@@ -7,6 +7,8 @@ export default function Home() {
 				src="/tedxgeorge-background.jpg"
 				alt="TEDxGeorge"
 				fill
+				placeholder="blur"
+				blurDataURL="/background-placeholder.jpg"
 				style={{ objectFit: "cover" }}
 			/>	
 		</main>
