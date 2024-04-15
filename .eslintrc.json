@@ -1,3 +1,33 @@
 {
-  "extends": "next/core-web-vitals"
-}
+  "root": true,
+  "extends": [
+   "next/core-web-vitals",
+   "plugin:storybook/recommended"
+  ],
+  "plugins": [
+   "testing-library"
+  ],
+  "rules": {
+   "react/no-unescaped-entities": [
+    "error",
+    {
+     "forbid": [
+      ">",
+      "}"
+     ]
+    }
+   ]
+  },
+  "overrides": [
+   {
+    "files": [
+     "**/__tests__/**/*.[jt]s?(x)",
+     "**/?(*.)+(spec|test).[jt]s?(x)"
+    ],
+    "extends": [
+     "plugin:testing-library/react"
+    ]
+   }
+  ]
+ }
+ 
