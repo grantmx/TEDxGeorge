@@ -1,0 +1,32 @@
+@import "@/styles/globals/placeholders";
+
+
+.block{
+    display: flex;
+    background-color: #111;
+    padding: 4rem;
+    width: 100%;
+
+    @media screen and (max-width: $screen-sm){
+        padding: 2rem 1rem 8rem 1rem;
+    }
+}
+
+.icon{
+    fill: #eee;
+    width: 25px;
+    height: 25px;
+}
+
+.iconLink{
+    background-color: transparent;
+    border: none;
+}
+
+.linkCntr{
+    border: none;
+
+    &:hover{
+        background-color: transparent;
+    }
+}

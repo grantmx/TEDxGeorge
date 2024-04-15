@@ -1,0 +1,13 @@
+@import "@/styles/globals/placeholders";
+
+
+.heading{
+    width: 75%;
+    padding: 2rem 0;
+
+    @media screen and (max-width: $screen-sm){
+        width: 100%;
+        padding: 0;
+    }
+}
+
