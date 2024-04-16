@@ -27,6 +27,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
+			<head>
+				<link href="/favicon.ico" rel="shortcut icon" />
+			</head>
 			<body className={inter.variable}>
 				{children}
 			</body>
