@@ -107,6 +107,46 @@ function Speakers(){
                         />
                     </div>
                 </div>
+
+                <div className="row mt-4">
+                    <div className="col-12 col-lg-3">
+                        <Image 
+                            src="https://dummyimage.com/400x400/111/fff&text=Announcing+Soon" 
+                            alt="Event 1" 
+                            width={400} 
+                            height={400} 
+                            className={clsx(Utils.w_100, Utils.h_auto, "object-fit-contain")}
+                        />
+                    </div>
+                    <div className="col-12 col-lg-3">
+                        <Image 
+                            src="https://dummyimage.com/400x400/111/fff&text=Announcing+Soon" 
+                            alt="Event 1" 
+                            width={400} 
+                            height={400} 
+                            className={clsx(Utils.w_100, Utils.h_auto, "object-fit-contain")}
+                        />
+                    </div>
+                    <div className="col-12 col-lg-3">
+                        <Image 
+                            src="https://dummyimage.com/400x400/111/fff&text=Announcing+Soon" 
+                            alt="Event 1" 
+                            width={400} 
+                            height={400} 
+                            className={clsx(Utils.w_100, Utils.h_auto, "object-fit-contain")}
+                        />
+                    </div>
+
+                    <div className="col-12 col-lg-3">
+                        <Image 
+                            src="https://dummyimage.com/400x400/111/fff&text=Announcing+Soon" 
+                            alt="Event 1" 
+                            width={400} 
+                            height={400} 
+                            className={clsx(Utils.w_100, Utils.h_auto, "object-fit-contain")}
+                        />
+                    </div>
+                </div>
             </section>
         </>
     )
