@@ -36,6 +36,8 @@ function Events(){
                             alt="Event 1" 
                             width={400} 
                             height={400} 
+                            placeholder="blur"
+                            blurDataURL="https://dummyimage.com/1x1/777/fff"
                             className={clsx(Utils.w_100, Utils.h_auto, "object-fit-contain")}
                         />
                     </div>
