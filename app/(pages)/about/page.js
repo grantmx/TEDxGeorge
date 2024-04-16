@@ -9,7 +9,7 @@ function AboutUs(){
             <section className="container text-center d-flex justify-content-center">
                 <div className={Style.heading}>
                     <h1 className={clsx(Utils.fs_5, "fw-light")}>
-                        About <strong className="fw-bold">TEDx</strong>George
+                        About
                     </h1>
 
                     <article>

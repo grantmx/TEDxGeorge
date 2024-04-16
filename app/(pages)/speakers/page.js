@@ -15,7 +15,7 @@ function Speakers(){
             <section className="container text-center d-flex justify-content-center">
                 <div className={Style.heading}>
                     <h1 className={clsx(Utils.fs_5, "fw-light")}>
-                        <strong className="fw-bold">TEDx</strong>George Speakers
+                        Speakers
                     </h1>
 
                     <article>
