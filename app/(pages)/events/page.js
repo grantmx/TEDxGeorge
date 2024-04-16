@@ -2,6 +2,7 @@ import Utils from "@/styles/globals/utils.module.scss"
 import Style from "../Page.module.scss"
 import clsx from "clsx"
 import Image from "next/image"
+import braveOnes from "@/public/brave-ones-event.jpg"
 
 
 export const metadata = {
@@ -31,7 +32,7 @@ function Events(){
                 <div className="row">
                     <div className="col-12 col-lg-3">
                         <Image 
-                            src="https://dummyimage.com/400x400/111/fff&text=Announcing+Soon" 
+                            src={braveOnes.src}
                             alt="Event 1" 
                             width={400} 
                             height={400} 
