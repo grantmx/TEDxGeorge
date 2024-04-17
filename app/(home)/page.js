@@ -6,8 +6,11 @@ import Utils from "@/styles/globals/utils.module.scss"
 import logo from "@/public/TEDx_Logo_Short_George-white.svg"
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import { MainEvent } from "@/components/JSONld";
 
-export default function Home() {
+
+
+function Home() {
 	return (
 		<>
 			<Header />
@@ -30,7 +33,7 @@ export default function Home() {
 
 			<main className="container px-4">
 				<section className="row my-5 py-5">
-					<header className="col col-lg-4">
+					<aside className="col col-lg-4">
 						<h1 className={Utils.fs_1}>
 							About <br/><Image src={logo} alt="TEDxGeorge Logo" width={300} height={75} />
 						</h1>
@@ -42,10 +45,10 @@ export default function Home() {
 							<strong>Venue:</strong> George Arts Theater<br />
 							<strong>Time:</strong> 9am - 4pm
 						</p>
-					</header>
+					</aside>
 
 					<article className="col col-lg-8">
-						<p className="fs-1"><strong>“The Brave Ones”</strong> is an attempt to celebrate the local heroes and heroines that have continuously taken brave steps in their respective fields. These individuals may not be the most recognised and acknowledged, but the impact and weight of their ideas are the centre of our attention. <Link href="/about">Learn more &rsaquo;</Link></p>
+						<p className="fs-1"><strong>"The Brave Ones"</strong> is an attempt to celebrate the local heroes and heroines that have continuously taken brave steps in their respective fields. These individuals may not be the most recognised and acknowledged, but the impact and weight of their ideas are the centre of our attention. <Link href="/about">Learn more &rsaquo;</Link></p>
 
 						<h2 className={Utils.fs_4}>
 							What is TEDx?
@@ -61,8 +64,13 @@ export default function Home() {
 				</section>
 			</main>
 
-
 			<Footer />
+
+			<MainEvent />
+			
 		</>
 	);
 }
+
+
+export default Home;

@@ -2,15 +2,32 @@ import Utils from "@/styles/globals/utils.module.scss"
 import Style from "../Page.module.scss"
 import clsx from "clsx"
 import Image from "next/image"
+import { eventsList } from "@/lib/eventList"
+import { MainEvent } from "@/components/JSONld"
 import braveOnes from "@/public/brave-ones-event.jpg"
 
 
 export const metadata = {
-    title: "Events"
+    title: "Events",
+    openGraph: {
+        title: 'TEDxGeorge',
+        description: "The Brave Ones is an attempt to celebrate the local heroes and heroines that have continuously taken brave steps in their respective fields",
+        url: 'https://www.tedxgeorge.com/events',
+        siteName: 'TEDxGeorge',
+        images: [
+            {
+                url: braveOnes.src,
+                width: 400,
+                height: 400,
+            },
+        ],
+        locale: 'en_US',
+        type: 'website',
+    },
 }
 
 
-function Events(){
+async function Events(){
     return(
         <>
              <section className="container text-center d-flex justify-content-center">
@@ -30,47 +47,26 @@ function Events(){
 
             <section className="container mb-5">
                 <div className="row">
-                    <div className="col-12 col-lg-3">
-                        <Image 
-                            src={braveOnes.src}
-                            alt="Event 1" 
-                            width={400} 
-                            height={400} 
-                            placeholder="blur"
-                            blurDataURL="https://dummyimage.com/1x1/777/fff"
-                            className={clsx(Utils.w_100, Utils.h_auto, "object-fit-contain")}
-                        />
-                    </div>
-                    <div className="col-12 col-lg-3">
-                        <Image 
-                            src="https://dummyimage.com/400x400/111/fff&text=Announcing+Soon" 
-                            alt="Event 1" 
-                            width={400} 
-                            height={400} 
-                            className={clsx(Utils.w_100, Utils.h_auto, "object-fit-contain")}
-                        />
-                    </div>
-                    <div className="col-12 col-lg-3">
-                        <Image 
-                            src="https://dummyimage.com/400x400/111/fff&text=Announcing+Soon" 
-                            alt="Event 1" 
-                            width={400} 
-                            height={400} 
-                            className={clsx(Utils.w_100, Utils.h_auto, "object-fit-contain")}
-                        />
-                    </div>
 
-                    <div className="col-12 col-lg-3">
-                        <Image 
-                            src="https://dummyimage.com/400x400/111/fff&text=Announcing+Soon" 
-                            alt="Event 1" 
-                            width={400} 
-                            height={400} 
-                            className={clsx(Utils.w_100, Utils.h_auto, "object-fit-contain")}
-                        />
-                    </div>
+                    {eventsList.map((event) => {
+                        return(
+                            <div className="col-12 col-lg-3" key={event.title}>
+                                <Image 
+                                    src={event.src}
+                                    alt="Event 1" 
+                                    width={400} 
+                                    height={400} 
+                                    placeholder="blur"
+                                    blurDataURL="https://dummyimage.com/1x1/777/fff"
+                                    className={clsx(Utils.w_100, Utils.h_auto, "object-fit-contain")}
+                                />
+                            </div>
+                        )
+                    })}
                 </div>
             </section>
+
+            <MainEvent />
         </>
     )
 }

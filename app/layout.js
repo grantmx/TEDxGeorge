@@ -1,6 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import '@/styles/globals/global.scss'
 import { Inter } from "next/font/google";
+import braveOnes from "@/public/brave-ones-event.jpg"
+
 
 const inter = Inter({ 
 	subsets: ["latin"],
@@ -9,6 +11,7 @@ const inter = Inter({
 
 
 export const metadata = {
+	metadataBase: "https://tedxgeorge.com",
 	title: {
 		template: '%s : TEDxGeorge',
 		default: 'TEDxGeorge',
@@ -19,6 +22,13 @@ export const metadata = {
 		siteName: 'TEDxGeorge',
 		locale: 'en_US',
 		type: 'website',
+		images: [
+            {
+                url: braveOnes.src,
+                width: 400,
+                height: 400,
+            },
+        ],
 	},
 	description: "A licensed TEDx event dedicated to the George community, independently curated to ignite conversations that inspire insightful and thought-provoking engagement and change.",
 };
