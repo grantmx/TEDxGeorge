@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import '@/styles/globals/global.scss'
 import { Inter } from "next/font/google";
 import braveOnes from "@/public/brave-ones-event.jpg"
-
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ 
 	subsets: ["latin"],
@@ -56,6 +56,8 @@ export default function RootLayout({ children }) {
 			<body className={inter.variable}>
 				{children}
 			</body>
+
+			<Analytics />
 		</html>
 	);
 }
