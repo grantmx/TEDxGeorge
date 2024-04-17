@@ -1,6 +1,7 @@
 import Utils from "@/styles/globals/utils.module.scss"
 import Style from "../Page.module.scss"
 import clsx from "clsx"
+import { MainEvent } from "@/components/JSONld"
 
 
 export const metadata = {
@@ -66,6 +67,8 @@ function AboutUs(){
                 </div>
                
             </section>
+
+            <MainEvent />
         </>
     )
 }
