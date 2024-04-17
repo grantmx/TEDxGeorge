@@ -3,6 +3,14 @@ import Style from "../Page.module.scss"
 import clsx from "clsx"
 
 
+export const metadata = {
+    title: "About",
+    alternates: {
+        canonical: "https://www.tedxgeorge.com/about",
+    }
+}
+
+
 function AboutUs(){
     return(
         <>

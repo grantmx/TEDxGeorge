@@ -16,6 +16,19 @@ export const metadata = {
 		template: '%s : TEDxGeorge',
 		default: 'TEDxGeorge',
 	},
+	alternates: {
+		canonical: 'https://tedxgeorge.com',
+	},
+	robots: {
+		index: true,
+		follow: true,
+		nocache: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			noimageindex: false,
+		},
+	},
 	openGraph: {
 		title: 'TEDxGeorge',
 		url: "https://tedxgeorge.com",

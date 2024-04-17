@@ -9,6 +9,9 @@ import braveOnes from "@/public/brave-ones-event.jpg"
 
 export const metadata = {
     title: "Events",
+    alternates: {
+        canonical: "https://www.tedxgeorge.com/events",
+    },
     openGraph: {
         title: 'TEDxGeorge',
         description: "The Brave Ones is an attempt to celebrate the local heroes and heroines that have continuously taken brave steps in their respective fields",

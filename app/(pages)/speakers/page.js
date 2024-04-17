@@ -6,7 +6,10 @@ import { speakerList } from "@/lib/speakerList"
 
 
 export const metadata = {
-    title: "Speakers"
+    title: "Speakers",
+    alternates: {
+        canonical: "https://www.tedxgeorge.com/speakers",
+    }
 }
 
 

@@ -3,7 +3,10 @@ import Style from "../Page.module.scss"
 import clsx from "clsx"
 
 export const metadata = {
-    title: "Partners"
+    title: "Partners",
+    alternates: {
+        canonical: "https://www.tedxgeorge.com/partners",
+    }
 }
 
 

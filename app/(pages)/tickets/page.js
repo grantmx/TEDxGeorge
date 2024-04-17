@@ -2,8 +2,12 @@ import Utils from "@/styles/globals/utils.module.scss"
 import Style from "../Page.module.scss"
 import clsx from "clsx"
 
+
 export const metadata = {
-    title: "Tickets"
+    title: "Tickets",
+    alternates: {
+        canonical: "https://www.tedxgeorge.com/tickets",
+    }
 }
 
 
