@@ -35,18 +35,18 @@ function Header(){
                             Partners
                         </Link>
                     </li>
-                    <li>
+                    <li className="me-4 me-lg-5">
                         <Link href="/about">
                             About
                         </Link>
                     </li>
-                    {/* <li>
+                    <li>
                         <Link href="/tickets" className="btn btn-danger px-4 py-3">
                             <span className="h3">
                                 Tickets
                             </span>
                         </Link>
-                    </li> */}
+                    </li>
                 </menu>
             </nav>
         </header>

@@ -7,7 +7,7 @@ import Cross from "@/components/icons/Cross"
 
 
 export const metadata = {
-    title: "Tickets",
+    title: "Purchase Tickets",
     alternates: {
         canonical: "https://www.tedxgeorge.com/tickets",
     }
@@ -20,7 +20,7 @@ function Tickets(){
             <section className="container text-center d-flex justify-content-center">
                 <div className={Style.heading}>
                     <h1 className={clsx(Utils.fs_5, "fw-light")}>
-                        Tickets
+                        Purchase Tickets
                     </h1>
 
                     <article>
