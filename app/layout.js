@@ -3,6 +3,9 @@ import '@/styles/globals/global.scss'
 import { Inter } from "next/font/google";
 import braveOnes from "@/public/brave-ones-event.jpg"
 import { Analytics } from "@vercel/analytics/react"
+import clsx from 'clsx';
+import { GlobalContextProvider } from '@/contexts/GlobalContext';
+import WidgetBar from '@/components/display/WidgetBar';
 
 const inter = Inter({ 
 	subsets: ["latin"],
@@ -53,9 +56,16 @@ export default function RootLayout({ children }) {
 			<head>
 				<link href="/favicon.ico" rel="shortcut icon" />
 			</head>
-			<body className={inter.variable}>
-				{children}
-			</body>
+
+			<GlobalContextProvider>
+				<body className={clsx(inter.variable)}>
+					<div id="wrapper" className='wrapper'>
+						{children}
+					</div>
+
+					<WidgetBar />
+				</body>
+			</GlobalContextProvider>
 
 			<Analytics />
 		</html>

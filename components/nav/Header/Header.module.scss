@@ -1,0 +1,51 @@
+@import "@/styles/globals/placeholders";
+
+
+.block{
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;    
+}
+
+
+
+.logoCntr{
+    display: flex;
+    border: none;
+
+    &:hover{
+        background-color: transparent;
+    }
+
+    @media screen and (max-width: $screen-sm){
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+.logo{
+
+    @media screen and (max-width: $screen-sm){
+        width: 75%;
+    }
+
+}
+
+.nav{
+    display: flex;
+
+    @media screen and (max-width: $screen-sm){
+        position: fixed;
+        justify-content: center;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        background-color: #333;
+        box-shadow: $box-shadow;
+        padding: 1rem;
+        width: 100vw;
+    }
+}
+

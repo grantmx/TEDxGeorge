@@ -1,9 +1,10 @@
-import Utils from "@/styles/globals/utils.module.scss"
+import Utils from "@/styles/globals/Utils.module.scss"
 import Style from "../Page.module.scss"
 import clsx from "clsx"
 import { features, ticketList } from "@/lib/ticketList"
-import Checkmark from "@/components/icons/Checkmark"
-import Cross from "@/components/icons/Cross"
+import Checkmark from "@/icons/Checkmark"
+import Cross from "@/icons/Cross"
+import RegisterBtn from "@/components/registration/RegisterBtn"
 
 
 export const metadata = {
@@ -39,7 +40,7 @@ function Tickets(){
                         </h2>
                     </div>
 
-                    {ticketList.map((ticket, index) => {
+                    {ticketList.map((ticket) => {
                         return(
                             <div className="col text-center" key={ticket.type}>
                                 <h2 className={clsx(Utils.fs_4, "mb-0")}>
@@ -65,8 +66,8 @@ function Tickets(){
                             )
                         })}
 
-                        <div className={clsx(Utils.fs_4, "col p-4")}>
-                            Ticket Price
+                        <div className={clsx(Utils.fs_2, "col p-4 m-0")} style={{ borderTop: "5px double #555"}}>
+                            Ticket Price:
                         </div>
                     </div>
 
@@ -75,21 +76,19 @@ function Tickets(){
                             <div className="col p-0" key={ticket.price}>
                                 {ticket.features.map((feature, i) => {
                                     return (
-                                        <div className={clsx("py-4 d-flex justify-content-center", (i % 2) && Style.zebraStripe, Style.cell)} key={feature.title}>
+                                        <div 
+                                            className={clsx("py-4 d-flex justify-content-center", (i % 2) && Style.zebraStripe, Style.cell)} 
+                                            key={feature.title}
+                                        >
                                             {feature.included ? <Checkmark /> : <Cross />}
                                         </div>
                                     )
                                 })}
 
-                                <div className="py-4 d-flex align-items-center flex-column">
-                                    <span className={clsx(Utils.fs_4)}>
-                                        {ticket.price}
-                                    </span>
-
-                                    <a href="#" className="btn btn-success py-2 px-4 fs-2">
-                                        Register Now
-                                    </a>
-                                </div>
+                                <RegisterBtn 
+                                    price={ticket.priceRaw} 
+                                    type={ticket.type}
+                                />
                             </div>
                         )
                     })}

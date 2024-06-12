@@ -7,12 +7,12 @@
 %standard-button{
     border-width: 1px;
     border-style: solid;
-    padding: 1.7rem calc(1vw + 17px);
+    padding: 2rem calc(1vw + 17px);
     text-transform: capitalize;    
     border-radius: $button-border-radius;
     text-decoration: none !important;
     border-color: transparent;
-    background-color: $charcoal;
+    background-color: rgb(25, 135, 84);
     color: $white;
     display: inline-flex;
     font-weight: normal;
@@ -23,7 +23,6 @@
     align-items: center;
     align-content: center;
     justify-content: center;
-    max-height: 60px;
 }
 
 %standard-control{
@@ -314,7 +313,37 @@
 
 
 
-// VDS UL and OL style
+%widgetBlock{
+    display: flex;
+    flex-direction: column;
+    height: 95%;
+}
+
+%widgetActions{
+    margin: 4rem -2rem 0 -2rem !important;
+    padding: 2rem !important;
+    position: absolute !important;
+    z-index: 10;
+    bottom: 0;
+    right: 2rem;
+    width: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+%widgetButtonRow{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+
+    & [class^="Button_block"]{
+        padding: 1.25rem 3rem;
+    }
+}
+
+
+
 %textBlock{
     margin-bottom: 4rem;
 

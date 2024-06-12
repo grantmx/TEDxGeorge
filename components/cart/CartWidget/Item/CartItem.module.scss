@@ -1,0 +1,76 @@
+@import "@/styles/globals/placeholders";
+
+
+.block{
+    margin: 0 0 2rem 0 !important;;
+    flex-direction: row !important;
+    width: 100%;
+    padding: 1rem !important;
+}
+
+.imageLink{
+    display: block;
+    width: auto;
+    width: 25%;
+
+    & img{
+        width: 100%;
+        object-fit: contain;
+        height: auto;
+    }
+}
+
+.image{
+    border-radius: $border-radius;
+}
+
+.title{
+    margin: 0;
+    width: 100%;
+    font-size: 1.6rem;
+    line-height: 1;
+    border-bottom: 1px solid #777;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 2rem;
+    width: 75%;
+}
+
+.detailLink{
+    color: initial;
+    margin-bottom: 1rem;
+
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+.priceRow{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.options{
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.removeBtn{
+    background-color: transparent;
+    padding: 0 1rem;
+
+    & svg{
+        fill: #999;
+    }
+}
+

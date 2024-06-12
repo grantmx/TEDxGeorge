@@ -1,10 +1,10 @@
 import Image from "next/image";
 import hero from "@/public/hero.jpg"
 import mobileHero from "@/public/mobile-hero.jpg"
-import Header from "@/components/Header";
-import Utils from "@/styles/globals/utils.module.scss"
+import Header from "@/components/nav/Header";
+import Utils from "@/styles/globals/Utils.module.scss"
 import logo from "@/public/TEDx_Logo_Short_George-white.svg"
-import Footer from "@/components/Footer";
+import Footer from "@/components/nav/Footer";
 import Link from "next/link";
 import { MainEvent } from "@/components/JSONld";
 
@@ -44,6 +44,12 @@ function Home() {
 							<strong>Venue:</strong> George Arts Theater<br />
 							<strong>Time:</strong> 9am - 4pm
 						</p>
+
+						<p>
+							<Link href="/tickets" className="btn btn-danger fs-1 px-5">
+								Purchase Tickets
+							</Link>
+						</p>
 					</aside>
 
 					<article className="col col-lg-8">
@@ -54,11 +60,6 @@ function Home() {
 						</h2>
 						<p>In the spirit of ideas worth spreading, TED has created a program called <a href="https://www.ted.com/tedx" target="_blank" rel="nofollow">TEDx</a>. TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. Our event is called TEDxGeorge, where x = independently organized TED event. At our TEDxGeorge event, TED Talks video and live speakers will combine to spark deep discussion and connection in a small group. The TED Conference provides general guidance for the TEDx program, but individual TEDx events, including ours, are self-organized.</p>
 					
-						<p>
-							<Link href="/tickets" className="btn btn-danger fs-1 px-5">
-								Purchase Tickets Now &rsaquo;
-							</Link>
-						</p>
 					</article>
 				</section>
 			</main>
