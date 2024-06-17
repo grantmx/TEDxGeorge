@@ -10,12 +10,17 @@ import { registrationOptions } from "@/lib/constants";
 import scrollToLocation from "@/lib/utils/scrollToLocation";
 import Status from "./Status";
 import { IconLock } from "@/icons/IconLock";
-import Divider from "@/components/display/Divider";
 
 
 
 function RegistrationCart(){
     const [ global, dispatch ] = useContext(GlobalContext)
+
+    
+    const canCheckout = useMemo(() => {
+        return global.cart.lineItems.every(item => item.isDone)
+    }, [ global.cart.lineItems ])
+
 
 
     useEffect(() => {
@@ -59,14 +64,14 @@ function RegistrationCart(){
     return(
         <section className={Style.block}>
             <h2 className={Style.heading}>
-                Edit your ticket registration.
+                Review your ticket registration.
             </h2>
 
             <article className={Style.cart}>
                 {Array.isArray(lineItems) && lineItems.length ? (
                     <>
                         {lineItems.map((item, index) => {
-                            const { type, price, quantity, listPrice, options, id } = item;
+                            const { type, price, quantity, listPrice, options, id, isDone } = item;
 
                             return(
                                 <button 
@@ -75,7 +80,7 @@ function RegistrationCart(){
                                     className={clsx(Style.editBtn, global.cart?.editTicket?.id !== id ? Style.inActive : "")}
                                     onClick={() => editTicket(item)}
                                 >
-                                    <Status />
+                                    <Status {...{ isDone }} />
 
                                     <Item 
                                         canEdit={false} 
@@ -92,16 +97,19 @@ function RegistrationCart(){
                                 </button>
                             )
                         })}
+
+
+                        <button 
+                            type="submit" 
+                            className={clsx(Style.submit, "btn btn-success")}
+                            disabled={!canCheckout}
+                        >
+                            <IconLock width="20" height="20" fill="#fff" />
+                            Continue to Payment
+                        </button>
                     </>
                 ):null}                
-                
-                <button type="submit" className={clsx(Style.submit, "btn btn-success")}>
-                    <IconLock width="20" height="20" fill="#fff" />
-                    Continue to Payment
-                </button>
             </article>
-
-            
         </section>
     )
 }

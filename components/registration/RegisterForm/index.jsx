@@ -34,11 +34,29 @@ function RegisterForm(){
 
 
     function updateTicket({ name, value, global }){
+        const validate = []
+
+        Object.keys(global.cart.editTicket?.options).forEach(option => {
+            switch(option){
+                case "title":
+                case "first_name":
+                case "last_name":
+                case "email":
+                case "phone":
+                case "city":
+                case "occupation":
+                case "makes_me_happy":
+                    validate.push(global.cart.editTicket?.options[option])
+                    break;
+            }
+        })
+console.log(validate)
         dispatch({
             type: "editTicket",
             data: {
-                id: global?.cart?.editTicket?.id,
                 ...global?.cart?.editTicket,
+                id: global?.cart?.editTicket?.id,
+                isDone: validate.every(item => item !== null),
                 options: {
                     ...global.cart.editTicket?.options,
                     [name]: value
@@ -53,7 +71,6 @@ function RegisterForm(){
 
     useEffect(() => {
         const subscription = watch((value, { name, type }) => {
-            console.log(value, name, type)
             updateTicket({ name, value: value[name], global })
         })
 
@@ -255,7 +272,6 @@ function RegisterForm(){
                                 id="after_party"
                                 name="after_party"
                                 type="checkbox"
-                                defaultChecked={true}
                                 {...register("after_party", { value: "Yes" })}
                                 className={Style.control}
                             />

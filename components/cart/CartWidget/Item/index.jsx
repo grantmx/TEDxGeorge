@@ -85,7 +85,7 @@ function Item({
                                     </div> 
 
                                     <strong className={Style.optionValue}>
-                                        {options?.[optionKey] ? "Yes" : (options?.[optionKey] ?? " - none -")}
+                                        {options?.[optionKey] ?? " - none -"}
                                     </strong>
                                 </li>
                             )
