@@ -11,7 +11,7 @@ export default function useCartWidget(){
             data:{
                 isOpen: true,
                 component: <CartWidget />,
-                heading: `Your Shopping Cart`
+                heading: `Your Ticket Cart`
             }
         })
     }

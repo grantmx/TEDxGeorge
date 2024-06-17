@@ -91,7 +91,7 @@ export const LocalStorage = {
             let storedItems = this.getStorage(key);
             
             if (Array.isArray(storedItems)) {
-                const newStoredItems = storedItems.filter(item => JSON.stringify(item) !== JSON.stringify(data));
+                const newStoredItems = storedItems.filter(item => item.id !== data.id);
                 this.setStorage(key, newStoredItems, "local");
             }
 

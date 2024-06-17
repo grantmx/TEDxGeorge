@@ -2,14 +2,21 @@
 
 
 .block{
-    padding: 2rem 0;
+    padding: 2rem 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #333;    
 }
 
+.menuBtn{
+    background-color: transparent;
+    display: none;
 
+    @media screen and (max-width: $screen-sm){
+        display: block;
+    }
+}
 
 .logoCntr{
     display: flex;
@@ -35,17 +42,67 @@
 
 .nav{
     display: flex;
+    position: relative;
+
+    &.closed{
+        @media screen and (max-width: $screen-md){
+            display: none !important;
+        }
+    }
+    
+    &.open{
+        @media screen and (max-width: $screen-md){
+            display: block !important;
+        }
+    }
 
     @media screen and (max-width: $screen-sm){
         position: fixed;
-        justify-content: center;
+        top: 0;
         bottom: 0;
         left: 0;
         z-index: 999;
         background-color: #333;
         box-shadow: $box-shadow;
         padding: 1rem;
-        width: 100vw;
+        width: 75vw;
+
+        & menu{
+            flex-direction: column;
+            align-items: start;
+            justify-content: start !important;
+
+            & li{
+                width: 100% !important;
+
+                &:last-child{
+                    margin-top: 2rem;
+                }
+            }
+
+            & a, a.btn{
+                font-size: 2.1rem !important;
+                padding: 2rem !important;
+                display: block;
+                width: 100%;
+            }
+
+            
+        }
+    }
+}
+
+
+
+.closeBtn{
+    position: absolute;
+    background-color: transparent;
+    top: 0;
+    right: 0;
+    display: none;
+
+    @media screen and (max-width: $screen-sm){
+        display: block;
     }
 }
 

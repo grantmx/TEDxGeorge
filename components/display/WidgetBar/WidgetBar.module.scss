@@ -14,6 +14,11 @@
     opacity: 0;
     transition: all 0.3s cubic-bezier(1,-0.03,.23,1);
 
+    @media screen and (max-width: $screen-md){
+        width: 55svw;
+        right:  -55svw !important;
+    }
+
     @media screen and (max-width: $screen-sm){
         width: 95svw;
         right:  -95svw !important;

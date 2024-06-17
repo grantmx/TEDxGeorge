@@ -46,7 +46,7 @@
 .h2 {
     @extend .fs_2;
     @extend %h2;
-    @include dynamic-font(23, 33);
+    @include dynamic-font(33, 33);
 
     @media print{
         font-size: 1.8rem !important;
@@ -57,7 +57,7 @@
 .h3 {
     @extend .fs_3;
     @extend %h3;
-    @include dynamic-font(23, 33);
+    @include dynamic-font(24, 33);
 
     @media print{
         font-size: 1.6rem !important;

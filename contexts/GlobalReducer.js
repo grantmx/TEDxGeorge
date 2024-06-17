@@ -6,6 +6,9 @@
 
 // use our initial state as a type of manifest for the Global State
 export const initialState = {
+    nav:{
+        isOpen: false
+    },
     user: {
         isLoggedIn: false,
         email: "",
@@ -17,7 +20,8 @@ export const initialState = {
     },
     cart: {
         total: 0,
-        lineItems: []
+        lineItems: [],
+        editTicket: null
     },
     thirdParty: {}
 }
@@ -25,11 +29,69 @@ export const initialState = {
 
 export const GlobalReducer = (state, action) => {
     switch(action.type){
+        
+        case "editTicket":
+            let newTicketCart = { ...state.cart }
+            const ticketData = newTicketCart.lineItems.find(item => item.id === action.data.id)
+
+            const ticket = {
+                ...ticketData,
+                ...action.data
+            }
+
+            return{
+                ...state,
+                cart: {
+                    ...state.cart,
+                    lineItems: state.cart.lineItems.map(item => {
+                        if (item.id === ticket.id) {
+                            return ticket
+                        }
+
+                        return item
+                    }),
+                    editTicket: ticket
+                }
+            }
+
+
+
+        case "toggleNav":
+            return{
+                ...state,
+                nav: {
+                    isOpen: action?.data ?? !state.nav.isOpen
+                }
+            }
 
         case "setCart":
             return{
                 ...state,
                 cart: action.data
+            }
+
+
+
+        case "updateCart":
+            const newCart = { ...state.cart }
+
+            newCart.lineItems = newCart.lineItems.map(item => {
+                if (item.type === action.data.type) {
+                    return {
+                        ...item,
+                        quantity: action.data.quantity,
+                        price: action.data.price
+                    }
+                }
+
+                return item
+            })
+
+            newCart.total = newCart.lineItems.reduce((acc, item) => acc + item.price, 0)
+
+            return{
+                ...state,
+                cart: newCart
             }
 
             

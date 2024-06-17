@@ -19,6 +19,7 @@ function TicketBtn(){
 
         if(cartData){
             const cartQty = cartData.reduce((acc, item) => acc + item.quantity, 0)
+            
             setQty(cartQty)
 
             dispatch({
@@ -35,10 +36,8 @@ function TicketBtn(){
 
     return(
         <li className="btn-group" role="group" aria-label="Ticket Cart">
-            <Link href="/tickets" className="btn btn-danger px-4 py-3">
-                <span className="h3">
-                    Tickets
-                </span>
+            <Link href="/tickets" className={clsx(Style.btn, "btn btn-danger px-4 py-3")}>
+                Tickets
             </Link>
 
             <button 
