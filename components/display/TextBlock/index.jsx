@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import GridColumn from 'components/layout/GridColumn';
+import GridColumn from '@/components/layout/GridColumn';
 import PropTypes from 'prop-types';
 import Style from './TextBlock.module.scss';
 

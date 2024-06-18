@@ -22,11 +22,7 @@ function Actions({ cartData }){
                             size="full"
                             onClick={() => window.location.href = "/tickets/register"}
                         >
-                            Register
-
-                            <svg id="icon-arrow_right_alt" viewBox="0 0 24 24" width={50} height={50} fill="#fff">
-                                <path d="M16.031 11.016v-3l3.984 3.984-3.984 3.984v-3h-12.047v-1.969h12.047z"></path>
-                            </svg>
+                            Go to registration
                         </Button>
                     </div>
                 </Card>

@@ -19,7 +19,8 @@ function Item({
     options = null,
     listPrice = null, 
     canRemove = true, 
-    canEdit = true 
+    canEdit = false,
+    showPrice = true 
 }){
     const [ state, dispatch ] = useContext(GlobalContext);
     const [ qty, setQty ] = useState(quantity)
@@ -30,7 +31,6 @@ function Item({
             const newTotal = (listPrice ?? price) * qty;
             const updatedTicket = { type, id, price: newTotal, quantity: qty, listPrice: listPrice ?? price }
 
-            LocalStorage.removeFromStorage("TXG_cart", { id })
             LocalStorage.addToStorage("TXG_cart", updatedTicket)
 
             dispatch({
@@ -85,7 +85,7 @@ function Item({
                                     </div> 
 
                                     <strong className={Style.optionValue}>
-                                        {options?.[optionKey] ?? " - none -"}
+                                        {options?.[optionKey] ? (typeof options?.[optionKey] === "boolean" ? "Yes" : options?.[optionKey]) : "-none-"}
                                     </strong>
                                 </li>
                             )
@@ -102,7 +102,14 @@ function Item({
                         />
                     )}
 
-                    <Price value={ticketTotal ?? price} size="sm" />
+
+                    {showPrice && (
+                        <Price 
+                            value={ticketTotal ?? price} 
+                            size="sm" 
+                        />
+                    )}
+                    
 
                     {canRemove && (
                         <button 

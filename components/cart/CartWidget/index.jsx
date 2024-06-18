@@ -1,6 +1,6 @@
 import Item from "./Item";
 import Actions from "./Actions";
-import WidgetBody from "@/components/display/WidgetBody";
+import WidgetBody from "@/components/feedback/WidgetBody";
 import Style from "./CartWidget.module.scss";
 import { GlobalContext } from "@/contexts/GlobalContext";
 import { useContext, useMemo } from "react";

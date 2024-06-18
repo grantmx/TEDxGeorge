@@ -18,10 +18,14 @@
 }
 
 .col_1_2{
+    width: 50% !important;
+    flex: 1 0 50% !important;
+}
+
+.col_2_3{
     width: 60% !important;
     flex: 1 0 60% !important;
 }
-
 
 .legend{
     font-size: 3rem;
@@ -40,6 +44,12 @@
     border: 4px solid #444;
     line-height: 2;
     min-height: 75px;
+
+    &[type="checkbox"]{
+        height: auto;
+        min-height: auto;
+        margin-top: 1rem;
+    }
 }
 
 .controlShort{
@@ -71,7 +81,6 @@
 
 .checkboxControl{
     flex-direction: row;
-    align-items: end;
     align-content: center;
 
     & label{
@@ -87,13 +96,31 @@
     }
 }
 
+.reviewIndemnity{
+    background-color: transparent;
+    line-height: 1;
+    background-color: rgb(175 126 134 / 14%);
+    color: #fff;
+    padding: 0 0.5rem;
+    font-size: 1.6rem;
+    text-decoration: dotted;
+}
+
+.divider{
+    margin: 2rem;
+    display: flex;
+}
 
 .btn{
     display: flex;
     flex: 1 0 auto;
-    padding: 1rem 2rem;
-    font-size: 1.8rem;    
+    padding: 1.5rem 2rem;
+    font-size: 2.1rem;    
     align-items: center;
+    justify-content: center;
+    text-align: center !important;
+    width: 100%;
+    margin-top: 2rem;
 
     & svg{
         fill: #fff;
@@ -103,3 +130,14 @@
     }
 }
 
+.highlight{
+    background-color: #333;
+    padding: 2rem;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+}
+
+.signatureCanvas{
+    width: 100%;
+    height: 200px;
+}

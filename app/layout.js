@@ -5,7 +5,8 @@ import braveOnes from "@/public/brave-ones-event.jpg"
 import { Analytics } from "@vercel/analytics/react"
 import clsx from 'clsx';
 import { GlobalContextProvider } from '@/contexts/GlobalContext';
-import WidgetBar from '@/components/display/WidgetBar';
+import WidgetBar from '@/components/feedback/WidgetBar';
+import GlobalModal from '@/components/feedback/Modal/GlobalModal';
 
 const inter = Inter({ 
 	subsets: ["latin"],
@@ -64,6 +65,7 @@ export default function RootLayout({ children }) {
 					</div>
 
 					<WidgetBar />
+					<GlobalModal />
 				</body>
 			</GlobalContextProvider>
 

@@ -18,6 +18,11 @@ export const initialState = {
         isOpen: true,
         component: null,
     },
+    modal: {
+        isOpen: false,
+        title: "",
+        content: null
+    },
     cart: {
         total: 0,
         lineItems: [],
@@ -64,6 +69,7 @@ export const GlobalReducer = (state, action) => {
                 }
             }
 
+
         case "setCart":
             return{
                 ...state,
@@ -109,6 +115,14 @@ export const GlobalReducer = (state, action) => {
                 }
                 
             }
+
+        
+        case "openModal":
+            return{
+                ...state,
+                modal: action.data
+            }
+
 
         case "setWidget":
             return{

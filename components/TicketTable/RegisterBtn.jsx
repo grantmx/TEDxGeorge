@@ -7,6 +7,7 @@ import { LocalStorage } from "@/services/LocalStorage.service";
 import { useContext } from "react";
 import Style from "./TicketTable.module.scss"
 import generateID from "@/lib/utils/generateID";
+import { IconPlus } from "@/icons/IconPlus";
 
 
 
@@ -44,10 +45,11 @@ function RegisterBtn({ price, type, quantity = 1 }){
 
             <button 
                 type="button" 
-                className="btn btn-success py-2 px-4 fs-2"
+                className="btn btn-success py-2 px-4 fs-2 d-flex align-items-center justify-content-center"
                 onClick={register}
             >
-                Register Now
+                <IconPlus width={24} height={24} fill="#fff" />
+                Add Ticket
             </button>
         </div>
     )

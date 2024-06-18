@@ -2,9 +2,12 @@ import ReactModal from 'react-modal';
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import clsx from 'clsx';
-import { IconChevronLeft, IconClose, IconDone } from 'components/icons';
-
 import Style from './Modal.module.scss';
+import Backdrop from '../Backdrop';
+import { IconChevronLeft } from '@/icons/IconChevronLeft';
+import { IconClose } from '@/icons/IconClose';
+
+
 
 function Modal({
     shouldOpen,
@@ -22,7 +25,6 @@ function Modal({
 
     useEffect(() => {
         setModalOpen(shouldOpen)
-
     }, [shouldOpen])
 
 
@@ -34,6 +36,7 @@ function Modal({
 
 
     return (
+        <>
         <ReactModal
             role={"dialog"}
             aria={{ labelledby: `${heading}` }}
@@ -57,9 +60,6 @@ function Modal({
             <header className={clsx(heading && Style.heading)}>
                 {heading &&
                     <h2 className={Style.header}>
-                        {isATC && (
-                            <IconDone width="50" height="50" className={Style.iconDone} />
-                        )}
                         {heading}
                     </h2>
                 }
@@ -86,6 +86,14 @@ function Modal({
 
             {children}
         </ReactModal>
+
+
+        <Backdrop 
+            updateOverlay={() => setModalOpen(!modalOpen)}
+            {...{ show: modalOpen }} 
+        />
+    </>
+
     )
 }
 

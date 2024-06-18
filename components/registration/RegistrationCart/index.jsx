@@ -16,7 +16,7 @@ import { IconLock } from "@/icons/IconLock";
 function RegistrationCart(){
     const [ global, dispatch ] = useContext(GlobalContext)
 
-    
+
     const canCheckout = useMemo(() => {
         return global.cart.lineItems.every(item => item.isDone)
     }, [ global.cart.lineItems ])
@@ -64,7 +64,7 @@ function RegistrationCart(){
     return(
         <section className={Style.block}>
             <h2 className={Style.heading}>
-                Review your ticket registration.
+                Review & Edit your ticket registration.
             </h2>
 
             <article className={Style.cart}>
@@ -85,6 +85,7 @@ function RegistrationCart(){
                                     <Item 
                                         canEdit={false} 
                                         canRemove={false}
+                                        showPrice={false}
                                         {...{ 
                                             type,
                                             price,

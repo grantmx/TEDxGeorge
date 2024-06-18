@@ -7,6 +7,8 @@ import Style from "./RegisterForm.module.scss"
 import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { GlobalContext } from "@/contexts/GlobalContext";
+import { LocalStorage } from "@/services/LocalStorage.service";
+import IndemnityForm from "./IndemnityForm";
 
 
 
@@ -15,6 +17,20 @@ function RegisterForm(){
     const [ bringKids, setBringKids ] = useState(false)
     const [ id, setId ] = useState(null)
     const { register, handleSubmit, watch, clearErrors, setError, reset, formState: { errors } } = useForm();
+
+
+    function triggerIndemnifyModal(canShow){
+        if(canShow){
+            dispatch({
+                type: "openModal",
+                data: {
+                    isOpen: true,
+                    title: "Parental Indemnify & Consent",
+                    content: <IndemnityForm />
+                }
+            })
+        }
+    }
 
 
     function onSubmit(data){
@@ -33,10 +49,10 @@ function RegisterForm(){
 
 
 
-    function updateTicket({ name, value, global }){
+    function updateTicket({ name, value, global, fieldValues }){
         const validate = []
 
-        Object.keys(global.cart.editTicket?.options).forEach(option => {
+        Object.keys(fieldValues).forEach(option => {
             switch(option){
                 case "title":
                 case "first_name":
@@ -46,32 +62,43 @@ function RegisterForm(){
                 case "city":
                 case "occupation":
                 case "makes_me_happy":
-                    validate.push(global.cart.editTicket?.options[option])
+                    validate.push(fieldValues[option])
                     break;
             }
         })
-console.log(validate)
+
+        const isDone = validate.every(item => item !== "");
+
+        const newEditTicket = { 
+            ...global?.cart?.editTicket,
+            id: global?.cart?.editTicket.id,
+            isDone,
+            options: {
+                ...global?.cart?.editTicket.options,
+                [name]: value
+            }
+        }
+
+
         dispatch({
             type: "editTicket",
-            data: {
-                ...global?.cart?.editTicket,
-                id: global?.cart?.editTicket?.id,
-                isDone: validate.every(item => item !== null),
-                options: {
-                    ...global.cart.editTicket?.options,
-                    [name]: value
-                }
-            }
+            data: newEditTicket
         })
 
-        setId(global?.cart?.editTicket?.id)
+        setId(newEditTicket.id)
+
+
+        if( isDone ){
+            LocalStorage.addToStorage("TXG_cart", newEditTicket)
+        }
     }
 
 
 
     useEffect(() => {
         const subscription = watch((value, { name, type }) => {
-            updateTicket({ name, value: value[name], global })
+            console.log(value, name, type)
+            updateTicket({ name, value: value[name], global, fieldValues: value })
         })
 
         return () => subscription.unsubscribe()
@@ -98,7 +125,8 @@ console.log(validate)
                             name="title"
                             required
                             type="text" 
-                            {...register("title", { value: global.editTicket?.options?.title })}
+                            defaultValue={global.cart?.editTicket?.options?.title}
+                            {...register("title")}
                             placeholder="Mr, Mrs, Dr, etc."
                             className={clsx(Style.control, Style.controlShort)}
                         />
@@ -113,6 +141,7 @@ console.log(validate)
                             id="first_name"
                             name="first_name"
                             required
+                            defaultValue={global.cart?.editTicket?.options?.first_name}
                             {...register("first_name")}
                             type="text" 
                             className={Style.control}
@@ -129,6 +158,7 @@ console.log(validate)
                             name="last_name"
                             required
                             type="text" 
+                            defaultValue={global.cart?.editTicket?.options?.last_name}
                             {...register("last_name")}
                             className={Style.control}
                         />
@@ -144,6 +174,7 @@ console.log(validate)
                             name="occupation"
                             required
                             type="text" 
+                            defaultValue={global.cart?.editTicket?.options?.occupation}
                             {...register("occupation")}
                             className={Style.control}
                         />
@@ -160,6 +191,7 @@ console.log(validate)
                             required
                             className={Style.control}
                             type="text"
+                            defaultValue={global.cart?.editTicket?.options?.makes_me_happy}
                             {...register("makes_me_happy", {
                                 validate: (value) => wordCount(value, 3)
                             })}
@@ -189,6 +221,7 @@ console.log(validate)
                             <select 
                                 id="tee_shirt_size"
                                 name="tee_shirt_size"
+                                defaultValue={global.cart?.editTicket?.options?.tee_shirt_size}
                                 {...register("tee_shirt_size")}
                                 className={clsx(Style.control, Style.controlShort)}
                             >
@@ -222,6 +255,7 @@ console.log(validate)
                             required
                             placeholder="you@example.com"
                             {...register("email")}
+                            defaultValue={global.cart?.editTicket?.options?.email}
                             className={Style.control}
                         />
                     </p>
@@ -238,6 +272,7 @@ console.log(validate)
                             required
                             placeholder="___-___-____" 
                             {...register("phone")}
+                            defaultValue={global.cart?.editTicket?.options?.phone}
                             className={Style.control}
                         />
                     </p>
@@ -253,6 +288,7 @@ console.log(validate)
                             type="text" 
                             required
                             {...register("city")}
+                            defaultValue={global.cart?.editTicket?.options?.city}
                             className={Style.control}
                         />
                     </p>
@@ -272,7 +308,8 @@ console.log(validate)
                                 id="after_party"
                                 name="after_party"
                                 type="checkbox"
-                                {...register("after_party", { value: "Yes" })}
+                                defaultChecked={!!global.cart?.editTicket?.options?.after_party}
+                                {...register("after_party")}
                                 className={Style.control}
                             />
 
@@ -288,7 +325,11 @@ console.log(validate)
                             id="kids_zone"
                             name="kids_zone"
                             type="checkbox"
-                            onChange={() => setBringKids(!bringKids)}
+                            {...register("kids_zone", {
+                                onChange: () => setBringKids(!bringKids)
+                            })}
+                            defaultChecked={!!global.cart?.editTicket?.options?.kids_zone}
+                           
                             className={Style.control}
                         />
 
@@ -297,36 +338,38 @@ console.log(validate)
                         </label>
                     </p>
 
-                    {bringKids && (
-                        <>
+                    {(bringKids || global.cart?.editTicket?.options?.kids_zone) && (
+                        <div className={Style.highlight}>
                             <div className={Style.controlRow}>
-                                <p className={clsx(Style.controlGroup, Style.col_1_2)}>
-                                    <label htmlFor="childName">
-                                        Child's Full Name
+                                <p className={clsx(Style.controlGroup, Style.col_2_3)}>
+                                    <label htmlFor="child_name_1">
+                                        1. Child's Full Name
                                     </label>
 
                                     <input 
-                                        id="childName"
-                                        name="childName"
+                                        id="child_name_1"
+                                        name="child_name_1"
                                         type="text" 
                                         placeholder="First Name & Surname"
-                                        {...register("childName_1")}
+                                        {...register("child_name_1")}
+                                        defaultValue={global.cart?.editTicket?.options?.child_name_1}
                                         className={Style.control}
                                     />
                                 </p>
 
                                 <p className={Style.controlGroup}>
-                                    <label htmlFor="childAge">
+                                    <label htmlFor="child_age_1">
                                         Age
                                     </label>
 
                                     <select
-                                        id="childAge"
-                                        name="childAge"
-                                        {...register("childAge_1")}
+                                        id="child_age_1"
+                                        name="child_age_1"
+                                        {...register("child_age_1")}
+                                        defaultValue={global.cart?.editTicket?.options?.child_age_1}
                                         className={clsx(Style.control)}
                                     >
-                                        <option value="">-- Age --</option>
+                                        <option value="">-Age-</option>
                                         {range(5, 12).map((age) => (
                                             <option value={age} key={age}>
                                                 {age}
@@ -337,33 +380,35 @@ console.log(validate)
                             </div>
 
                             <div className={Style.controlRow}>
-                                <p className={clsx(Style.controlGroup, Style.col_1_2)}>
-                                    <label htmlFor="childName">
-                                        Child's Full Name
+                                <p className={clsx(Style.controlGroup, Style.col_2_3)}>
+                                    <label htmlFor="child_name_2">
+                                        2. Child's Full Name
                                     </label>
 
                                     <input 
-                                        id="childName"
-                                        name="childName"
+                                        id="child_name_2"
+                                        name="child_name_2"
                                         type="text" 
                                         placeholder="First Name & Surname"
-                                        {...register("childName_2")}
+                                        {...register("child_name_2")}
+                                        defaultValue={global.cart?.editTicket?.options?.child_name_2}
                                         className={Style.control}
                                     />
                                 </p>
 
                                 <p className={Style.controlGroup}>
-                                    <label htmlFor="childAge">
+                                    <label htmlFor="child_age_2">
                                         Age
                                     </label>
 
                                     <select
-                                        id="childAge"
-                                        name="childAge"
-                                        {...register("childAge_2")}
+                                        id="child_age_2"
+                                        name="child_age_2"
+                                        {...register("child_age_2")}
+                                        defaultValue={global.cart?.editTicket?.options?.child_age_2}
                                         className={clsx(Style.control)}
                                     >
-                                        <option value="">-- Age --</option>
+                                        <option value="">-Age-</option>
                                         {range(5, 12).map((age) => (
                                             <option value={age} key={age}>
                                                 {age}
@@ -372,7 +417,38 @@ console.log(validate)
                                     </select>
                                 </p>
                             </div>
-                        </>
+
+                            <div className={Style.controlRow}>
+                                <p className={clsx(Style.controlGroup, Style.checkboxControl)}>
+                                    <input 
+                                        id="indemnify_and_consent"
+                                        name="indemnify_and_consent"
+                                        type="checkbox"
+                                        {...register("indemnify_and_consent", {
+                                            onChange: (e) => triggerIndemnifyModal(e.target.checked)
+                                        })}
+                                        defaultChecked={!!global.cart?.editTicket?.options?.indemnify_and_consent}
+                                    
+                                        className={Style.control}
+                                    />
+
+                                    <label htmlFor="indemnify_and_consent">
+                                        <small>I grant permission for my child(ren) to participate in the Kids Zone activities at TEDxGeorge from any claims or law suits brought against TED or TEDxGeorge by myself, my child or others, that arises out of any behavior by my child at the event/activity described above.</small>
+                                    </label>
+                                </p>    
+                            </div>
+
+                            {global.cart?.editTicket?.options?.indemnify_and_consent && (
+                                <button 
+                                    type="button" 
+                                    onClick={() => triggerIndemnifyModal(true)} 
+                                    className={Style.reviewIndemnity}
+                                >
+                                    Review Indemnity & Consent Form
+                                </button>
+                            )}
+                            
+                        </div>
                     )}
                 </fieldset>
             </form>
