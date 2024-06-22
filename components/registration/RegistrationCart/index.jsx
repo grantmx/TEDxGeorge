@@ -10,11 +10,29 @@ import { registrationOptions } from "@/lib/constants";
 import scrollToLocation from "@/lib/utils/scrollToLocation";
 import Status from "./Status";
 import { IconLock } from "@/icons/IconLock";
+import ButtonFeedback from "@/components/forms/Button/ButtonFeedback";
+import submitRegistration from "@/app/(pages)/tickets/register/submitRegistration";
+import useButtonFeedback from "@/components/forms/Button/useButtonFeedback";
+import useCheckoutUrl from "@/components/cart/_hooks/useCheckoutUrl";
 
 
 
 function RegistrationCart(){
     const [ global, dispatch ] = useContext(GlobalContext)
+    const feedback = useButtonFeedback()
+    const checkoutPath = useCheckoutUrl(global.cart)
+
+
+    function checkout(){
+        feedback.setLoading(true)
+
+        submitRegistration(global.cart.lineItems).then(() => {
+            feedback.setSuccess(true)
+            feedback.setLoading(false)
+
+            window.location.assign(checkoutPath.redirectUrl)
+        })
+    }
 
 
     const canCheckout = useMemo(() => {
@@ -104,9 +122,16 @@ function RegistrationCart(){
                             type="submit" 
                             className={clsx(Style.submit, "btn btn-success")}
                             disabled={!canCheckout}
+                            onClick={() => {
+                                if(feedback.loading || feedback.success) return
+                                
+                                checkout()
+                            }}
                         >
-                            <IconLock width="20" height="20" fill="#fff" />
-                            Continue to Payment
+                            <ButtonFeedback {...feedback}>
+                                <IconLock width="20" height="20" fill="#fff" />
+                                Continue to Payment
+                            </ButtonFeedback>
                         </button>
                     </>
                 ):null}                

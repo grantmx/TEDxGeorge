@@ -97,17 +97,16 @@
 }
 
 .reviewIndemnity{
-    background-color: transparent;
-    line-height: 1;
     background-color: rgb(175 126 134 / 14%);
     color: #fff;
     padding: 0 0.5rem;
     font-size: 1.6rem;
-    text-decoration: dotted;
+    border-bottom: 2px dotted #999;
+    line-height: 1.6;
 }
 
 .divider{
-    margin: 2rem;
+    margin: 2rem 0 !important;
     display: flex;
 }
 
@@ -121,6 +120,7 @@
     text-align: center !important;
     width: 100%;
     margin-top: 2rem;
+    height: 65px;
 
     & svg{
         fill: #fff;

@@ -43,7 +43,7 @@ const Divider = React.forwardRef(({
                     className, 
                     orientation && Style[orientation],
                     flex && Style.flex,
-                    color && utils[`bg_${color?.class ?? color}`],
+                    color && Utils[`bg_${color?.class ?? color}`],
                     capped && Style.capped
                 )}
             />

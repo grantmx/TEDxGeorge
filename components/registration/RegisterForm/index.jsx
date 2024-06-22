@@ -18,6 +18,17 @@ function RegisterForm(){
     const [ id, setId ] = useState(null)
     const { register, handleSubmit, watch, clearErrors, setError, reset, formState: { errors } } = useForm();
 
+    function closeModal(){
+        dispatch({
+            type: "openModal",
+            data: {
+                isOpen: false,
+                title: "",
+                content: null
+            }
+        })
+    }
+
 
     function triggerIndemnifyModal(canShow){
         if(canShow){
@@ -26,7 +37,7 @@ function RegisterForm(){
                 data: {
                     isOpen: true,
                     title: "Parental Indemnify & Consent",
-                    content: <IndemnityForm />
+                    content: <IndemnityForm ticket={global?.cart?.editTicket} onDone={closeModal} />
                 }
             })
         }
@@ -85,6 +96,7 @@ function RegisterForm(){
             data: newEditTicket
         })
 
+
         setId(newEditTicket.id)
 
 
@@ -97,7 +109,6 @@ function RegisterForm(){
 
     useEffect(() => {
         const subscription = watch((value, { name, type }) => {
-            console.log(value, name, type)
             updateTicket({ name, value: value[name], global, fieldValues: value })
         })
 
@@ -117,7 +128,7 @@ function RegisterForm(){
 
                     <p className={Style.controlGroup}>
                         <label htmlFor="title">
-                            Title
+                            Title*
                         </label>
 
                         <input 
@@ -134,7 +145,7 @@ function RegisterForm(){
                     
                     <p className={Style.controlGroup}>
                         <label htmlFor="first_name">
-                            First Name
+                            First Name*
                         </label>
 
                         <input 
@@ -150,7 +161,7 @@ function RegisterForm(){
 
                     <p className={Style.controlGroup}>
                         <label htmlFor="lastName">
-                            Surname
+                            Surname*
                         </label>
 
                         <input 
@@ -166,7 +177,7 @@ function RegisterForm(){
 
                     <p className={Style.controlGroup}>
                         <label htmlFor="occupation">
-                            Occupation
+                            Occupation*
                         </label>
 
                         <input 
@@ -182,7 +193,7 @@ function RegisterForm(){
 
                     <p className={Style.controlGroup}>
                         <label htmlFor="makesMeHappy">
-                            In 3 words or less, what makes you happy?
+                            In 3 words or less, what makes you happy?*
                         </label>
 
                         <input 
@@ -232,6 +243,8 @@ function RegisterForm(){
                                 <option value="xlarge">X-Large</option>
                                 <option value="xxlarge">XX-Large</option>
                                 <option value="xxxlarge">XXX-Large</option>
+                                <option value="4xlarge">4X-Large</option>
+                                <option value="5xlarge">5X-Large</option>
                             </select>
                         </p>
                     )}
@@ -245,7 +258,7 @@ function RegisterForm(){
 
                     <p className={Style.controlGroup}>
                         <label htmlFor="email">
-                            Email Address
+                            Email Address*
                         </label>
 
                         <input 
@@ -262,7 +275,7 @@ function RegisterForm(){
 
                     <p className={Style.controlGroup}>
                         <label htmlFor="phone">
-                            Phone Number
+                            Phone Number*
                         </label>
 
                         <input 
@@ -279,7 +292,7 @@ function RegisterForm(){
 
                     <p className={Style.controlGroup}>
                         <label htmlFor="city">
-                            City
+                            Your City*
                         </label>
 
                         <input 
@@ -293,7 +306,6 @@ function RegisterForm(){
                         />
                     </p>
                 </fieldset>
-
 
 
                 <fieldset>
@@ -314,7 +326,7 @@ function RegisterForm(){
                             />
 
                             <label htmlFor="afterParty">
-                                YES! I will be attending the TEDx After Party.* <br/><small>*Must be 18 or older to attend.</small>
+                                YES! I will be attending the TEDx After Party. <br/><small>*Must be 18 or older to attend.</small>
                             </label>
                         </p>
                     )}
@@ -329,12 +341,11 @@ function RegisterForm(){
                                 onChange: () => setBringKids(!bringKids)
                             })}
                             defaultChecked={!!global.cart?.editTicket?.options?.kids_zone}
-                           
                             className={Style.control}
                         />
 
                         <label htmlFor="kids_zone">
-                            I'd like to bring my kids to the FREE Kids Zone (Ages 5-12).* <br/> <small>*Only 2 children per ticket.</small>
+                            I'd like to bring my kids to the FREE Kids Zone (Ages 5-16). <br/> <small>*Only 2 children per ticket.</small>
                         </label>
                     </p>
 
@@ -428,7 +439,6 @@ function RegisterForm(){
                                             onChange: (e) => triggerIndemnifyModal(e.target.checked)
                                         })}
                                         defaultChecked={!!global.cart?.editTicket?.options?.indemnify_and_consent}
-                                    
                                         className={Style.control}
                                     />
 
@@ -444,7 +454,7 @@ function RegisterForm(){
                                     onClick={() => triggerIndemnifyModal(true)} 
                                     className={Style.reviewIndemnity}
                                 >
-                                    Review Indemnity & Consent Form
+                                    Review Indemnity & Consent Form &raquo;
                                 </button>
                             )}
                             
@@ -452,10 +462,6 @@ function RegisterForm(){
                     )}
                 </fieldset>
             </form>
-
-                
-            
-            
         </>
     )
 }

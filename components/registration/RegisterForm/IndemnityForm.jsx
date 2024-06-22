@@ -2,22 +2,52 @@
 
 import { GlobalContext } from "@/contexts/GlobalContext";
 import clsx from "clsx";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { useForm } from "react-hook-form";
 import Style from "./RegisterForm.module.scss"
 import TextBlock from "@/components/display/TextBlock";
 import SignatureCanvas from 'react-signature-canvas'
 import Divider from "@/components/display/Divider";
+import ButtonFeedback from "@/components/forms/Button/ButtonFeedback";
+import useButtonFeedback from "@/components/forms/Button/useButtonFeedback";
 
 
-function IndemnityForm(){
+function IndemnityForm({ 
+    ticket = {}, 
+    onDone = () => null 
+}){
     const [ global, dispatch ] = useContext(GlobalContext)
     const { register, handleSubmit, watch, clearErrors, setError, reset, formState: { errors } } = useForm();
+    const feedback = useButtonFeedback()
+    const sigCanvas = useRef()
 
 
     function onSubmit(data){
-        console.log(data)
+        feedback.setLoading(true)
+
+        data.signature = sigCanvas.current.getTrimmedCanvas().toDataURL("image/png")
+        data.signature_date = new Date().toDateString()
+
+        dispatch({
+            type: "editTicket",
+            data: {
+                ...ticket,
+                options: {
+                    ...ticket.options,
+                    ...data
+                }
+            }
+        })
+
+        setTimeout(() => {
+            feedback.setSuccess(true)
+            feedback.setLoading(false)
+
+            onDone()
+        }, 2000)
+
     }
+
 
     return(
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -25,7 +55,7 @@ function IndemnityForm(){
                 <div className={Style.controlRow}>
                     <p className={clsx(Style.controlGroup, Style.col_1_2)}>
                         <label htmlFor="child_name_1">
-                            Child's Full Name
+                            1. Child's Full Name
                         </label>
 
                         <input 
@@ -41,7 +71,7 @@ function IndemnityForm(){
 
                     <p className={clsx(Style.controlGroup, Style.col_1_2)}>
                         <label htmlFor="child_name_2">
-                            Child's Full Name
+                            2. Child's Full Name
                         </label>
 
                         <input 
@@ -98,7 +128,7 @@ function IndemnityForm(){
                 <div className={Style.controlRow}>
                     <p className={clsx(Style.controlGroup, Style.col_1_2)}>
                         <label htmlFor="emergency_contact_name">
-                            Emergency Contact Full Name
+                            Emergency Contact Name
                         </label>
 
                         <input 
@@ -186,7 +216,7 @@ function IndemnityForm(){
                 <div className={Style.controlRow}>
                     <p className={clsx(Style.controlGroup, Style.col_1_2)}>
                         <label htmlFor="doctor_name">
-                            Family Doctor Name
+                            Doctor Name
                         </label>
 
                         <input 
@@ -226,16 +256,33 @@ function IndemnityForm(){
                         penColor='green'
                         backgroundColor="rgba(255, 255, 255)"
                         canvasProps={{ height: 200, className: Style.signatureCanvas}} 
+                        ref={sigCanvas}
                     />
                     <span>(Use finger or mouse to sign here)</span>
 
-                    <input name="signature" type="hidden" ref={register} {...register("signature")} />
-                    <input name="signature_date" type="hidden" {...register("signature_date")} value={new Date().toDateString()} />
+                    <input 
+                        name="signature" 
+                        type="hidden" 
+                        {...register("signature")} 
+                        defaultValue={global.cart?.editTicket?.options?.signature}
+                    />
+
+                    <input 
+                        name="signature_date" 
+                        type="hidden" 
+                        {...register("signature_date")} 
+                        defaultValue={global.cart?.editTicket?.options?.signature_date}
+                    />
                 </div>
 
 
-                <button type="submit" className={clsx(Style.btn, "btn btn-danger")}>
-                    Submit Indemnity Form
+                <button 
+                    type="submit" 
+                    className={clsx(Style.btn, "btn btn-danger")}
+                >
+                    <ButtonFeedback {...feedback}>
+                        Submit Indemnity Form
+                    </ButtonFeedback>
                 </button>
             </fieldset>
         </form>
