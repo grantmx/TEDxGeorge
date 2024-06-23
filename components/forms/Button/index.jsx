@@ -3,7 +3,7 @@
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import Style from './Button.module.scss';
-import Utils from "@/styles/globals/Utils.module.scss"
+import Utils from "@/styles/globals/utils.module.scss"
 import { useId } from 'react';
 import Link from 'next/link';
 

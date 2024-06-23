@@ -7,7 +7,7 @@ import GenerateID from 'lib/Utils/generateID';
 import dynamic from 'next/dynamic'
 
 import Style from './RadioButton.module.scss';
-import Utils from "@/styles/globals/Utils.module.scss"
+import Utils from "@/styles/globals/utils.module.scss"
 
 const IconArrowRight = dynamic(() => import('components/icons').then(module => module.IconArrowRight))
 const IconLiquidPropane = dynamic(() => import('components/icons').then(module => module.IconLiquidPropane))

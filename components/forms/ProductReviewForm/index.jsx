@@ -11,8 +11,8 @@ import Switch from "components/forms/Switch";
 import Button from "components/forms/Button";
 import Input from "components/forms/Input";
 // import ImageUpload from '../ImageUpload';
-// import Col from 'styles/globals/gridUtils.module.scss';
-import Utils from "@/styles/globals/Utils.module.scss"
+// import Col from 'styles/globals/gridutils.module.scss';
+import Utils from "@/styles/globals/utils.module.scss"
 import { useRouter } from 'next/navigation';
 // import { s3FilesUpload } from 'thirdparty/Amazon/s3';
 import useCallTracking from 'thirdparty/CallTracking/useCallTracking';

@@ -7,7 +7,7 @@ import Button from "components/forms/Button";
 import Input from "components/forms/Input";
 import { CreateQuestion } from 'thirdparty/Yotpo/YotpoContext';
 import { useState } from "react";
-import Utils from "@/styles/globals/Utils.module.scss"
+import Utils from "@/styles/globals/utils.module.scss"
 import { useRouter } from "next/navigation";
 import useCallTracking from 'thirdparty/CallTracking/useCallTracking';
 

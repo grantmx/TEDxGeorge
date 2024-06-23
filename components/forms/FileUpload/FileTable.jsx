@@ -1,5 +1,5 @@
 import Style from "./FileUpload.module.scss";
-import Utils from "@/styles/globals/Utils.module.scss"
+import Utils from "@/styles/globals/utils.module.scss"
 import EditUpload from './EditUpload';
 import toDateTimeFormat from 'lib/utils/toDateTimeFormat';
 import clsx from "clsx";

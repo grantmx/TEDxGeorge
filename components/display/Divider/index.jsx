@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 
 import Style from './Divider.module.scss';
-import Utils from "@/styles/globals/Utils.module.scss"
+import Utils from "@/styles/globals/utils.module.scss"
 
 
 const Divider = React.forwardRef(({ 

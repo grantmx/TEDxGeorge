@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 
 import { useRouter } from "next/router";
 import Favorites from "components/forms/Favorites";
-import Utils from "@/styles/globals/Utils.module.scss"
+import Utils from "@/styles/globals/utils.module.scss"
 import Style from './FavoriteSelect.module.scss';
 import { GetWishlists, AddProductsToWishlist } from 'services/myaccount/AuthContext.service';
 import Link from 'next/link';

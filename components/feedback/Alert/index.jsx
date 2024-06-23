@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import Link from 'next/link';
 
 import Style from './Alert.module.scss';
-import Utils from "@/styles/globals/Utils.module.scss"
+import Utils from "@/styles/globals/utils.module.scss"
 
 
 function Alert({ color, className, href, title, children, center, noMargin }){

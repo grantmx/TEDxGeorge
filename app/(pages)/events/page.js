@@ -1,4 +1,4 @@
-import Utils from "@/styles/globals/Utils.module.scss"
+import Utils from "@/styles/globals/utils.module.scss"
 import Style from "../Page.module.scss"
 import clsx from "clsx"
 import Image from "next/image"

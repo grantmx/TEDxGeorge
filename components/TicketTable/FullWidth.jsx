@@ -1,7 +1,7 @@
 import { features, ticketList } from "@/lib/ticketList"
 import Checkmark from "@/icons/Checkmark"
 import Cross from "@/icons/Cross"
-import Utils from "@/styles/globals/Utils.module.scss"
+import Utils from "@/styles/globals/utils.module.scss"
 import clsx from "clsx"
 import Style from "./TicketTable.module.scss"
 import RegisterBtn from "./RegisterBtn"

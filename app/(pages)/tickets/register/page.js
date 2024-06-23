@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import Style from "../../Page.module.scss"
-import Utils from "@/styles/globals/Utils.module.scss"
+import Utils from "@/styles/globals/utils.module.scss"
 import RegisterForm from "@/components/registration/RegisterForm";
 import RegistrationCart from "@/components/registration/RegistrationCart";
 

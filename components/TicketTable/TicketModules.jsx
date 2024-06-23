@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import Style from "./TicketTable.module.scss"
 import { ticketList } from "@/lib/ticketList"
-import Utils from "@/styles/globals/Utils.module.scss"
+import Utils from "@/styles/globals/utils.module.scss"
 import TicketImg from "../cart/TicketImg";
 import RegisterBtn from "./RegisterBtn";
 

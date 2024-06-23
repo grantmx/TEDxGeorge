@@ -2,7 +2,7 @@ import Image from "next/image";
 import hero from "@/public/hero.jpg"
 import mobileHero from "@/public/mobile-hero.jpg"
 import Header from "@/components/nav/Header";
-import Utils from "@/styles/globals/Utils.module.scss"
+import Utils from "@/styles/globals/utils.module.scss"
 import logo from "@/public/TEDx_Logo_Short_George-white.svg"
 import Footer from "@/components/nav/Footer";
 import Link from "next/link";

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
 import Style from './Badge.module.scss';
-import Utils from "@/styles/globals/Utils.module.scss"
+import Utils from "@/styles/globals/utils.module.scss"
 
 
 function Badge({

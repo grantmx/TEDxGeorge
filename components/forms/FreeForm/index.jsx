@@ -4,7 +4,7 @@ import Loader from "components/feedback/Loader";
 import { GetFreeForm } from "contexts/FormContext";
 import clsx from 'clsx';
 
-import Utils from "@/styles/globals/Utils.module.scss"
+import Utils from "@/styles/globals/utils.module.scss"
 
 function FreeForm({ 
     onSuccess = () => null,

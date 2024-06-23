@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 
 import Style from "./Skeleton.module.scss";
-import Utils from "@/styles/globals/Utils.module.scss"
+import Utils from "@/styles/globals/utils.module.scss"
 
 
 function Skeleton({ 
