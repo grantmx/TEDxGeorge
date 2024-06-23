@@ -5,7 +5,6 @@ import clsx from "clsx";
 import { useContext, useRef } from "react";
 import { useForm } from "react-hook-form";
 import Style from "./RegisterForm.module.scss"
-import TextBlock from "@/components/display/TextBlock";
 import SignatureCanvas from 'react-signature-canvas'
 import Divider from "@/components/display/Divider";
 import ButtonFeedback from "@/components/forms/Button/ButtonFeedback";
@@ -120,10 +119,10 @@ function IndemnityForm({
                     </p>
                 </div>
 
-                <TextBlock>
+                <section>
                     <p>I, <strong><u>{global.cart?.editTicket?.options.first_name +" "+ global.cart?.editTicket?.options.last_name}</u></strong> (Parent/Guardian) grant permission for <strong><u>{`${global.cart?.editTicket?.options.child_name_1} ${global.cart?.editTicket?.options.child_name_2 && " and " + global.cart?.editTicket?.options.child_name_2}`}</u></strong> to participate in the above named activity and I warrant that my child is in good health. In consideration of my child's participation, I agree to indemnify TED and TEDxGeorge from any claims or law suits brought against TED and TEDxGeorge by myself, my child or others, that arises out of any behavior by my child at the event/activity described above. I also agree to pay reasonable attorney's fees or expenses incurred by TED and TEDxGeorge in defense of such a claim/suit.</p>
                     <p><strong>EMERGENCY MEDICAL TREATMENT:</strong> In the event of an emergency, I give permission to transport my child to a hospital for medical treatment. I wish to be advised prior to any further treatment by a doctor or hospital. In the event of any emergency, if you are unable to reach me at the above numbers, contact:</p>
-                </TextBlock>
+                </section>
 
                 <div className={Style.controlRow}>
                     <p className={clsx(Style.controlGroup, Style.col_1_2)}>
