@@ -4,7 +4,9 @@ import { useEffect, useState } from "react";
 
 
 export default function useCheckoutUrl(cart){
-    const callbackUrl = "https://tedxgeorge.com/tickets/checkout"
+    // const callbackUrl = "https://tedxgeorge.com/tickets/checkout-confirmation"
+    const callbackUrl = "https://tedx-george-git-pricing-grantmxs-projects.vercel.app/tickets/checkout-confirmation"
+    
     const [ checkoutUrl, setCheckoutUrl ] = useState({})
 
 
@@ -22,14 +24,14 @@ export default function useCheckoutUrl(cart){
             },
             lineItems: lineItems.map(item => {
                 return {
-                    displayName: item.type,
+                    displayName: item.type +" Ticket",
                     quantity: item.quantity,
                     pricingDetails: {
                         price: parseInt(item.price) * 100
                     }
                 }
             })
-            
+
         }).then((res) => {
             setCheckoutUrl(res)
         })

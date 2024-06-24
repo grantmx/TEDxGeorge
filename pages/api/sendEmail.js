@@ -1,0 +1,23 @@
+import StandardEmail from '@/components/emails/StandardEmail';
+import SendgridService from '@/services/sendgrid.service';
+import { render } from 'mjml-react';
+
+
+export default async function handler(req, res) {
+    const { heading, message, to, subject, qrImage } = req.body;
+    const { html } = render(StandardEmail({ heading, message, qrImage }), { validationLevel: 'soft' })
+    const sendgrid = new SendgridService({ to, subject, html })
+
+    if( req.method === "POST" ){
+        await sendgrid.send()
+            .then((data) => {
+                res.status(200).json(data)
+            })
+            .catch((err) => {
+                // res.status(400).json(err)
+            })
+
+    }else{
+        res.status(500).json({ message: "Method not allowed" })
+    }
+}

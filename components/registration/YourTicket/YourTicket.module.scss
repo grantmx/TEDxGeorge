@@ -1,0 +1,43 @@
+@import "@/styles/globals/placeholders";
+
+.block{
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+}
+
+.header{
+    background-color: #111;
+    padding: 1rem 4rem
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.body{
+    padding: 2rem 0;
+}
+
+.name{
+    font-size: 3rem;
+    font-weight: 800;
+    color: #333;
+}
+
+.type{
+    font-size: 6rem;
+    font-weight: 800;
+    color: #333;
+}
+
+.qr{
+    width: 200px;
+    margin: 2rem 0
+}
+
