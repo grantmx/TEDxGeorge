@@ -58,7 +58,7 @@ function StandardEmail({ message, heading, type, id, first_name, last_name }){
                             align="left"
                             href={`${process.env.NEXT_PUBLIC_URL}/tickets/your-ticket?id=${id}&first_name=${first_name}&last_name=${last_name}&type=${type}`}
                         >
-                            Download Your Ticket
+                            View Your Ticket
                         </MjmlButton>
 
                     </MjmlColumn>

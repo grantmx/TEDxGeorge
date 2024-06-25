@@ -26,7 +26,7 @@ function ConfirmationHeader({ status }){
                         type: item.type,
                         message: `
                             <p>
-                                Download your ticket below.  We are excited to see you in October! 🎉
+                                View your ticket below.  We are excited to see you in October! 🎉
                             </p>
                             <p>
                                 <strong>Date:</strong> October 5, 2024<br />
