@@ -11,7 +11,7 @@ function EmailTicket({ name, type, id, qrImage }){
     return(
         <MjmlSection>
             <MjmlColumn width="100%" backgroundColor="#111">
-                <MjmlImage align="left" width="300px" src="https://tedxgeorge.com/assets/TEDx_Logo_Short_George-white.png" href="https://tedxgeorge.com" />
+                <MjmlImage align="left" width="300px" src={`${process.env.NEXT_PUBLIC_URL}/assets/TEDx_Logo_Short_George-white.png`} href={`${process.env.NEXT_PUBLIC_URL}`} />
             </MjmlColumn>
 
             <MjmlColumn width="100%" backgroundColor="#fff">

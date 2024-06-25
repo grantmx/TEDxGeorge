@@ -23,6 +23,7 @@ function ConfirmationHeader({ status }){
                         first_name: item?.options?.first_name,
                         last_name: item?.options?.last_name,
                         id: item.id,
+                        type: item.type,
                         message: `
                             <p>
                                 Download your ticket below.  We are excited to see you in October! 🎉
@@ -33,7 +34,7 @@ function ConfirmationHeader({ status }){
                                 <strong>Time:</strong> 9am - 4pm
                             </p>
 
-                            <p>Please present your ticket <a href=https://tedxgeorge.com/tickets/your-ticket?id=${item.id}&first_name=${item?.options?.first_name}&last_name=${item?.options?.last_name}&type=${item.type}><strong>(${item.id})</strong></a> when you check-in.
+                            <p>Please present your ticket <a href=${process.env.NEXT_PUBLIC_URL}/tickets/your-ticket?id=${item.id}&first_name=${item?.options?.first_name}&last_name=${item?.options?.last_name}&type=${item.type}><strong>(${item.id})</strong></a> when you check-in.
                         `
                     })  
                 })

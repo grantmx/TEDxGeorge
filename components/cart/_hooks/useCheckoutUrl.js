@@ -4,8 +4,7 @@ import { useEffect, useState } from "react";
 
 
 export default function useCheckoutUrl(cart){
-    // const callbackUrl = "https://tedxgeorge.com/tickets/checkout-confirmation"
-    const callbackUrl = "https://tedx-george-git-pricing-grantmxs-projects.vercel.app/tickets/checkout-confirmation"
+    const callbackUrl = `${process.env.NEXT_PUBLIC_URL}/tickets/checkout-confirmation`
     
     const [ checkoutUrl, setCheckoutUrl ] = useState({})
 

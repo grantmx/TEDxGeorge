@@ -32,7 +32,7 @@ function StandardEmail({ message, heading, type, id, first_name, last_name }){
             <MjmlBody>
                 <MjmlSection>
                     <MjmlColumn width="100%">
-                        <MjmlImage align="left" width="300px" src="https://tedxgeorge.com/assets/TEDx_Logo_Short_George-black.png" href="https://tedxgeorge.com" />
+                        <MjmlImage align="left" width="300px" src={`${process.env.NEXT_PUBLIC_URL}/assets/TEDx_Logo_Short_George-black.png`} href={`${process.env.NEXT_PUBLIC_URL}`} />
                     </MjmlColumn>
                 </MjmlSection>
         
@@ -56,7 +56,7 @@ function StandardEmail({ message, heading, type, id, first_name, last_name }){
                             borderRadius="6px"
                             color="#fff"
                             align="left"
-                            href={`https://tedxgeorge.com/tickets/your-ticket?id=${id}&first_name=${first_name}&last_name=${last_name}&type=${type}`}
+                            href={`${process.env.NEXT_PUBLIC_URL}/tickets/your-ticket?id=${id}&first_name=${first_name}&last_name=${last_name}&type=${type}`}
                         >
                             Download Your Ticket
                         </MjmlButton>
@@ -75,7 +75,7 @@ function StandardEmail({ message, heading, type, id, first_name, last_name }){
 
                 <MjmlSection paddingBottom="0">
                     <MjmlColumn>
-                        <MjmlImage align="left" width="200px" src="https://tedxgeorge.com/assets/TEDx_Logo_Short_George-black.png" href="https://tedxgeorge.com"/>
+                        <MjmlImage align="left" width="200px" src={`${process.env.NEXT_PUBLIC_URL}/assets/TEDx_Logo_Short_George-black.png`} href={`${process.env.NEXT_PUBLIC_URL}`} />
                     </MjmlColumn>
                     
                     <MjmlColumn>
@@ -92,13 +92,13 @@ function StandardEmail({ message, heading, type, id, first_name, last_name }){
                 <MjmlSection paddingTop="0">
                     <MjmlColumn>
                         <MjmlText color="#aaa" paddingTop="20px" fontSize="11px">
-                            <a href="https://tedxgeorge.com/about" style={{ color: "#aaa"}}>About</a> 
+                            <a href={`${process.env.NEXT_PUBLIC_URL}/about`} style={{ color: "#aaa"}}>About</a> 
                             &nbsp; | &nbsp; 
-                            <a href="https://tedxgeorge.com/events" style={{ color: "#aaa"}}>Events</a>
+                            <a href={`${process.env.NEXT_PUBLIC_URL}/events`} style={{ color: "#aaa"}}>Events</a>
                             &nbsp; | &nbsp;  
-                            <a href="https://tedxgeorge.com/partners" style={{ color: "#aaa"}}>Partners</a> 
+                            <a href={`${process.env.NEXT_PUBLIC_URL}/partners`} style={{ color: "#aaa"}}>Partners</a> 
                             &nbsp; | &nbsp;  
-                            <a href="https://tedxgeorge.com/speakers" style={{ color: "#aaa" }}>Speakers</a>
+                            <a href={`${process.env.NEXT_PUBLIC_URL}/speakers`} style={{ color: "#aaa" }}>Speakers</a>
                         </MjmlText>
                         
                         <MjmlText lineHeight="1.65" color="#aaa" fontSize="11px">
