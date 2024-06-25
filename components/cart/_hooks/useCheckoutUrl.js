@@ -20,12 +20,12 @@ export default function useCheckoutUrl(cart){
             failureUrl: `${callbackUrl}?status=failure`,
             metadata: {
                 id: lineItems.map(item => item.id).join(","), 
-                name: lineItems.map(item => item.options.first_name +" "+ item.options.last_name).join(","),
+                name: lineItems.map(item => item?.options?.first_name +" "+ item?.options?.last_name).join(","),
             },
             lineItems: lineItems.map(item => {
                 return {
-                    displayName: item.type +" Ticket",
-                    quantity: item.quantity,
+                    displayName: item?.type +" Ticket",
+                    quantity: item?.quantity,
                     pricingDetails: {
                         price: parseInt(item.price) * 100
                     }
@@ -35,7 +35,6 @@ export default function useCheckoutUrl(cart){
         }).then((res) => {
             setCheckoutUrl(res)
         })
-
     }
 
 

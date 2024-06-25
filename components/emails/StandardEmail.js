@@ -1,3 +1,4 @@
+import { last } from "lodash";
 import {
     render,
     Mjml,
@@ -17,7 +18,7 @@ import {
 
 
 
-function StandardEmail({ message, heading, type, id }){
+function StandardEmail({ message, heading, type, id, first_name, last_name }){
     return( 
         <Mjml>
             <MjmlHead>
@@ -55,7 +56,7 @@ function StandardEmail({ message, heading, type, id }){
                             borderRadius="6px"
                             color="#fff"
                             align="left"
-                            href={`https://tedxgeorge.com/qr?id=${id}`}
+                            href={`https://tedxgeorge.com/tickets/your-ticket?id=${id}&first_name=${first_name}&last_name=${last_name}&type=${type}`}
                         >
                             Download Your Ticket
                         </MjmlButton>

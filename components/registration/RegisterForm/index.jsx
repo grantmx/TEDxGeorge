@@ -381,7 +381,7 @@ function RegisterForm(){
                                         className={clsx(Style.control)}
                                     >
                                         <option value="">-Age-</option>
-                                        {range(5, 12).map((age) => (
+                                        {range(5, 16).map((age) => (
                                             <option value={age} key={age}>
                                                 {age}
                                             </option>
@@ -420,7 +420,7 @@ function RegisterForm(){
                                         className={clsx(Style.control)}
                                     >
                                         <option value="">-Age-</option>
-                                        {range(5, 12).map((age) => (
+                                        {range(5, 16).map((age) => (
                                             <option value={age} key={age}>
                                                 {age}
                                             </option>

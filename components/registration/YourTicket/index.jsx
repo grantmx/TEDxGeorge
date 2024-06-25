@@ -15,14 +15,22 @@ function YourTicket(){
     return(
         <div className={Style.row}>
             {global.cart.lineItems.map((item) => {
-                return <Ticket key={item.id} {...{ item }} />
+                return(
+                    <Ticket 
+                        key={item.id} 
+                        id={item.id}
+                        first_name={item.options.first_name}
+                        last_name={item.options.last_name}
+                        type={item.type} 
+                    />
+                )
             })}
         </div>
     )
 }
 
 
-export function Ticket({ item}){
+export function Ticket({ first_name, last_name, type, id }){
     return(
         <article className={Style.block}>
             <header className={Style.header}>
@@ -36,16 +44,17 @@ export function Ticket({ item}){
 
             <div className={Style.body}>
                 <h2 className={Style.name}>
-                    {item.options.first_name} {item.options.last_name}
+                    {first_name} {last_name}
                 </h2>
 
                 <QRCode 
                     className={Style.qr}
-                    value={item.id}
+                    value={id}
+                    size={200}
                 />
 
                 <h2 className={Style.type}>
-                    {item.type}
+                    {type}
                 </h2>
             </div>
         </article>
