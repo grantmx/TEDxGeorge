@@ -2,6 +2,9 @@ import Utils from "@/styles/globals/utils.module.scss"
 import Style from "../Page.module.scss"
 import clsx from "clsx"
 import { MainEvent } from "@/components/JSONld"
+import hero from "@/public/about-hero.jpg"
+import Image from "next/image"
+import braveOnes from "@/public/The_Brave_Ones.png"
 
 
 export const metadata = {
@@ -15,11 +18,79 @@ export const metadata = {
 function AboutUs(){
     return(
         <>
-            <section className="container text-center d-flex justify-content-center">
+            <section className={Style.hero}>
+				<picture className={Style.heroImg}>
+					<source srcSet={hero.src} type="image/webp" media="(min-width: 600px)"/>
+					{/* <source srcSet={mobileHero.src} type="image/webp" media="(max-width: 600px)" /> */}
+
+					<Image 
+						src={hero.src} 
+						alt="TEDxGeorge Hero" 
+						layout="responsive"
+						width={1920}
+						height={1080}
+					/>
+				</picture>
+
+                <div className={Style.heroInner}>
+                    <div className={Style.heroSpacer} />
+
+                    <div className={Style.heroText}>
+                        <Image 
+                            {...braveOnes} 
+                            className={Style.eventLogo}
+                            alt="the brave ones"
+                        />
+                        
+                        <p className={Utils.fs_3}>
+                            October 5, 2024 &nbsp;&nbsp;|&nbsp;&nbsp; George Arts Theater
+                        </p>
+
+                        <p className={Utils.fs_5}>
+                            An inspirational one day event propelling you to be challenged at every level.
+                        </p>
+
+                        <p className={Utils.mt_3}>
+                            <a href="/tickets" className="btn btn-danger fs-1 px-5">
+                                Get Tickets
+                            </a>
+                        </p>
+                    </div>
+                </div>
+			</section>
+
+
+
+            <section className="container my-5 pb-5">
+                <div className="row">
+                    <article className="col-lg-6 col-12">
+                        <h1 className={Style.callout}>
+                            Are you ready to be inspired, empowered and challenged?
+                        </h1>
+
+                        <p className={Utils.mt_3}>
+                            <a href="/tickets" className="btn btn-danger fs-1 px-5">
+                                Get Tickets
+                            </a>
+                        </p>
+                    </article>
+
+                    <article className="col-lg-6 col-12 p-5">
+                       <p className={Utils.fs_3}>TEDxGeorge is a one day event focused on empowerment and inspiration with one core focus, Ideas change everything!</p>
+                    </article>
+                </div>
+
+                <hr className="mt-5" />
+            </section>
+
+
+
+
+            <section className="container text-center d-flex justify-content-center mt-5 pt-5">
                 <div className={Style.heading}>
-                    <h1 className={clsx(Utils.fs_5, "fw-light")}>
-                        About
-                    </h1>
+                    <h2 className={clsx(Utils.fs_5, "fw-light")}>
+                        About TEDxGeorge
+                    </h2>
 
                     <article>
                         <p className={Utils.fs_3}><strong>“The Brave Ones”</strong> is an attempt to celebrate the local heroes and heroines that have continuously taken brave steps in their respective fields. These individuals may not be the most recognised and acknowledged, but <strong>the impact and weight of their ideas are the centre of our attention.</strong></p>

@@ -41,25 +41,25 @@ function Partners(){
                 </p>
 
                 <div className="row">
-                    <article className="col-lg-4 col-12 p-3">
+                    <article className="col-lg-4 col-12 p-4">
                         <h2 className={clsx(Utils.fs_2, Utils.mb_1)}>
-                            Collaborate With Us
+                            1. Collaborate With Us
                         </h2>
-                        <p className={Utils.fs_5}>As a sponsor we are engaging each other in a collaborative relationship to be part of something meaningful, TEDxGeorge.</p>
+                        <p>As a sponsor we are engaging each other in a collaborative relationship to be part of something meaningful, TEDxGeorge.</p>
                     </article>
                 
 
-                    <article className="col-lg-4 col-12 p-3">
+                    <article className="col-lg-4 col-12 p-4">
                         <h2 className={clsx(Utils.fs_2, Utils.mb_1)}>
-                            Provide Authentic Dialogue
+                            2. Provide Authentic Dialogue
                         </h2>
                         <p>You are a partner who we want to have an authentic dialogue with our TED/TEDx community.</p>
                     </article>
                
                 
-                    <article className="col-lg-4 col-12 p-3">
+                    <article className="col-lg-4 col-12 p-4">
                         <h2 className={clsx(Utils.fs_2, Utils.mb_1)}>
-                            Think Big, Dream Big
+                            3. Think Big, Dream Big
                         </h2>
                         <p>We encourage you as a partner to be as creative as possible and dream up interesting and value-adding ways to reach their/your audience.</p>
                     </article>
@@ -79,7 +79,7 @@ function Partners(){
 
                     <article className="col-lg-8 col-12">
                         <p>Imagine a gathering where the air buzzes with excitement, where ideas crackle and spark, and where the boundaries of possibility are pushed to their limits. That's the vision we have for our upcoming event, TEDxGeorge 2024, where we celebrate "The Brave Ones" – individuals who defy the status quo and fearlessly shape the future. Anticipated benefits for you include:</p>
-                        <ul>
+                        <ul className="ms-0">
                             <li>A chance to launch a new product</li>
                             <li>Networking opportunities</li>
                             <li>Showcasing a project</li>

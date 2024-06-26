@@ -5,6 +5,7 @@ import Utils from "@/styles/globals/utils.module.scss"
 import clsx from "clsx"
 import Style from "./TicketTable.module.scss"
 import RegisterBtn from "./RegisterBtn"
+import Link from "next/link"
 
 
 function FullWidth(){
@@ -37,7 +38,14 @@ function FullWidth(){
                     {Object.keys(features).map((feature, i) => {
                         return (
                             <div className={clsx("col p-4", (i % 2) && Style.zebraStripe, Style.cell)} key={feature}>
-                                {features[feature].title}
+                                {features[feature].href ? (
+                                    <Link href={features[feature].href}>
+                                        {features[feature].title}
+                                    </Link>
+                                ):(
+                                    <>{features[feature].title}</>
+                                )}
+                                
                                 {features[feature]?.toolTip}
                             </div>
                         )
