@@ -3,6 +3,7 @@ import Style from "../Page.module.scss"
 import clsx from "clsx"
 import { MainEvent } from "@/components/JSONld"
 import hero from "@/public/about-hero.jpg"
+import mobileHero from "@/public/background-mobile.jpg"
 import Image from "next/image"
 import braveOnes from "@/public/The_Brave_Ones.png"
 
@@ -21,7 +22,7 @@ function AboutUs(){
             <section className={Style.hero}>
 				<picture className={Style.heroImg}>
 					<source srcSet={hero.src} type="image/webp" media="(min-width: 600px)"/>
-					{/* <source srcSet={mobileHero.src} type="image/webp" media="(max-width: 600px)" /> */}
+					<source srcSet={mobileHero.src} type="image/webp" media="(max-width: 600px)" />
 
 					<Image 
 						src={hero.src} 
@@ -76,7 +77,7 @@ function AboutUs(){
                     </article>
 
                     <article className="col-lg-6 col-12 p-5">
-                       <p className={Utils.fs_3}>TEDxGeorge is a one day event focused on empowerment and inspiration with one core focus, Ideas change everything!</p>
+                       <p className={Utils.fs_3}>TEDxGeorge is a one day conference hosted in the city of George focused on empowerment and inspiration with one core focus: Ideas change everything!</p>
                     </article>
                 </div>
 

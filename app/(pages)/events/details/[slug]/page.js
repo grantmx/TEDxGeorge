@@ -65,12 +65,13 @@ function EventDetail({ params }){
                                 <p>Salon events are small events that keeps our TEDxGeorge community engaged between regular TEDx events. It's a unique kind of gathering that TEDx we hold which allows the conversation to continue, up close and in person.</p>                       
                             
                                 <h3 className={Utils.fs_4}>
-                                    Two reasons why you'll love TEDx salons:
+                                    Three reasons why you'll love TEDx salons:
                                 </h3>
 
                                 <ol className="m-0">
                                     <li className="mb-4"><strong>The discussion:</strong> A critical element of salon is lively discussions, allowing attendees to actively participate in the event. With much smaller audiences than a standard TEDx event, salons bring attendees together in more intimate spaces, and with more chances to get know and exchange ideas as with each other.</li>
-                                    <li><strong>The single subject:</strong> Having the ability to focus on only one subject creates focused audience and atmosphere.</li>
+                                    <li className="mb-4"><strong>The single subject:</strong> Having the ability to focus on only one subject creates focused audience and atmosphere.</li>
+                                    <li><strong>Frequency:</strong> TEDxGeorge Salons are recurring events that offer a way stay engaged with the latest ideas. Salons can happen between larger standard events, providing a regular touch point for you and TEDxGeorge.</li>
                                 </ol>
                             </article>
                         </div>

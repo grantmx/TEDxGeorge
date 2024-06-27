@@ -59,20 +59,36 @@
     flex-direction: row;
     align-items: center;
     padding: 0 10rem;
+
+    @media screen and (max-width: $screen-sm){
+        flex-direction: column;
+        padding: 0 2rem;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
 }
 
 .heroSpacer{
-    width: 50%;
+    width: 40%;
+
+    @media screen and (max-width: $screen-sm){
+        display: none;
+    }
 }
 
 .heroText{
-    width: 50%;
+    width: 60%;
     padding: 0 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     flex-direction: column;
+
+    @media screen and (max-width: $screen-sm){
+        width: 100%;
+        padding: 0;
+    }
 }
 
 .eventLogo{
