@@ -3,7 +3,7 @@ import Style from "../../../Page.module.scss"
 import clsx from "clsx"
 import { eventsList } from "@/lib/eventList"
 import Image from "next/image"
-
+import salonImg from "@/public/TEDx_Logo_George_Salon.png"
 
 
 function EventDetail({ params }){
@@ -56,17 +56,21 @@ function EventDetail({ params }){
 
                         <div className="row">
                             <heading className="col-lg-4 col-12 pe-5">
-                                <h2 className={Utils.fs_2}>
-                                    About TEDxGeorge Salon Events
-                                </h2>
+                                <Image 
+                                    {...salonImg} 
+                                    alt="TEDxGeorge Salon" 
+                                    width="500" 
+                                    height="62" 
+                                    className={Style.salonImg}
+                                />
+                                
+                                <small>Salon events are small events that keeps our TEDxGeorge community engaged between regular TEDx events. It's a unique kind of gathering that TEDx we hold which allows the conversation to continue, up close and in person.</small>                       
                             </heading>
                             
-                            <article className="col-lg-8 col-12">
-                                <p>Salon events are small events that keeps our TEDxGeorge community engaged between regular TEDx events. It's a unique kind of gathering that TEDx we hold which allows the conversation to continue, up close and in person.</p>                       
-                            
-                                <h3 className={Utils.fs_4}>
+                            <article className="col-lg-8 col-12 ps-5">
+                                <h2 className={Utils.fs_2}>
                                     Three reasons why you'll love TEDx salons:
-                                </h3>
+                                </h2>
 
                                 <ol className="m-0">
                                     <li className="mb-4"><strong>The discussion:</strong> A critical element of salon is lively discussions, allowing attendees to actively participate in the event. With much smaller audiences than a standard TEDx event, salons bring attendees together in more intimate spaces, and with more chances to get know and exchange ideas as with each other.</li>
