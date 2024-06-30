@@ -2,13 +2,13 @@
 
 import { GlobalContext } from "@/contexts/GlobalContext";
 import clsx from "clsx";
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import Style from "./RegisterForm.module.scss"
-import SignatureCanvas from 'react-signature-canvas'
-import Divider from "@/components/display/Divider";
+
 import ButtonFeedback from "@/components/forms/Button/ButtonFeedback";
 import useButtonFeedback from "@/components/forms/Button/useButtonFeedback";
+import Signature from "@/components/display/Signature";
 
 
 function IndemnityForm({ 
@@ -19,13 +19,15 @@ function IndemnityForm({
     const { register, handleSubmit, watch, clearErrors, setError, reset, formState: { errors } } = useForm();
     const feedback = useButtonFeedback()
     const sigCanvas = useRef()
+    const [ signature, setSignature ] = useState(null)
 
 
     function onSubmit(data){
         feedback.setLoading(true)
 
-        data.signature = sigCanvas.current.getTrimmedCanvas().toDataURL("image/png")
+        data.signature = signature
         data.signature_date = new Date().toDateString()
+
 
         dispatch({
             type: "editTicket",
@@ -61,7 +63,7 @@ function IndemnityForm({
                             id="child_name_1"
                             name="child_name_1"
                             type="text" 
-                            placeholder="First Name & Surname"
+                            placeholder="Child Name"
                             {...register("child_name_1")}
                             defaultValue={global.cart?.editTicket?.options?.child_name_1}
                             className={Style.control}
@@ -77,7 +79,7 @@ function IndemnityForm({
                             id="child_name_2"
                             name="child_name_2"
                             type="text" 
-                            placeholder="First Name & Surname"
+                            placeholder="Child Name"
                             {...register("child_name_2")}
                             defaultValue={global.cart?.editTicket?.options?.child_name_2}
                             className={Style.control}
@@ -245,34 +247,35 @@ function IndemnityForm({
                         />
                     </p>
                 </div>
+            </fieldset>
+            
+            
 
-                <Divider className={Style.divider} />
+            <fieldset>
+                <legend className={Style.legend}>
+                    Add Your Signature
+                </legend>
 
                 <p>As Parent or Guardian, I agree to all of the above stated considerations and conditions. Signed on, <strong>{new Date().toDateString()}</strong></p>
 
-                <div className={clsx(Style.controlGroup)}>
-                    <SignatureCanvas 
-                        penColor='green'
-                        backgroundColor="rgba(255, 255, 255)"
-                        canvasProps={{ height: 200, className: Style.signatureCanvas}} 
-                        ref={sigCanvas}
-                    />
-                    <span>(Use finger or mouse to sign here)</span>
+                <Signature 
+                    onSigned={(signature) => setSignature(signature)}
+                    name={global.cart?.editTicket?.options?.first_name +" "+ global.cart?.editTicket?.options?.last_name}
+                />
+                
+                <input 
+                    name="signature" 
+                    type="hidden" 
+                    {...register("signature")} 
+                    defaultValue={global.cart?.editTicket?.options?.signature}
+                />
 
-                    <input 
-                        name="signature" 
-                        type="hidden" 
-                        {...register("signature")} 
-                        defaultValue={global.cart?.editTicket?.options?.signature}
-                    />
-
-                    <input 
-                        name="signature_date" 
-                        type="hidden" 
-                        {...register("signature_date")} 
-                        defaultValue={global.cart?.editTicket?.options?.signature_date}
-                    />
-                </div>
+                <input 
+                    name="signature_date" 
+                    type="hidden" 
+                    {...register("signature_date")} 
+                    defaultValue={global.cart?.editTicket?.options?.signature_date}
+                />
 
 
                 <button 
