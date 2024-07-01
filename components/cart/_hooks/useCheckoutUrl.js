@@ -13,7 +13,6 @@ export default function useCheckoutUrl(cart){
        getCheckoutUrl({
             amount: parseInt(total)*100,
             currency: "ZAR",
-            processingMode: "test",
             cancelUrl: `${callbackUrl}?status=cancelled`,
             successUrl: `${callbackUrl}?status=success`,
             failureUrl: `${callbackUrl}?status=failure`,
