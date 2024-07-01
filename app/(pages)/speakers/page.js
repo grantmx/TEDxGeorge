@@ -3,6 +3,7 @@ import Style from "../Page.module.scss"
 import clsx from "clsx"
 import Image from "next/image"
 import { speakerList } from "@/lib/speakerList"
+import sortBy from "@/lib/utils/sortBy"
 
 
 export const metadata = {
@@ -14,6 +15,8 @@ export const metadata = {
 
 
 function Speakers(){
+    const speakers = sortBy(speakerList, "last_name")
+
     return(
         <>
             <section className="container text-center d-flex justify-content-center">
@@ -33,11 +36,11 @@ function Speakers(){
 
             <section className="container mb-5">
                 <div className="row mt-4">
-                    {speakerList.map((speaker, index) => {
+                    {speakers.map((speaker) => {
                         return(
-                            <div className="col-12 col-lg-3 mb-4" key={`speaker-${index}`}>
+                            <div className="col-12 col-lg-3 mb-4" key={speaker.slug}>
                                 <Image 
-                                    src="https://dummyimage.com/400x400/111/fff&text=Announcing+Soon" 
+                                    src={`https://dummyimage.com/400x400/111/fff&text=Announcing+Soon`}
                                     alt="Event 1" 
                                     width={400} 
                                     height={400} 

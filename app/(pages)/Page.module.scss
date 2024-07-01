@@ -11,3 +11,97 @@
     }
 }
 
+
+.regContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 4rem 0;
+
+    @media screen and (max-width: $screen-sm){
+        flex-direction: column;
+    }
+}
+
+.confirmation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    flex: 1 0 auto;  
+    padding-bottom: 10rem;
+}
+
+
+.hero{
+    position: relative;
+    width: 100%;
+    margin-top: -6rem;
+}
+
+.heroImg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.callout{
+    font-size: 6rem;
+    line-height: 1.2;
+}
+
+.heroInner{
+    display: flex;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 10rem;
+
+    @media screen and (max-width: $screen-sm){
+        flex-direction: column;
+        padding: 0 2rem;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+}
+
+.heroSpacer{
+    width: 40%;
+
+    @media screen and (max-width: $screen-sm){
+        display: none;
+    }
+}
+
+.heroText{
+    width: 60%;
+    padding: 0 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+
+    @media screen and (max-width: $screen-sm){
+        width: 100%;
+        padding: 0;
+    }
+}
+
+.eventLogo{
+    height: auto;
+    width: 90%;
+    object-fit: contain;
+    margin-bottom: 2rem;
+}
+
+.salonImg{
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+}
+

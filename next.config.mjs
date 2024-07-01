@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    experimental: {
+        serverComponentsExternalPackages: ["mjml"],
+    },
     pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
 	images: {
 		formats: [

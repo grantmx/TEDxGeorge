@@ -5,6 +5,7 @@ import Image from "next/image"
 import { eventsList } from "@/lib/eventList"
 import { MainEvent } from "@/components/JSONld"
 import braveOnes from "@/public/brave-ones-event.jpg"
+import Link from "next/link"
 
 
 export const metadata = {
@@ -33,7 +34,7 @@ export const metadata = {
 async function Events(){
     return(
         <>
-             <section className="container text-center d-flex justify-content-center">
+            <section className="container text-center d-flex justify-content-center">
                 <div className={Style.heading}>
                     <h1 className={clsx(Utils.fs_5, "fw-light")}>
                        Events
@@ -50,20 +51,28 @@ async function Events(){
 
             <section className="container mb-5">
                 <div className="row">
-
                     {eventsList.map((event) => {
                         return(
-                            <div className="col-12 col-lg-3" key={event.title}>
+                            <Link 
+                                href={event.href}
+                                title={`More on ${event.title}`}
+                                className={clsx("col-12 col-lg-3 border-0 mb-5 p-2")} 
+                                key={event.title}
+                            >
                                 <Image 
                                     src={event.src}
-                                    alt="Event 1" 
+                                    alt={event.title}
                                     width={400} 
                                     height={400} 
                                     placeholder="blur"
                                     blurDataURL="https://dummyimage.com/1x1/777/fff"
                                     className={clsx(Utils.w_100, Utils.h_auto, "object-fit-contain")}
                                 />
-                            </div>
+
+                                <div className="btn btn-danger btn-lg mt-3">
+                                    Read more &rarr;
+                                </div>
+                            </Link>
                         )
                     })}
                 </div>
