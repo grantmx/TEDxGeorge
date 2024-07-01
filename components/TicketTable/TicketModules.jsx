@@ -7,7 +7,7 @@ import RegisterBtn from "./RegisterBtn";
 
 
 
-function TicketModules(){
+function TicketModules({ sold }){
     return(
         <div className={Style.modules}>
             {ticketList.map((ticket) => {
@@ -40,6 +40,8 @@ function TicketModules(){
                             <RegisterBtn 
                                 price={ticket.priceRaw} 
                                 type={ticket.type}
+                                sold={sold[ticket.type]}
+                                isSoldOut={sold[ticket.type] >= ticket.allocation}
                             />
                         </ul>
                     </article>

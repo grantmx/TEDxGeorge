@@ -90,7 +90,6 @@ function RegisterForm(){
             }
         }
 
-
         dispatch({
             type: "editTicket",
             data: newEditTicket

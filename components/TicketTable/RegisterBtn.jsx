@@ -8,12 +8,22 @@ import { useContext } from "react";
 import Style from "./TicketTable.module.scss"
 import generateID from "@/lib/utils/generateID";
 import { IconPlus } from "@/icons/IconPlus";
+import clsx from "clsx";
 
 
+// check to lookup how many types of tickets are currently in Google Sheets
+// if it exceeds the amount allocated then disable the button
 
-function RegisterBtn({ price, type, quantity = 1 }){
+function RegisterBtn({ 
+    price, 
+    type, 
+    quantity = 1, 
+    sold = 0, 
+    isSoldOut = false 
+}){
     const [ _, dispatch ] = useContext(GlobalContext);
     const cart = useCartWidget()
+
 
     function register(){
         const id = generateID()
@@ -45,11 +55,16 @@ function RegisterBtn({ price, type, quantity = 1 }){
 
             <button 
                 type="button" 
-                className="btn btn-success py-2 px-4 fs-2 d-flex align-items-center justify-content-center"
+                className={clsx(isSoldOut ? "btn-secondary" : "btn-success", "btn  py-2 px-4 fs-2 d-flex align-items-center justify-content-center")}
                 onClick={register}
+                disabled={isSoldOut}
             >
-                <IconPlus width={24} height={24} fill="#fff" />
-                Add Ticket
+                {isSoldOut ? "Sold Out" : (
+                    <>
+                        <IconPlus width={24} height={24} fill="#fff" />
+                        Add Ticket
+                    </>
+                )}
             </button>
         </div>
     )

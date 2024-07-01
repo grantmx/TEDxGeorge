@@ -2,6 +2,7 @@ import Utils from "@/styles/globals/utils.module.scss"
 import Style from "../Page.module.scss"
 import clsx from "clsx"
 import TicketTable from "@/components/TicketTable"
+import getTicketCount from "./getTicketCount"
 
 
 
@@ -13,7 +14,9 @@ export const metadata = {
 }
 
 
-function Tickets(){
+async function Tickets(){
+    const sold =  await getTicketCount()
+
     return(
         <>
             <section className="container text-center d-flex justify-content-center">
@@ -30,7 +33,7 @@ function Tickets(){
                 </div>
             </section>
 
-            <TicketTable />
+            <TicketTable {...{ sold }} />
         </>
     )
 }

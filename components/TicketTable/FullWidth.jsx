@@ -8,7 +8,7 @@ import RegisterBtn from "./RegisterBtn"
 import Link from "next/link"
 
 
-function FullWidth(){
+function FullWidth({ sold }){
     return(
         <div className={Style.full}>
             <div className="row align-items-start">
@@ -73,6 +73,8 @@ function FullWidth(){
                             <RegisterBtn 
                                 price={ticket.priceRaw} 
                                 type={ticket.type}
+                                sold={sold[ticket.type]}
+                                isSoldOut={sold[ticket.type] >= ticket.allocation}
                             />
                         </div>
                     )

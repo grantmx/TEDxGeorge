@@ -29,6 +29,8 @@ function ConfirmationHeader({ status }){
                     heading: `Hey, ${item?.options?.first_name}! 👋`,
                     first_name: item?.options?.first_name,
                     last_name: item?.options?.last_name,
+                    occupation: item?.options?.occupation,
+                    makes_me_happy: item?.options?.makes_me_happy,
                     id: item.id,
                     type: item.type,
                     message: `

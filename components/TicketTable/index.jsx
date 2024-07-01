@@ -2,11 +2,11 @@ import FullWidth from "./FullWidth";
 import TicketModules from "./TicketModules";
 
 
-function TicketTable(){
+function TicketTable({ sold }){
     return(
         <section className="container">
-            <FullWidth />
-            <TicketModules />
+            <FullWidth {...{ sold }} />
+            <TicketModules  {...{ sold }} />
         </section>
     )
 }
