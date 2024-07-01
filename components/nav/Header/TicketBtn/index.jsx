@@ -7,12 +7,14 @@ import useCartWidget from "@/components/cart/_hooks/useCartWidget";
 import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "@/contexts/GlobalContext";
 import { LocalStorage } from "@/services/LocalStorage.service";
+import { usePathname } from "next/navigation";
 
 
 function TicketBtn(){
     const cart = useCartWidget()
     const [ state, dispatch ] = useContext(GlobalContext);
     const [ qty, setQty ] = useState(0)
+    const pathName = usePathname()
 
 
     useEffect(() => {
@@ -30,9 +32,15 @@ function TicketBtn(){
                     lineItems: cartData
                 }
             })
+
+        }else{
+            setQty(0)
         }
 
-    }, [ state.cart.total ])
+    }, [ 
+        state.cart.total,
+        pathName 
+    ])
 
 
     return(

@@ -1,5 +1,5 @@
-import AutoSignatureCanvas from "@/components/display/AutoSignatureCanvas";
-import { useEffect, useRef } from "react";
+import AutoSignatureCanvas from "@/components/display/Signature/AutoSignatureCanvas";
+import { useRef, useState } from "react";
 import SignatureCanvas from 'react-signature-canvas'
 import Style from './Signature.module.scss';
 import clsx from "clsx";
@@ -12,13 +12,14 @@ function Signature({ name, onSigned= () => null }){
     const autoSigCanvas = useRef()
     const autoDetailsRef = useRef()
     const manualDetailsRef = useRef()
+    const [ signed, setSigned ] = useState(null)
 
 
     return(
         <div className={Style.block}>
             <details 
                 name="signature" 
-                open 
+                open
                 id="autoSignature" 
                 ref={autoDetailsRef}
                 // onToggle={(e) => console.log(e.target.open)}
@@ -36,9 +37,12 @@ function Signature({ name, onSigned= () => null }){
                 <button 
                     type="button" 
                     className={Style.acceptBtn}
-                    onClick={() => onSigned(autoSigCanvas.current.toDataURL("image/png").replace("image/png", "image/octet-stream"))}
+                    onClick={() => {
+                        onSigned(autoSigCanvas.current.toDataURL("image/png").replace("image/png", "image/octet-stream"))
+                        setSigned("autoSign")
+                    }}
                 >
-                    <Checkmark fill="#fff" className={Style.acceptBtnIcon} />
+                    {signed === "autoSign" && <Checkmark fill="#fff" className={Style.acceptBtnIcon} />}
                     I accept my signature
                 </button>
             </details>
@@ -65,9 +69,12 @@ function Signature({ name, onSigned= () => null }){
                 <button 
                     type="button" 
                     className={Style.acceptBtn}
-                    onClick={() => onSigned(sigCanvas.current.getTrimmedCanvas().toDataURL("image/png").replace("image/png", "image/octet-stream"))}
+                    onClick={() => {
+                        onSigned(sigCanvas.current.getTrimmedCanvas().toDataURL("image/png").replace("image/png", "image/octet-stream"))
+                        setSigned("manualSign")
+                    }}
                 >
-                    <Checkmark  fill="#fff" className={Style.acceptBtnIcon} />
+                    {signed === "manualSign" && <Checkmark fill="#fff" className={Style.acceptBtnIcon} />}
                     I accept my signature
                 </button>            
             </details>

@@ -47,9 +47,9 @@ function WidgetBar(){
                         </div>
                     )}
 
-                    <h6 className={Style.heading}>
+                    <p className={Style.heading}>
                         {global.widget.heading}
-                    </h6>
+                    </p>
 
                     <button 
                         type="button" 
