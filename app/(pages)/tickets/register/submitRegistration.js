@@ -4,7 +4,7 @@ import { doc } from "@/services/google/googleSheets"
 import { redirect } from "next/navigation";
 
 
-async function submitRegistration(registration = [], resolve = null ){
+async function submitRegistration( registration = [] ){
     if(!Array.isArray(registration) && registration.length){ 
         console.error("No registration data provided")
         redirect("/404")        
@@ -36,7 +36,7 @@ async function submitRegistration(registration = [], resolve = null ){
 
             await sheet.addRow(registrationItem)
 
-            resolve("Registration added")
+            return "done"
         })
 
 

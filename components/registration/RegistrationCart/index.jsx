@@ -23,16 +23,14 @@ function RegistrationCart(){
     const checkoutPath = useCheckoutUrl(global.cart)
 
 
-    function checkout(){
+    async function checkout(){
         feedback.setLoading(true)
 
-        const register = new Promise((resolve) => {
-            submitRegistration(global.cart.lineItems, resolve)
-        })
-        
-        register.then(() => {
+        await submitRegistration(global.cart.lineItems).then((res) => {
+            console.log(res)
             feedback.setSuccess(true)
             feedback.setLoading(false)
+
             window.location.assign(checkoutPath.redirectUrl)
         })
     }
