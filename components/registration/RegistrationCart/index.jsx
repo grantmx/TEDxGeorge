@@ -26,10 +26,13 @@ function RegistrationCart(){
     function checkout(){
         feedback.setLoading(true)
 
-        submitRegistration(global.cart.lineItems).then(() => {
+        const register = new Promise((resolve) => {
+            submitRegistration(global.cart.lineItems, resolve)
+        })
+        
+        register.then(() => {
             feedback.setSuccess(true)
             feedback.setLoading(false)
-
             window.location.assign(checkoutPath.redirectUrl)
         })
     }
