@@ -1,23 +1,17 @@
 "use server"
 
 import { doc } from "@/services/google/googleSheets"
-import { redirect } from "next/navigation";
 
 
 async function submitRegistration( registration = [] ){
-    if(!Array.isArray(registration) && registration.length){ 
-        console.error("No registration data provided")
-        redirect("/404")        
-    }
-
     try{
         await doc.loadInfo();
         const sheet = doc.sheetsByIndex[0];
 
-        registration.forEach(async (item) => {
+        for await (const item of registration){
             const registrationItem = {}
 
-            Object.keys(item).forEach((key) => {
+            for await (const key of item){
                 if( 
                     key !== "price" ||
                     key !== "quantity" ||
@@ -32,17 +26,17 @@ async function submitRegistration( registration = [] ){
                         registrationItem[key] = item[key]
                     }
                 }
-            })
+            }
 
             await sheet.addRow(registrationItem)
 
             return "done"
-        })
+        }
 
 
     }catch(err){
         console.error(err)
-        redirect("/404") 
+        return false
     }
 
 }
