@@ -43,11 +43,11 @@ function AboutUs(){
                             alt="the brave ones"
                         />
                         
-                        <p className={Utils.fs_3}>
+                        <p className={clsx(Utils.fs_3, Utils.mb_1)}>
                             October 5, 2024 &nbsp;&nbsp;|&nbsp;&nbsp; George Arts Theater
                         </p>
 
-                        <p className={Utils.fs_5}>
+                        <p className={clsx(Utils.fs_5, Utils.mb_2)}>
                             An inspirational one day event propelling you to be challenged at every level.
                         </p>
 
