@@ -27,7 +27,6 @@ function RegistrationCart(){
         feedback.setLoading(true)
 
         await submitRegistration(global.cart.lineItems).then((res) => {
-            console.log(res)
             feedback.setSuccess(true)
             feedback.setLoading(false)
 

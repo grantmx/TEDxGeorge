@@ -28,10 +28,7 @@ async function submitRegistration( registration = [] ){
                 }
             })
 
-
             await sheet.addRow(registrationItem)
-
-            console.log(registrationItem)
 
             return "done"
         }
