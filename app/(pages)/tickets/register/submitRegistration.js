@@ -11,7 +11,7 @@ async function submitRegistration( registration = [] ){
         for await (const item of registration){
             const registrationItem = {}
 
-            for await (const key of item){
+            Object.keys(item).forEach((key) => {
                 if( 
                     key !== "price" ||
                     key !== "quantity" ||
@@ -26,9 +26,12 @@ async function submitRegistration( registration = [] ){
                         registrationItem[key] = item[key]
                     }
                 }
-            }
+            })
+
 
             await sheet.addRow(registrationItem)
+
+            console.log(registrationItem)
 
             return "done"
         }
