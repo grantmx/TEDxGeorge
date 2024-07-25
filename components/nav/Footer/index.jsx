@@ -66,29 +66,34 @@ function Footer(){
 
 
                     <menu className="list-inline d-flex h3 justify-content-end w-100">
-                        <li>
-                            <Link href="/events" className="me-4">
+                        <li className="me-4">
+                            <Link href="/events">
                                 Events
                             </Link>
                         </li>
-                        <li>
-                            <Link href="/speakers" className="me-4">
+                        <li className="me-4">
+                            <Link href="/speakers">
                                 Speakers
                             </Link>
                         </li>
-                        <li>
-                            <Link href="/partners" className="me-4">
+                        <li className="me-4">
+                            <Link href="/partners">
                                 Partners
                             </Link>
                         </li>
-                        <li>
-                            <Link href="/about" className="me-4">
+                        <li className="me-4">
+                            <Link href="/about">
                                 About
                             </Link>
                         </li>
-                        <li>
+                        <li className="me-4">
                             <Link href="/tickets">
                                 Tickets
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/press-releases">
+                                Press
                             </Link>
                         </li>
                     </menu>
