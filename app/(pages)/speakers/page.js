@@ -9,7 +9,7 @@ import sortBy from "@/lib/utils/sortBy"
 export const metadata = {
     title: "Speakers",
     alternates: {
-        canonical: "https://www.tedxgeorge.com/speakers",
+        canonical: "https://tedxgeorge.com/speakers",
     }
 }
 

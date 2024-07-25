@@ -1,6 +1,29 @@
 import Utils from "@/styles/globals/utils.module.scss"
 import Style from "@/app/(pages)/Page.module.scss"
 import clsx from "clsx";
+import press from "@/public/tedxgeorge-press.jpg"
+
+
+export const metadata = {
+    title: "Press Releases",
+    alternates: {
+        canonical: "https://tedxgeorge.com/press-releases",
+    },
+    openGraph: {
+        title: 'TEDxGeorge Press Releases',
+        url: 'https://tedxgeorge.com/press-releases',
+        siteName: 'TEDxGeorge',
+        images: [
+            {
+                url: press.src,
+                width: 800,
+                height: 800,
+            },
+        ],
+        locale: 'en_US',
+        type: 'website',
+    },
+}
 
 
 function PressReleases(){

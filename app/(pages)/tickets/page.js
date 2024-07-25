@@ -9,7 +9,7 @@ import getTicketCount from "./getTicketCount"
 export const metadata = {
     title: "Purchase Tickets",
     alternates: {
-        canonical: "https://www.tedxgeorge.com/tickets",
+        canonical: "https://tedxgeorge.com/tickets",
     }
 }
 

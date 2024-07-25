@@ -11,7 +11,7 @@ import braveOnes from "@/public/The_Brave_Ones.png"
 export const metadata = {
     title: "About",
     alternates: {
-        canonical: "https://www.tedxgeorge.com/about",
+        canonical: "https://tedxgeorge.com/about",
     }
 }
 

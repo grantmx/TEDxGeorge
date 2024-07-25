@@ -10,7 +10,7 @@ import YourTicket from "@/components/registration/YourTicket";
 export const metadata = {
     title: "Ticket Checkout",
     alternates: {
-        canonical: "https://www.tedxgeorge.com/tickets/checkout-confirmation",
+        canonical: "https://tedxgeorge.com/tickets/checkout-confirmation",
     }
 }
 

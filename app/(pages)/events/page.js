@@ -11,12 +11,12 @@ import Link from "next/link"
 export const metadata = {
     title: "Events",
     alternates: {
-        canonical: "https://www.tedxgeorge.com/events",
+        canonical: "https://tedxgeorge.com/events",
     },
     openGraph: {
         title: 'TEDxGeorge',
         description: "The Brave Ones is an attempt to celebrate the local heroes and heroines that have continuously taken brave steps in their respective fields",
-        url: 'https://www.tedxgeorge.com/events',
+        url: 'https://tedxgeorge.com/events',
         siteName: 'TEDxGeorge',
         images: [
             {

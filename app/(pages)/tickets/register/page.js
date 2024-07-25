@@ -8,7 +8,7 @@ import RegistrationCart from "@/components/registration/RegistrationCart";
 export const metadata = {
     title: "Register",
     alternates: {
-        canonical: "https://www.tedxgeorge.com/tickets/register",
+        canonical: "https://tedxgeorge.com/tickets/register",
     }
 }
 

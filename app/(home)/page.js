@@ -7,7 +7,6 @@ import logo from "@/public/TEDx_Logo_Short_George-white.svg"
 import Footer from "@/components/nav/Footer";
 import Link from "next/link";
 import { MainEvent } from "@/components/JSONld";
-import IndemnityForm from "@/components/registration/RegisterForm/IndemnityForm";
 
 
 function Home() {
