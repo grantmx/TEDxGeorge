@@ -1,5 +1,5 @@
 import Utils from "@/styles/globals/utils.module.scss"
-import Style from "../../../Page.module.scss"
+import Style from "@/app/(pages)/Page.module.scss"
 import clsx from "clsx"
 import { eventsList } from "@/lib/eventList"
 import Image from "next/image"

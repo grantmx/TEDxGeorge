@@ -38,7 +38,7 @@ function Speakers(){
                 <div className="row mt-4">
                     {speakers.map((speaker) => {
                         return(
-                            <div className="col-12 col-lg-3 mb-4" key={speaker.slug}>
+                            <div className="col-6 col-lg-3 mb-4" key={speaker.slug}>
                                 <Image 
                                     src={`https://dummyimage.com/400x400/111/fff&text=Announcing+Soon`}
                                     alt="Event 1" 

@@ -105,3 +105,50 @@
     margin-bottom: 2rem;
 }
 
+.sponsorHeading{
+    @extend %h2;
+    font-size: 3.3rem;
+    text-transform: capitalize;
+}
+
+.sponsorImg{
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    border-radius: $border-radius;
+    margin-right: 2rem;
+    display: block;
+    border: none;
+    background-color: $white;
+
+    &__platinum{
+        max-width: 300px;
+    }
+
+    &__gold{
+        max-width: 250px;
+    }
+
+    &__silver{
+        max-width: 200px;
+    }
+
+    &__bronze{
+        max-width: 150px;
+        max-height: 100px;
+    }
+}
+
+.sponsorList{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+}
+
+
