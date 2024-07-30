@@ -20,10 +20,10 @@ function ConfirmationHeader({ status }){
         ){
             celebrationTime()
 
-            setEmailed(true)
 
-            global.cart.lineItems.map((item) => {
-                axios.post("/api/sendEmail", {
+            global.cart.lineItems.forEach((item) => {
+
+                axios.post(`/api/sendEmail?id=${item.id}`, {
                     subject: `🎉 Your TEDxGeorge ticket is here, ${item?.options?.first_name}!`,
                     to: item?.options?.email,
                     heading: `Hey, ${item?.options?.first_name}! 👋`,
@@ -45,7 +45,11 @@ function ConfirmationHeader({ status }){
 
                         <p>Please present your ticket <a href=${process.env.NEXT_PUBLIC_URL}/tickets/your-ticket?id=${item.id}&first_name=${item?.options?.first_name}&last_name=${item?.options?.last_name}&type=${item.type}><strong>(${item.id})</strong></a> when you check-in.
                     `
-                })  
+                }).then(() => {
+                    setEmailed(true)
+                })
+
+
             })
 
             LocalStorage.remove("TXG_cart")
