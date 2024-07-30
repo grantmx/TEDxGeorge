@@ -9,7 +9,9 @@ async function submitRegistration( registration = [] ){
         const sheet = doc.sheetsByIndex[0];
 
         for await (const item of registration){
-            const registrationItem = {}
+            const registrationItem = {
+                register_date: new Date(),
+            }
 
             Object.keys(item).forEach((key) => {
                 if( 
@@ -29,9 +31,9 @@ async function submitRegistration( registration = [] ){
             })
 
             await sheet.addRow(registrationItem)
-
-            return "done"
         }
+
+        return "done"
 
 
     }catch(err){
