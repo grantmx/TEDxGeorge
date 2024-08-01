@@ -108,7 +108,12 @@ function RegisterForm(){
 
     useEffect(() => {
         const subscription = watch((value, { name, type }) => {
-            updateTicket({ name, value: value[name], global, fieldValues: value })
+            updateTicket({ 
+                name, 
+                value: value[name], 
+                global, 
+                fieldValues: value 
+            })
         })
 
         return () => subscription.unsubscribe()
@@ -303,6 +308,23 @@ function RegisterForm(){
                             defaultValue={global.cart?.editTicket?.options?.city}
                             className={Style.control}
                         />
+                    </p>
+
+
+                    <p className={clsx(Style.controlGroup, Style.checkboxControl)}>
+                        <input 
+                            id="post_event_survey"
+                            name="post_event_survey"
+                            type="checkbox"
+                            defaultChecked={true}
+                            {...register("post_event_survey")}
+                            className={Style.control}
+                        />
+
+                        <label htmlFor="afterParty">
+                            Yes, email me the post-event Survey from TED!<br/>
+                            <small>*TED, TEDx or Delighted (our third party survey partner) will not use any collected email addresses for any purpose other than sending this particular survey.</small>
+                        </label>
                     </p>
                 </fieldset>
 
