@@ -6,6 +6,8 @@ import hero from "@/public/about-hero.jpg"
 import mobileHero from "@/public/background-mobile.jpg"
 import Image from "next/image"
 import braveOnes from "@/public/The_Brave_Ones.png"
+import Link from "next/link"
+import logo from "@/public/TEDx_Logo_Short_George-white.svg"
 
 
 export const metadata = {
@@ -147,6 +149,29 @@ function AboutUs(){
                         <p>Follow TED on <a href="http://twitter.com/TEDTalks">Twitter</a>, <a href="http://www.facebook.com/TED">Facebook</a>, <a href="https://instagram.com/ted">Instagram</a>, <a href="https://www.tiktok.com/@tedtoks?lang=en">TikTok</a> and on <a href="https://www.linkedin.com/company/ted-conferences">LinkedIn</a>.</p>
                     </article>
                 </div>
+
+                <hr className="my-5" />
+                 
+                <div className="row">
+                     <heading className="col-lg-4 col-12">
+                         <h2 className={Utils.fs_2}>
+                            Our Team <br/>
+                            <Image src={logo} alt="TEDxGeorge Logo" width={300} height={75} />
+                         </h2>
+                     </heading>
+                     
+                     <article className="col-lg-8 col-12">
+                        <p>
+                            TEDxGeorge is driven by a diverse and dedicated team of volunteers who are passionate about fostering dialogue, sharing ideas, and creating positive change in our community. Our team members come from various backgrounds and disciplines, bringing unique perspectives and skills to the table. Together, we work tirelessly to curate engaging events, support inspiring speakers, and connect with our audience to spark meaningful conversations. <Link href="/about/our-team">Meet the faces behind TEDxGeorge</Link> and learn more about the individuals who are shaping our TEDx community.
+                        </p>   
+
+                        <p className={Utils.fs_3}>
+                            <Link href="/about/our-team">
+                                Meet the team &rsaquo;
+                            </Link>
+                        </p>                      
+                    </article>
+                 </div>
                
             </section>
 

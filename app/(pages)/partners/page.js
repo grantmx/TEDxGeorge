@@ -1,6 +1,9 @@
 import Utils from "@/styles/globals/utils.module.scss"
-import Style from "@/app/(pages)/Page.module.scss"
 import clsx from "clsx"
+import { sponsorList } from "@/lib/utils/sponsorList"
+import Image from "next/image"
+import Style from "@/app/(pages)/Page.module.scss"
+
 
 export const metadata = {
     title: "Partners",
@@ -23,13 +26,51 @@ function Partners(){
                         <p className={clsx(Utils.fs_1)}>
                             We in the TEDx Community view our sponsors as partners who are joining us on a journey. This is a project that we're investing in together. 
                         </p>
-                        <p>
-                            <a href="/TEDxGeorge_Sponsors_Welcome_Guide.pdf" download={true} className="btn btn-danger fs-1 px-5">
-                                Download Sponsorship Guide
-                            </a>
-                        </p>
                     </article>
                 </div>
+            </section>
+
+
+                 
+            <section className="container">
+                {Object.keys(sponsorList).map((sponsorLevel) => {
+                    const sponsor = sponsorList[sponsorLevel]
+
+                    if(sponsor.length === 0) return null
+
+                    return(
+                        <div className="row mt-5" key={sponsorLevel}>
+                            <heading className="col-lg-3 col-12">
+                                <h2 className={Style.sponsorHeading}>
+                                    {sponsorLevel} Partners
+                                </h2>
+                            </heading>
+                                
+                            <article className="col-lg-9 col-12">
+                                <ul className={Style.sponsorList}>
+                                    {sponsor.map((sponsor) => {
+                                        return(
+                                            <li 
+                                                key={sponsor.name} 
+                                                className={Style.sponsorItem}
+                                            >
+                                                <a href={sponsor.url} target="_blank" rel="noreferrer">
+                                                    <Image 
+                                                        width={400}
+                                                        height={400}
+                                                        src={sponsor.logo} 
+                                                        alt={sponsor.name} 
+                                                        className={clsx(Style.sponsorImg, Style[`sponsorImg__${sponsorLevel}`])} 
+                                                    />
+                                                </a>
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
+                            </article>
+                        </div>
+                    )
+                })}  
             </section>
 
 
@@ -100,6 +141,21 @@ function Partners(){
 
                     <p className="w-75 fs-1">
                         For information on how to support TEDxGeorge through in-kind donations of products or services, email <a href="mailto:info@tedxgeorge.com">info@tedxgeorge.com</a>
+                    </p>
+                </article>
+
+
+                <hr className={Utils.my_6} />
+
+                <article className="text-center d-flex flex-column align-items-center">
+                    <h3 className={Utils.fs_1}>
+                        Ready to get started?
+                    </h3>
+
+                    <p>
+                        <a href="/TEDxGeorge_Sponsors_Welcome_Guide.pdf" download={true} className="btn btn-danger fs-1 px-5">
+                            Download Sponsorship Guide
+                        </a>
                     </p>
                 </article>
             </section>
