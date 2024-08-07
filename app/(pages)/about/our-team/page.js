@@ -43,10 +43,11 @@ function OurTeam(){
                         return(
                             <figure className="col-6 col-lg-3 mb-5" key={member.name}>
                                 <Image 
-                                    src={member?.photo ?? `https://dummyimage.com/400x400/111/777`}
+                                    {...member.photo}
                                     alt="Event 1" 
                                     width={400} 
                                     height={400} 
+                                    placeholder="blur"
                                     className={clsx(Utils.w_100, Utils.h_auto, "object-fit-contain")}
                                 />
 
