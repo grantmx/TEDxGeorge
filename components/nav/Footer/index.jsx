@@ -14,8 +14,9 @@ function Footer(){
                         <Image src={logo} alt="TEDxGeorge Logo" width={200} height={50} />
                     </Link>
 
-                    <small className="lead lh-2">
-                        This independent TEDx event is operated under license from TED.
+                    <small className="lead lh-1">
+                        This independent TEDx event is operated under license from TED.<br/>
+                        <small>Built with ❤️ by <a href="https://grithub.com" target="_blank">GRITHub</a></small>
                     </small>
                 </div>
 
