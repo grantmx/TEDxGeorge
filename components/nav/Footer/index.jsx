@@ -16,7 +16,7 @@ function Footer(){
 
                     <small className="lead lh-1">
                         This independent TEDx event is operated under license from TED.<br/>
-                        <small>Built with ❤️ by <a href="https://grithub.co.za" target="_blank">GRITHub</a></small>
+                        <small>Built with ❤️ by <a href="https://grithub.org.za/" target="_blank">GRITHub</a></small>
                     </small>
                 </div>
 
