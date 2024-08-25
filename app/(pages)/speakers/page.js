@@ -38,10 +38,7 @@ function Speakers(){
             </section>
 
 
-            <section className="container">
-                <hr className={Utils.my_6} />
-                
-                
+            <section className="container  mb-5">                
                 <div className="row mt-4">
                     {speakers.map((speaker) => {
                         return(
@@ -60,7 +57,8 @@ function Speakers(){
             </section>
 
 
-            <section className="container mb-5">
+            <section className="container">
+                <hr className={Utils.my_6} />
 
                 <div className="row">
                     <heading className="col-lg-4 col-12">
