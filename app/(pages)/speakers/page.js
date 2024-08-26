@@ -60,17 +60,13 @@ function Speakers(){
             <section className="container">
                 <hr className={Utils.my_6} />
 
-                <div className="row">
-                    <heading className="col-lg-4 col-12">
-                        <h2 className={Utils.fs_2}>
-                            Our curation approach at TEDxGeorge
-                        </h2>
-                    </heading>
+                <article className="text-center d-flex flex-column align-items-center">
+                    <h3 className={Utils.fs_1}>
+                        Our curation approach at TEDxGeorge
+                    </h3>
 
-                    <article className="col-lg-8 col-12">
-                        <p>At TEDxGeorge, we welcome individuals from all backgrounds, disciplines, and cultures who seek to explore new ideas and connect with others. We understand that not every curation decision will resonate with everyone, but our selections are rooted in principles that reflect our commitment to inclusivity and thoughtful debate.</p>              
-                    </article>
-                </div>    
+                    <p>At TEDxGeorge, we welcome individuals from all backgrounds, disciplines, and cultures who seek to explore new ideas and connect with others. We understand that not every curation decision will resonate with everyone, but our selections are rooted in principles that reflect our commitment to inclusivity and thoughtful debate.</p>              
+                </article>
 
 
                 <div className="row">
