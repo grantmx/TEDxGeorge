@@ -63,7 +63,7 @@ function Speakers(){
                 <div className="row">
                     <heading className="col-lg-4 col-12">
                         <h2 className={Utils.fs_2}>
-                            Curation Approach at TEDxGeorge
+                            Our curation approach at TEDxGeorge
                         </h2>
                     </heading>
 
@@ -78,7 +78,7 @@ function Speakers(){
 
                     <heading className="col-lg-4 col-12">
                         <h2 className={Utils.fs_2}>
-                            Inclusion
+                            We believe ideas can come from anyone
                         </h2>
                     </heading>
 
@@ -92,7 +92,7 @@ function Speakers(){
 
                     <heading className="col-lg-4 col-12">
                         <h2 className={Utils.fs_2}>
-                            Debate
+                            We value skepticism and debate
                         </h2>
                     </heading>
 
