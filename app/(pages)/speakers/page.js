@@ -65,7 +65,9 @@ function Speakers(){
                         Our curation approach at TEDxGeorge
                     </h3>
 
-                    <p>At TEDxGeorge, we welcome individuals from all backgrounds, disciplines, and cultures who seek to explore new ideas and connect with others. We understand that not every curation decision will resonate with everyone, but our selections are rooted in principles that reflect our commitment to inclusivity and thoughtful debate.</p>              
+                    <p className="fs-1">
+                        At TEDxGeorge, we welcome individuals from all backgrounds, disciplines, and cultures who seek to explore new ideas and connect with others. We understand that not every curation decision will resonate with everyone, but our selections are rooted in principles that reflect our commitment to inclusivity and thoughtful debate.
+                    </p>              
                 </article>
 
 
@@ -79,7 +81,9 @@ function Speakers(){
                     </heading>
 
                     <article className="col-lg-8 col-12">
-                        <p>Ideas know no boundaries—they are not confined by geography, religion, politics, or culture. TEDxGeorge believes that ideas belong to everyone, regardless of skin-color, gender, identity, or social class. With a global perspective, we seek to source diverse ideas and ensure they are accessible to all. We know that powerful ideas, when shared with care, have the potential to unite different groups and build a collective vision for a better future.</p>
+                        <p>
+                            Ideas know no boundaries—they are not confined by geography, religion, politics, or culture. TEDxGeorge believes that ideas belong to everyone, regardless of skin-color, gender, identity, or social class. With a global perspective, we seek to source diverse ideas and ensure they are accessible to all. We know that powerful ideas, when shared with care, have the potential to unite different groups and build a collective vision for a better future.
+                        </p>
                     </article>
                 </div>      
 
