@@ -65,7 +65,7 @@ function Speakers(){
                         Our curation approach at TEDxGeorge
                     </h3>
 
-                    <p className="fs-1">
+                    <p className="fs-1 w-75">
                         We welcome individuals from all backgrounds, disciplines, and cultures who seek to explore new ideas and connect with others. We understand that not every curation decision will resonate with everyone, but our selections are rooted in principles that reflect our commitment to inclusivity and thoughtful debate.
                     </p>              
                 </article>
