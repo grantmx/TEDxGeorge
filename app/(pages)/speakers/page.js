@@ -97,7 +97,7 @@ function Speakers(){
                     </heading>
 
                     <article className="col-lg-8 col-12">
-                        <p>Ideas know no boundaries—they are not confined by geography, religion, politics, or culture. TEDxGeorge believes that ideas belong to everyone, regardless of race, gender, identity, or social class. With a global perspective, we seek to source diverse ideas and ensure they are accessible to all. We know that powerful ideas, when shared with care, have the potential to unite different groups and build a collective vision for a better future.</p>
+                        <p>Ideas know no boundaries—they are not confined by gender, skin-color, religion, politics, or culture. TEDxGeorge believes that ideas belong to everyone, regardless of race, gender, identity, or social class. With a global perspective, we seek to source diverse ideas and ensure they are accessible to all. We know that powerful ideas, when shared with care, have the potential to unite different groups and build a collective vision for a better future.</p>
 
                         <h3 className={Utils.fs_3}>
                             Debate
