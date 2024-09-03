@@ -1,9 +1,9 @@
 import Utils from "@/styles/globals/utils.module.scss"
 import Style from "../Page.module.scss"
 import clsx from "clsx"
-import Image from "next/image"
 import { speakerList } from "@/lib/speakerList"
 import sortBy from "@/lib/utils/sortBy"
+import SpeakerCard from "@/components/speakers/SpeakerCard"
 
 
 export const metadata = {
@@ -41,40 +41,13 @@ function Speakers(){
             <section className="container mb-5">                
                 <div className="row mt-4">
                     {speakers.map((speaker) => {
-                        const { first_name, last_name, organization, slug, topic, image } = speaker
-
-                        return(
-                            <figure className="col-6 col-lg-3 mb-3" key={slug}>
-                                <Image 
-                                    src={image?.src ?? "https://dummyimage.com/400x400/111/fff&text=Announcing+Soon"}
-                                    blurDataURL={image?.blurDataURL ?? "https://dummyimage.com/1x1/111/fff&text=Announcing+Soon"}
-                                    placeholder="blur"
-                                    alt="Event 1" 
-                                    width={400} 
-                                    height={400} 
-                                    className={clsx(Utils.w_100, Utils.mb_1, Utils.h_auto, "object-fit-contain")}
-                                />
-
-                                <figcaption className={Utils.px_1}>
-                                    <h2 className={clsx(Utils.fs_5, Utils.mb_0)}>
-                                        <strong>{first_name} {last_name}</strong>
-                                    </h2>
-                                    <small>{organization}</small>
-
-                                    <p className={Utils.mt_2}>
-                                        <small className={Style.smallText}>
-                                            TALK TOPIC
-                                        </small>
-                                        <span>
-                                            {topic}
-                                        </span>
-                                    </p>
-                                    
-                                </figcaption>
-
-                            </figure>
-                        )
+                        return <SpeakerCard {...speaker} key={speaker?.slug} />
                     })}
+
+                    <div className={clsx("col", Style.moreToCome )}>
+                        <h2 className={Utils.fs_1}>MORE TO COME</h2>
+                        <p className={Utils.fs_3}>Stay tuned for additional speaker announcements as we approach the event in October.</p>
+                    </div>
                 </div>
             </section>
 
