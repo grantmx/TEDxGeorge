@@ -38,18 +38,40 @@ function Speakers(){
             </section>
 
 
-            <section className="container  mb-5">                
+            <section className="container mb-5">                
                 <div className="row mt-4">
                     {speakers.map((speaker) => {
+                        const { first_name, last_name, organization, slug, topic, image } = speaker
+
                         return(
-                            <figure className="col-6 col-lg-3 mb-4" key={speaker.slug}>
+                            <figure className="col-6 col-lg-3 mb-3" key={slug}>
                                 <Image 
-                                    src={`https://dummyimage.com/400x400/111/fff&text=Announcing+Soon`}
+                                    src={image?.src ?? "https://dummyimage.com/400x400/111/fff&text=Announcing+Soon"}
+                                    blurDataURL={image?.blurDataURL ?? "https://dummyimage.com/1x1/111/fff&text=Announcing+Soon"}
+                                    placeholder="blur"
                                     alt="Event 1" 
                                     width={400} 
                                     height={400} 
-                                    className={clsx(Utils.w_100, Utils.h_auto, "object-fit-contain")}
+                                    className={clsx(Utils.w_100, Utils.mb_1, Utils.h_auto, "object-fit-contain")}
                                 />
+
+                                <figcaption className={Utils.px_1}>
+                                    <h2 className={clsx(Utils.fs_5, Utils.mb_0)}>
+                                        <strong>{first_name} {last_name}</strong>
+                                    </h2>
+                                    <small>{organization}</small>
+
+                                    <p className={Utils.mt_2}>
+                                        <small className={Style.smallText}>
+                                            TALK TOPIC
+                                        </small>
+                                        <span>
+                                            {topic}
+                                        </span>
+                                    </p>
+                                    
+                                </figcaption>
+
                             </figure>
                         )
                     })}
@@ -75,9 +97,9 @@ function Speakers(){
                     <hr className={Utils.my_6} />
 
                     <heading className="col-lg-4 col-12">
-                        <h2 className={Utils.fs_2}>
+                        <h4 className={Utils.fs_2}>
                             We believe ideas can come from anyone
-                        </h2>
+                        </h4>
                     </heading>
 
                     <article className="col-lg-8 col-12">
@@ -91,9 +113,9 @@ function Speakers(){
                     <hr className={Utils.my_6} />
 
                     <heading className="col-lg-4 col-12">
-                        <h2 className={Utils.fs_2}>
+                        <h4 className={Utils.fs_2}>
                             We value skepticism and debate
-                        </h2>
+                        </h4>
                     </heading>
 
                     <article className="col-lg-8 col-12">

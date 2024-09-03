@@ -9,6 +9,7 @@ import Link from "next/link";
 import { MainEvent } from "@/components/JSONld";
 
 
+
 function Home() {
 	return (
 		<>
