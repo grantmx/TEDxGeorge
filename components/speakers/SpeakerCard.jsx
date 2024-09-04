@@ -6,7 +6,7 @@ import clsx from "clsx"
 
 function SpeakerCard({ first_name, last_name, organization, slug, topic, image }){
     return(
-        <figure className="col-6 col-lg-3 mb-3" key={slug}>
+        <figure className="col-6 col-lg-4 mb-3" key={slug}>
             <Image 
                 src={image?.src ?? "https://dummyimage.com/400x400/111/fff&text=Announcing+Soon"}
                 blurDataURL={image?.blurDataURL ?? "https://dummyimage.com/1x1/111/fff&text=Announcing+Soon"}
