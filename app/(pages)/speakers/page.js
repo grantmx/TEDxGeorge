@@ -45,8 +45,8 @@ function Speakers(){
                     })}
 
                     <div className={clsx("col", Style.moreToCome )}>
-                        <h2 className={Utils.fs_1}>MORE TO COME</h2>
-                        <p className={Utils.fs_3}>Stay tuned for additional speaker announcements as we approach the event in October.</p>
+                        <h2 className={Utils.fs_2}>MORE TO COME</h2>
+                        <p className={Utils.fs_5}>Stay tuned for additional speaker announcements as we approach the event in October.</p>
                     </div>
                 </div>
             </section>
