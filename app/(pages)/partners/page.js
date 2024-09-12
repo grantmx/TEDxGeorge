@@ -1,6 +1,6 @@
 import Utils from "@/styles/globals/utils.module.scss"
 import clsx from "clsx"
-import { sponsorList } from "@/lib/utils/sponsorList"
+import { sponsorList } from "@/lib/sponsorList"
 import Image from "next/image"
 import Style from "@/app/(pages)/Page.module.scss"
 

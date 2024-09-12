@@ -1,7 +1,7 @@
 "use client"
 
 import { useContext, useEffect, useState } from "react"
-import { celebrationTime } from "@/lib/celebrationTime";
+import { celebrationTime } from "@/lib/utils/celebrationTime";
 import { GlobalContext } from "@/contexts/GlobalContext";
 import axios from "axios";
 import { LocalStorage } from "@/services/LocalStorage.service";
