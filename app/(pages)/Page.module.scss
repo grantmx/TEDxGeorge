@@ -129,13 +129,14 @@
     margin-right: 2rem;
     display: block;
     border: none;
+    fill: #fff;
 
     &__platinum{
-        width: 300px;
+        width: 275px;
     }
 
     &__gold{
-        max-width: 250px;
+        max-width: 225px;
     }
 
     &__silver{
@@ -156,6 +157,7 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    align-content: center;
     width: 100%;
 }
 
