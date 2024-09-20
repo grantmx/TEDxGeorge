@@ -40,6 +40,8 @@ function Partners(){
 
                     return(
                         <div className="row mt-5" key={sponsorLevel}>
+                            <hr className={Utils.my_2} />
+
                             <heading className="col-lg-3 col-12">
                                 <h2 className={Style.sponsorHeading}>
                                     {sponsorLevel} Partners
