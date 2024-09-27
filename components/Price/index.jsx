@@ -5,7 +5,7 @@ import Badge from "@/components/display/Badge";
 import clsx from "clsx";
 
 
-function Price({ value, listPrice, size, showSaleFlag = false }){
+function Price({ value, listPrice, size, showSaleFlag = false, discount }){
     return(
         <span itemProp="price" className={Style.block} suppressHydrationWarning>
             <div className={Style.priceRow}>
@@ -15,7 +15,7 @@ function Price({ value, listPrice, size, showSaleFlag = false }){
 
                 {showSaleFlag && (
                     <Badge variant="square" className={Style.badge} color="red">
-                        -{Math.round((value/listPrice)*100)}% Off
+                        -{Math.round((discount)*100)}% Off
                     </Badge>
                 )}
             </div>

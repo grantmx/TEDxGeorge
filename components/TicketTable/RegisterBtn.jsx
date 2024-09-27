@@ -58,8 +58,9 @@ function RegisterBtn({
             <span className={Style.price}>
                 <Price 
                     showSaleFlag={!!discount}
+                    discount={discount}
                     listPrice={price}
-                    value={discount ? Math.floor(price * discount) : price} 
+                    value={discount ? price - Math.floor(price * discount) : price} 
                 />
             </span>
 
