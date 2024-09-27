@@ -4,7 +4,7 @@ import Price from "@/components/Price";
 import useCartWidget from "@/components/cart/_hooks/useCartWidget";
 import { GlobalContext } from "@/contexts/GlobalContext";
 import { LocalStorage } from "@/services/LocalStorage.service";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import Style from "./TicketTable.module.scss"
 import generateID from "@/lib/utils/generateID";
 import { IconPlus } from "@/icons/IconPlus";
@@ -15,7 +15,8 @@ import clsx from "clsx";
 // if it exceeds the amount allocated then disable the button
 
 function RegisterBtn({ 
-    price, 
+    allocation,
+    priceRaw, 
     type, 
     quantity = 1, 
     discount = null,
@@ -24,6 +25,7 @@ function RegisterBtn({
 }){
     const [ _, dispatch ] = useContext(GlobalContext);
     const cart = useCartWidget()
+    const finalPrice = useRef(discount ? Math.floor(priceRaw - (priceRaw * discount)) : priceRaw)
 
 
     function register(){
@@ -31,7 +33,7 @@ function RegisterBtn({
 
         LocalStorage.addToStorage("TXG_cart", { 
             type, 
-            price: discount ? Math.floor(price - (price * discount)) : price, 
+            price: finalPrice.current, 
             quantity, 
             id 
         })
@@ -40,7 +42,7 @@ function RegisterBtn({
             type: "addToCart",
             data: {
                 type,
-                price:discount ? Math.floor(price - (price * discount)) : price,
+                price: finalPrice.current,
                 quantity,
                 id
             }
@@ -55,14 +57,22 @@ function RegisterBtn({
             className="py-4 d-flex align-items-center flex-column" 
             style={{ borderTop: "5px double #555"}}
         >
+            
+
             <span className={Style.price}>
                 <Price 
                     showSaleFlag={!!discount}
                     discount={discount}
-                    listPrice={price}
-                    value={discount ? Math.floor(price - (price * discount)) : price} 
+                    listPrice={priceRaw}
+                    value={finalPrice.current} 
                 />
             </span>
+
+            {(allocation - sold) < 5 && (
+                <small className={Style.fewLeft}>
+                    Only {allocation - sold} left! - Order Soon
+                </small>
+            )}
 
             <button 
                 type="button" 

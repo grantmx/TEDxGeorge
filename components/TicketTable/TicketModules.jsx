@@ -38,9 +38,7 @@ function TicketModules({ sold }){
                             })}
 
                             <RegisterBtn 
-                                price={ticket.priceRaw} 
-                                type={ticket.type}
-                                discount={ticket.discount}
+                                {...ticket}
                                 sold={sold[ticket.type]}
                                 isSoldOut={sold[ticket.type] >= ticket.allocation}
                             />
