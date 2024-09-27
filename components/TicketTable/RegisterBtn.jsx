@@ -18,6 +18,7 @@ function RegisterBtn({
     price, 
     type, 
     quantity = 1, 
+    discount = null,
     sold = 0, 
     isSoldOut = false 
 }){
@@ -28,13 +29,18 @@ function RegisterBtn({
     function register(){
         const id = generateID()
 
-        LocalStorage.addToStorage("TXG_cart", { type, price, quantity, id })
+        LocalStorage.addToStorage("TXG_cart", { 
+            type, 
+            price: discount ? price * discount : price, 
+            quantity, 
+            id 
+        })
 
         dispatch({
             type: "addToCart",
             data: {
                 type,
-                price,
+                price: discount ? price * discount : price,
                 quantity,
                 id
             }
@@ -50,7 +56,11 @@ function RegisterBtn({
             style={{ borderTop: "5px double #555"}}
         >
             <span className={Style.price}>
-                <Price value={price} />
+                <Price 
+                    showSaleFlag={!!discount}
+                    listPrice={price}
+                    value={discount ? Math.floor(price * discount) : price} 
+                />
             </span>
 
             <button 

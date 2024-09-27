@@ -21,9 +21,9 @@ function Price({ value, listPrice, size, showSaleFlag = false }){
             </div>
             
 
-            {listPrice ? (
+            {(listPrice && showSaleFlag) ? (
                 <span className={Style.listPrice}>
-                    List price: <strike>{formatPrice(listPrice)}</strike>
+                    Regular price: <strike>{formatPrice(listPrice)}</strike>
                 </span>
             ):null}
         </span>

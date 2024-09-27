@@ -72,6 +72,7 @@ function FullWidth({ sold }){
 
                             <RegisterBtn 
                                 price={ticket.priceRaw} 
+                                discount={ticket.discount}
                                 type={ticket.type}
                                 sold={sold[ticket.type]}
                                 isSoldOut={sold[ticket.type] >= ticket.allocation}
