@@ -31,7 +31,7 @@ function RegisterBtn({
 
         LocalStorage.addToStorage("TXG_cart", { 
             type, 
-            price: discount ? price * discount : price, 
+            price: discount ? Math.floor(price - (price * discount)) : price, 
             quantity, 
             id 
         })
@@ -40,7 +40,7 @@ function RegisterBtn({
             type: "addToCart",
             data: {
                 type,
-                price: discount ? price * discount : price,
+                price:discount ? Math.floor(price - (price * discount)) : price,
                 quantity,
                 id
             }
@@ -60,7 +60,7 @@ function RegisterBtn({
                     showSaleFlag={!!discount}
                     discount={discount}
                     listPrice={price}
-                    value={discount ? price - Math.floor(price * discount) : price} 
+                    value={discount ? Math.floor(price - (price * discount)) : price} 
                 />
             </span>
 
