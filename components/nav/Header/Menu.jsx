@@ -36,6 +36,11 @@ function Menu(){
                     </Link>
                 </li>
                 <li className="me-4 me-lg-5">
+                    <Link href="/events/agenda" className="p-1">
+                        Agenda
+                    </Link>
+                </li>
+                <li className="me-4 me-lg-5">
                     <Link href="/partners" className="py-1">
                         Partners
                     </Link>

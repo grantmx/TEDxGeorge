@@ -21,7 +21,7 @@ function EventAgenda(){
                 {agenda.map(item => {
                     return(
                         <div className="col-lg-10 col-12" key={item.title}>
-                            <div className="row px-4 my-5">
+                            <div className="row px-4 mt-5 pb-5">
                                 <heading className="col-lg-6 col-12">
                                     <h2 className={clsx(Utils.fs_2, "mb-0")}>
                                         {item.title}

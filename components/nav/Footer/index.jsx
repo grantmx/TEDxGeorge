@@ -78,6 +78,11 @@ function Footer(){
                             </Link>
                         </li>
                         <li className="me-4">
+                            <Link href="/events/agenda">
+                                Agenda
+                            </Link>
+                        </li>
+                        <li className="me-4">
                             <Link href="/partners">
                                 Partners
                             </Link>
