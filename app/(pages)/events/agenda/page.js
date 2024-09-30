@@ -17,28 +17,48 @@ function EventAgenda(){
                 </div>
             </section>
         
-            <section className="container">
-            {agenda.map(item => {
-                return(
-                    <React.Fragment key={item.title}>
-                        <div className="row">
-                            <heading className="col-lg-4 col-12">
-                                <h2 className={Utils.fs_2}>
-                                    {item.title}
-                                </h2>
-                            </heading>
-                            
-                            <article className="col-lg-8 col-12">
-                                <p>
-                                    {item.description}
-                                </p>
-                            </article>
-                        </div>
+            <section className="container d-flex flex-column align-items-center">
+                {agenda.map(item => {
+                    return(
+                        <div className="col-lg-10 col-12" key={item.title}>
+                            <div className="row px-4 my-5">
+                                <heading className="col-lg-6 col-12">
+                                    <h2 className={clsx(Utils.fs_2, "mb-0")}>
+                                        {item.title}
+                                    </h2>
+                                    
+                                    <p>
+                                        {item.start} - {item.end} CAT
+                                    </p>
+                                </heading>
+                                
+                                <article className="col-lg-6 col-12">
+                                    <p>
+                                        {item.description}
+                                    </p>
+                                </article>
 
-                        <hr className="my-5" />
-                    </React.Fragment>
-                )
-            })}
+
+                                {item.speakers && (
+                                    <aside className="row g-4 mt-0">
+                                        {item.speakers.map(speaker => {
+                                            return(
+                                                <div className="col-lg-4 col-6" key={speaker?.slug}>
+                                                    <p className={Style.speakerBox}>
+                                                        <strong>{speaker?.first_name} {speaker?.last_name}</strong><br/>
+                                                        <small>{speaker?.organization}</small>
+                                                    </p>
+                                                </div>
+                                            )
+                                        })}
+                                    </aside>
+                                )}
+                            </div>
+
+                            <hr className="my-5" />
+                        </div>
+                    )
+                })}
             </section>
         </>
     )
