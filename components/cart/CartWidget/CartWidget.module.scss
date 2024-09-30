@@ -24,6 +24,7 @@
 
 .buttonRow{
     @extend %widgetButtonRow;
+    flex-direction: column;
     width: 100%;
 
     & [class^="Button_block"]{
@@ -60,5 +61,15 @@
 .empty{
     padding: 2rem;
     text-align: center;
+}
+
+.addTicket{
+    color: #ccc !important;
+    margin: 1rem 0 0 0;
+    border-color: #ccc !important;
+
+    & svg{
+        fill: #ccc !important;
+    }
 }
 

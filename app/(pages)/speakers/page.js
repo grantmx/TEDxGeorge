@@ -15,7 +15,7 @@ export const metadata = {
 
 
 function Speakers(){
-    const speakers = sortBy(speakerList, "last_name")
+    const speakers = sortBy(Object.values(speakerList), "last_name")
 
     return(
         <>
