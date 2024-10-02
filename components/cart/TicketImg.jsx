@@ -18,7 +18,7 @@ function TicketImg({ type }){
             case "Streaming":
                 return streamingImg
             default:
-                return generalImg
+                return "https://dummyimage.com/600x400/222222/777777.gif&text=+"
         }
 
     }, [ type ])

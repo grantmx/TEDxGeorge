@@ -5,6 +5,8 @@ import TicketTable from "@/components/TicketTable"
 import getTicketCount from "./getTicketCount"
 
 
+export const dynamic = 'force-dynamic'
+
 
 export const metadata = {
     title: "Purchase Tickets",
