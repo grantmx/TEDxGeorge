@@ -1,15 +1,16 @@
 import Item from "@/components/cart/CartWidget/Item";
 import Style from "@/components/registration/RegisterForm/RegisterForm.module.scss"
 import clsx from "clsx";
+import getTicket from "./getTicket";
 
 
 function LookUp(){
     return(
         <section className="container d-flex flex-column align-items-center justify-content-center my-5 py-5">
-            <form className="col-6 p-5">
+            <form className="col-6 p-5" action={getTicket}>
                 <p className={clsx(Style.controlGroup, "mb-2")}>
                     <input 
-                        placeholder="Enter the ticket ID"
+                        placeholder="Enter the ticket ID for first and last name"
                         id="ticket_id"
                         name="ticket_id"
                         required
