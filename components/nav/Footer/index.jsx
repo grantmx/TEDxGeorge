@@ -77,11 +77,11 @@ function Footer(){
                                 Speakers
                             </Link>
                         </li>
-                        <li className="me-4">
+                        {/* <li className="me-4">
                             <Link href="/events/agenda">
                                 Agenda
                             </Link>
-                        </li>
+                        </li> */}
                         <li className="me-4">
                             <Link href="/partners">
                                 Partners
@@ -92,11 +92,11 @@ function Footer(){
                                 About
                             </Link>
                         </li>
-                        <li className="me-4">
+                        {/* <li className="me-4">
                             <Link href="/tickets">
                                 Tickets
                             </Link>
-                        </li>
+                        </li> */}
                         <li>
                             <Link href="/press-releases">
                                 Press

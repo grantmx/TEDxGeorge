@@ -35,11 +35,11 @@ function Menu(){
                         Speakers
                     </Link>
                 </li>
-                <li className="me-4 me-lg-5">
+                {/* <li className="me-4 me-lg-5">
                     <Link href="/events/agenda" className="p-1">
                         Agenda
                     </Link>
-                </li>
+                </li> */}
                 <li className="me-4 me-lg-5">
                     <Link href="/partners" className="py-1">
                         Partners
@@ -51,7 +51,7 @@ function Menu(){
                     </Link>
                 </li>
                 
-                <TicketBtn />
+                {/* <TicketBtn /> */}
             </menu>
 
             <button 
