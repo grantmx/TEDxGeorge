@@ -7,6 +7,9 @@ import logo from "@/public/TEDx_Logo_Short_George-white.svg"
 import Footer from "@/components/nav/Footer";
 import Link from "next/link";
 import { MainEvent } from "@/components/JSONld";
+import { eventsList } from "@/lib/eventList";
+import EventItem from "@/components/events/EventItem";
+import clsx from "clsx";
 
 
 
@@ -29,6 +32,20 @@ function Home() {
 					/>
 				</picture>
 			</section>
+
+
+			<section className="container mt-5">
+
+                <div className="row">
+                    {eventsList.map((event, index) => {
+						if( index > 3 ) return
+
+						return <EventItem key={event.slug} event={event} />
+					})}
+                </div>
+
+				<hr className="mb-5" />
+            </section>
 
 
 			<main className="container px-4">

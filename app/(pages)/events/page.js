@@ -1,11 +1,10 @@
 import Utils from "@/styles/globals/utils.module.scss"
 import Style from "../Page.module.scss"
 import clsx from "clsx"
-import Image from "next/image"
 import { eventsList } from "@/lib/eventList"
 import { MainEvent } from "@/components/JSONld"
 import braveOnes from "@/public/brave-ones-event.jpg"
-import Link from "next/link"
+import EventItem from "@/components/events/EventItem"
 
 
 export const metadata = {
@@ -51,31 +50,7 @@ async function Events(){
 
             <section className="container mb-5">
                 <div className="row">
-                    {eventsList.map((event) => {
-                        return(
-                            <Link 
-                                href={event.href}
-                                title={`More on ${event.title}`}
-                                className={clsx("col-12 col-lg-3 border-0 mb-5 p-2")} 
-                                key={event.title}
-                            >
-                                <Image 
-                                    {...event}
-                                    alt={event.title}
-                                    width={400} 
-                                    height={400} 
-                                    quality={100}
-                                    placeholder="blur"
-                                    blurDataURL="https://dummyimage.com/1x1/777/fff"
-                                    className={clsx(Utils.w_100, Utils.h_auto, "object-fit-contain")}
-                                />
-
-                                <div className="btn btn-danger btn-lg mt-3">
-                                    Read more &rarr;
-                                </div>
-                            </Link>
-                        )
-                    })}
+                    {eventsList.map((event) => <EventItem key={event.slug} event={event} />)}
                 </div>
             </section>
 

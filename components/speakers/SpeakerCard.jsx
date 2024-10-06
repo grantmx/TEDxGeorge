@@ -11,7 +11,7 @@ function SpeakerCard({ first_name, last_name, organization, slug, topic, image }
                 src={image?.src ?? "https://dummyimage.com/400x400/111/fff&text=Announcing+Soon"}
                 blurDataURL={image?.blurDataURL ?? "https://dummyimage.com/1x1/111/fff&text=Announcing+Soon"}
                 placeholder="blur"
-                alt="Event 1" 
+                alt={`${first_name} ${last_name}`}
                 width={400} 
                 height={400} 
                 className={clsx(Utils.w_100, Utils.mb_1, Utils.h_auto, "object-fit-contain")}
