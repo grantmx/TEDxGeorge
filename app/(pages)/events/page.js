@@ -64,6 +64,7 @@ async function Events(){
                                     alt={event.title}
                                     width={400} 
                                     height={400} 
+                                    quality={100}
                                     placeholder="blur"
                                     blurDataURL="https://dummyimage.com/1x1/777/fff"
                                     className={clsx(Utils.w_100, Utils.h_auto, "object-fit-contain")}
