@@ -38,7 +38,7 @@ function Home() {
 							About <br/><Image src={logo} alt="TEDxGeorge Logo" width={300} height={75} />
 						</h1>
 
-						<hr className="mb-5 w-50" />
+						{/* <hr className="mb-5 w-50" />
 
 						<p>
 							<strong>Date:</strong> October 5, 2024<br />
@@ -50,7 +50,7 @@ function Home() {
 							<Link href="/tickets" className="btn btn-danger fs-1 px-5">
 								Purchase Tickets
 							</Link>
-						</p>
+						</p> */}
 					</aside>
 
 					<article className="col col-lg-8">
