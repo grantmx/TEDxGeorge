@@ -21,7 +21,7 @@ export const metadata = {
 function AboutUs(){
     return(
         <>
-            <section className={Style.hero}>
+            {/* <section className={Style.hero}>
 				<picture className={Style.heroImg}>
 					<source srcSet={hero.src} type="image/webp" media="(min-width: 600px)"/>
 					<source srcSet={mobileHero.src} type="image/webp" media="(max-width: 600px)" />
@@ -60,44 +60,25 @@ function AboutUs(){
                         </p>
                     </div>
                 </div>
-			</section>
+			</section> */}
 
 
 
-            <section className="container my-5 pb-5">
-                <div className="row">
-                    <article className="col-lg-6 col-12">
-                        <h1 className={Style.callout}>
-                            Are you ready to be inspired, empowered and challenged?
-                        </h1>
+                <section className="container text-center d-flex justify-content-center">
+                    <div className={Style.heading}>
+                            <h1>About TEDxGeorge</h1>
 
-                        <p className={Utils.mt_3}>
-                            <a href="/tickets" className="btn btn-danger fs-1 px-5">
-                                Get Tickets
-                            </a>
-                        </p>
-                    </article>
+                            <h2 className={clsx(Style.callout, "mb-5")}>
+                                Are you ready to be inspired, empowered and challenged?
+                            </h2>
 
-                    <article className="col-lg-6 col-12 p-5">
-                       <p className={Utils.fs_3}>TEDxGeorge is a one day conference hosted in the city of George focused on empowerment and inspiration with one core focus: Ideas change everything!</p>
-                    </article>
-                </div>
-
-                <hr className="mt-5" />
-            </section>
-
-
-
-
-            <section className="container text-center d-flex justify-content-center mt-5 pt-5">
-                <div className={Style.heading}>
-                    <h2 className={clsx(Utils.fs_5, "fw-light")}>
-                        About TEDxGeorge
-                    </h2>
-
-                    <article>
-                        <p className={Utils.fs_3}><strong>“The Brave Ones”</strong> is an attempt to celebrate the local heroes and heroines that have continuously taken brave steps in their respective fields. These individuals may not be the most recognised and acknowledged, but <strong>the impact and weight of their ideas are the centre of our attention.</strong></p>
-                        <p>By creating an environment that allows them to offer us insight into their history, activities, and future aspirations through their ideas – we hope to further inspire and empower other individuals to seek their highest potential – regardless of the internal and external challenges that one continuously faces.</p>
+                            {/* <p className={Utils.mt_3}>
+                                <a href="/tickets" className="btn btn-danger fs-1 px-5">
+                                    Get Tickets
+                                </a>
+                            </p> */}
+                       
+                        <p className={Utils.fs_3}>TEDxGeorge is a one day conference hosted in the city of George focused on empowerment and inspiration with one core focus: Ideas change everything!</p>
                     
                         <p>
 							<a href="https://chat.whatsapp.com/HGProtkIBL15I4K1ILAS71" className="btn btn-success fs-1 px-5">
@@ -108,17 +89,18 @@ function AboutUs(){
 								Join the Community Group &rsaquo;
 							</a>
 						</p>
-                    </article>
-                </div>
+                    </div>
+
+                <hr className="mt-5" />
             </section>
             
 
 
             <section className="container">
                 
-                <hr className="my-5" />
+                {/* <hr className="my-5" /> */}
 
-                <div className="row">
+                {/* <div className="row">
                     <heading className="col-lg-4 col-12">
                         <h2 className={Utils.fs_2}>
                             TEDx, x = independently organized event
@@ -128,7 +110,7 @@ function AboutUs(){
                     <article className="col-lg-8 col-12">
                         <p>In the spirit of ideas worth spreading, TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TED Talks video and live speakers combine to spark deep discussion and connection. These local, self-organized events are branded TEDx, where x = independently organized TED event. The TED Conference provides general guidance for the TEDx program, but individual TEDx events are self-organized. (Subject to certain rules and regulations.)</p>
                     </article>
-                </div>
+                </div> */}
 
                 <hr className="my-5" />
                  

@@ -54,8 +54,6 @@ function Home() {
 					</aside>
 
 					<article className="col col-lg-8">
-						<p className="fs-1"><strong>"The Brave Ones"</strong> is an attempt to celebrate the local heroes and heroines that have continuously taken brave steps in their respective fields. These individuals may not be the most recognised and acknowledged, but the impact and weight of their ideas are the centre of our attention. <Link href="/about">Learn more &rsaquo;</Link></p>
-
 						<h2 className={Utils.fs_4}>
 							What is TEDx?
 						</h2>
