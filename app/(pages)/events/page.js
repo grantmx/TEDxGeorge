@@ -60,7 +60,7 @@ async function Events(){
                                 key={event.title}
                             >
                                 <Image 
-                                    src={event.src}
+                                    {...event}
                                     alt={event.title}
                                     width={400} 
                                     height={400} 
