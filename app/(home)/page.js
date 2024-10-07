@@ -68,7 +68,7 @@ function Home() {
 				</section>
 
 
-				<section className="container py-5">
+				<section className="container pb-5">
 					<h3 className={Utils.fs_3}>
 						Upcoming Events
 					</h3>
