@@ -44,10 +44,11 @@ function OurTeam(){
                             <figure className="col-6 col-lg-3 mb-5" key={member.name}>
                                 <Image 
                                     {...member.photo}
-                                    alt="Event 1" 
+                                    alt={member.name} 
                                     width={400} 
                                     height={400} 
                                     placeholder="blur"
+                                    unoptimized={true}
                                     className={clsx(Utils.w_100, Utils.h_auto, "object-fit-contain")}
                                 />
 
