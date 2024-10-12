@@ -41,6 +41,7 @@ function EventDetail({ params }){
                             alt={`${event.type}: ${event.title}`}
                             width={400}
                             height={400}
+                            unoptimized={true}
                         />
 
                         <figcaption className="mt-5">

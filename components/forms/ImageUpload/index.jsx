@@ -59,6 +59,7 @@ function ImageUpload({ onUpload = () => null }) {
                                 height={100}
                                 alt=""
                                 src={URL.createObjectURL(img)}
+                                unoptimized={true}
                             />
                             <button 
                                 role="button"

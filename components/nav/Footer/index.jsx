@@ -11,7 +11,7 @@ function Footer(){
 
                 <div className="col d-flex flex-column mb-5 mb-lg-0">
                     <Link href="/" className={Style.linkCntr}>
-                        <Image src={logo} alt="TEDxGeorge Logo" width={200} height={50} />
+                        <Image src={logo} alt="TEDxGeorge Logo" width={200} height={50} unoptimized={true} />
                     </Link>
 
                     <small className="lead lh-1">

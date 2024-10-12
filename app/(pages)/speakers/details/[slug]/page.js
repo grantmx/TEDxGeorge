@@ -39,6 +39,7 @@ function SpeakerDetails({ params }){
                             src={speaker.image}
                             width={400}
                             height={400}
+                            unoptimized={true}
                         />
 
                         <figcaption className="mt-5">

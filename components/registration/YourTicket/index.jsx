@@ -39,6 +39,7 @@ export function Ticket({ first_name, last_name, type, id }){
                     alt="TEDxGeorge Logo" 
                     width={300} 
                     height={75}
+                    unoptimized={true}
                 />
             </header>
 

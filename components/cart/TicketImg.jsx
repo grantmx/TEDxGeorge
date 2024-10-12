@@ -30,6 +30,7 @@ function TicketImg({ type }){
             width={100} 
             height={100} 
             alt={type} 
+            unoptimized={true}
         />
     )
 }

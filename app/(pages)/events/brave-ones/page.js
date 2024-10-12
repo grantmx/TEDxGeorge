@@ -32,6 +32,7 @@ function AboutUs(){
 						layout="responsive"
 						width={1920}
 						height={1080}
+                        unoptimized={true}
 					/>
 				</picture>
 
@@ -43,6 +44,7 @@ function AboutUs(){
                             {...braveOnes} 
                             className={Style.eventLogo}
                             alt="the brave ones"
+                            unoptimized={true}
                         />
                         
                         <p className={clsx(Utils.fs_3, Utils.mb_1)}>
