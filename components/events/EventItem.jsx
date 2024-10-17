@@ -19,7 +19,6 @@ function EventItem({ event }){
                 width={400} 
                 height={400} 
                 placeholder="blur"
-                unoptimized={true}
                 blurDataURL={event?.blurDataURL ?? "https://dummyimage.com/1x1/777/fff"}
                 className={clsx(Utils.w_100, Utils.h_auto, "object-fit-contain")}
             />
