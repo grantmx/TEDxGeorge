@@ -67,6 +67,8 @@ export default function RootLayout({ children }) {
 		<html lang="en">
 			<head>
 				<link href="/favicon.ico" rel="shortcut icon" />
+				<link rel="manifest" href="/manifest.json" />
+
 			</head>
 
 			<GlobalContextProvider>
