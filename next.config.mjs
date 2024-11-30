@@ -33,4 +33,4 @@ const NextConfig = {
 	},
 };
 
-module.exports = withPWA(NextConfig)
+export default withPWA(NextConfig)

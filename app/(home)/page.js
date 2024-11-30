@@ -5,12 +5,9 @@ import Header from "@/components/nav/Header";
 import Utils from "@/styles/globals/utils.module.scss"
 import logo from "@/public/TEDx_Logo_Short_George-white.svg"
 import Footer from "@/components/nav/Footer";
-import Link from "next/link";
 import { MainEvent } from "@/components/JSONld";
 import { eventsList } from "@/lib/eventList";
 import EventItem from "@/components/events/EventItem";
-import clsx from "clsx";
-
 
 
 function Home() {
