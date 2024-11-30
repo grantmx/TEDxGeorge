@@ -4,6 +4,7 @@ import clsx from "clsx"
 import { agenda } from "@/lib/agenda";
 import React from "react";
 
+export const dynamic = 'force-static'
 
 
 function EventAgenda(){

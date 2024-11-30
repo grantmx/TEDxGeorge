@@ -5,6 +5,7 @@ import { teamList } from "@/lib/teamList";
 import Image from "next/image";
 import sortBy from "@/lib/utils/sortBy";
 
+export const dynamic = 'force-static'
 
 export const metadata = {
     title: "Our Team",

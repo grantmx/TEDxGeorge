@@ -6,8 +6,8 @@ import hero from "@/public/about-hero.jpg"
 import mobileHero from "@/public/background-mobile.jpg"
 import Image from "next/image"
 import braveOnes from "@/public/The_Brave_Ones.png"
-import Link from "next/link"
-import logo from "@/public/TEDx_Logo_Short_George-white.svg"
+
+export const dynamic = 'force-static'
 
 
 export const metadata = {

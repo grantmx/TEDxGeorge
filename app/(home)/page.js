@@ -9,6 +9,8 @@ import { MainEvent } from "@/components/JSONld";
 import { eventsList } from "@/lib/eventList";
 import EventItem from "@/components/events/EventItem";
 
+export const dynamic = 'force-static'
+
 
 function Home() {
 	return (

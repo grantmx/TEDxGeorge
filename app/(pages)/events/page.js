@@ -6,6 +6,7 @@ import { MainEvent } from "@/components/JSONld"
 import braveOnes from "@/public/brave-ones-event.jpg"
 import EventItem from "@/components/events/EventItem"
 
+export const dynamic = 'force-static'
 
 export const metadata = {
     title: "Events",

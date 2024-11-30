@@ -3,6 +3,7 @@ import Style from "@/app/(pages)/Page.module.scss"
 import clsx from "clsx";
 import press from "@/public/tedxgeorge-press.jpg"
 
+export const dynamic = 'force-static'
 
 export const metadata = {
     title: "Press Releases",

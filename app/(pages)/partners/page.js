@@ -4,6 +4,7 @@ import { sponsorList } from "@/lib/sponsorList"
 import Image from "next/image"
 import Style from "@/app/(pages)/Page.module.scss"
 
+export const dynamic = 'force-static'
 
 export const metadata = {
     title: "Partners",

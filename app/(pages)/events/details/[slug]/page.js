@@ -6,6 +6,8 @@ import Image from "next/image"
 import Salon from "@/components/events/Salon"
 import Live from "@/components/events/Live"
 
+export const dynamic = 'force-static'
+
 
 function EventDetail({ params }){
     const event = eventsList.find((event) => event.slug === params.slug)

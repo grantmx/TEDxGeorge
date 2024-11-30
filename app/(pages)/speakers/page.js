@@ -5,6 +5,7 @@ import { speakerList } from "@/lib/speakerList"
 import sortBy from "@/lib/utils/sortBy"
 import SpeakerCard from "@/components/speakers/SpeakerCard"
 
+export const dynamic = 'force-static'
 
 export const metadata = {
     title: "Speakers",
