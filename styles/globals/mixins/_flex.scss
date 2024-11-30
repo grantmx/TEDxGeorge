@@ -14,12 +14,12 @@
 		.flex#{$infix}_column {
 			flex-direction: column !important;
 		}
-		.flex#{$infix}_rowReverse {
-			flex-direction: row-reverse !important;
-		}
-		.flex#{$infix}_columnReverse {
-			flex-direction: column-reverse !important;
-		}
+		// .flex#{$infix}_rowReverse {
+		// 	flex-direction: row-reverse !important;
+		// }
+		// .flex#{$infix}_columnReverse {
+		// 	flex-direction: column-reverse !important;
+		// }
 
 		.flex#{$infix}_wrap {
 			flex-wrap: wrap !important;
