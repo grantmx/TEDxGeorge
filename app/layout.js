@@ -33,6 +33,17 @@ export const metadata = {
 			noimageindex: false,
 		},
 	},
+	appleWebApp: {
+		title: 'TEDxGeorge',
+		statusBarStyle: 'black-translucent',
+		startupImage: [
+		  '/assets/icons/apple-touch-startup-image-768x1004.jpg',
+		  {
+			url: '/assets/icons/apple-touch-startup-image-1536x2008.png',
+			media: '(device-width: 768px) and (device-height: 1024px)',
+		  },
+		],
+	},
 	openGraph: {
 		title: 'TEDxGeorge',
 		url: "https://tedxgeorge.com",
