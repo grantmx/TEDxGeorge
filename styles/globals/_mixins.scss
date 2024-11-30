@@ -10,7 +10,7 @@
 
 // Helpers
 @import "mixins/breakpoints";
-@import "mixins/image";
+// @import "mixins/image";
 @import "mixins/resize";
 @import "mixins/visually-hidden";
 @import "mixins/reset-text";
@@ -20,19 +20,19 @@
 @import "mixins/utilities";
 
 // Components
-@import "mixins/alert";
+// @import "mixins/alert";
 @import "mixins/buttons";
-@import "mixins/caret";
-@import "mixins/pagination";
-@import "mixins/lists";
-@import "mixins/list-group";
+// @import "mixins/caret";
+// @import "mixins/pagination";
+// @import "mixins/lists";
+// @import "mixins/list-group";
 @import "mixins/forms";
-@import "mixins/table-variants";
+// @import "mixins/table-variants";
 
 // Skins
 @import "mixins/border-radius";
 @import "mixins/box-shadow";
-@import "mixins/gradients";
+// @import "mixins/gradients";
 @import "mixins/transition";
 
 // Layout
