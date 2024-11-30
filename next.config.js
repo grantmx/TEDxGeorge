@@ -11,6 +11,20 @@ const NextConfig = {
     },
     pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
 	images: {
+        localPatterns: [
+            {
+                pathname: '/assets/**',
+                search: '',
+            },
+            {
+              pathname: '/assets/images/**',
+              search: '',
+            },
+            {
+                pathname: '/assets/icons/**',
+                search: '',
+            }
+        ],
 		remotePatterns: [
             {
                 protocol: 'https',
