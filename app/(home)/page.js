@@ -70,7 +70,7 @@ function Home() {
 
 				<section className="container pb-5">
 					<h3 className={Utils.fs_3}>
-						Upcoming Events
+						Events
 					</h3>
 
 					<div className="row">
