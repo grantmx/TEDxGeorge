@@ -19,7 +19,7 @@ function Header(){
                     width={350} 
                     height={75}
                     className={Style.logo}
-                     
+                    priority={true}
                 />
             </Link>
             
