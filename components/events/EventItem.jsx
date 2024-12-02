@@ -17,7 +17,6 @@ function EventItem({ event }){
                 src={event?.src}
                 alt={event?.title}
                 width={400} 
-                unoptimized={true}
                 height={400} 
                 placeholder="blur"
                 blurDataURL={event?.blurDataURL ?? "https://dummyimage.com/1x1/777/fff"}

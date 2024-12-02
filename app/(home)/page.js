@@ -28,7 +28,6 @@ function Home() {
 						layout="responsive"
 						width={1920}
 						height={1080}
-						unoptimized={true}
 					/>
 				</picture>
 			</section>
