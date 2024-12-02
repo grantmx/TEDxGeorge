@@ -19,15 +19,16 @@ function Home() {
 
 			<section className="w-100">
 				<picture>
-					<source srcSet={hero.src} type="image/webp" media="(min-width: 600px)"/>
-					<source srcSet={mobileHero.src} type="image/webp" media="(max-width: 600px)" />
+					<source srcSet={hero.src} type="image/jpeg" media="(min-width: 600px)"/>
+					<source srcSet={mobileHero.src} type="image/jpeg" media="(max-width: 600px)" />
 
 					<Image 
 						src={hero.src} 
-						alt="TEDxGeorge Hero" 
+						alt="TEDxGeorge Brave Ones" 
 						layout="responsive"
 						width={1920}
 						height={1080}
+						priority={true}
 					/>
 				</picture>
 			</section>
