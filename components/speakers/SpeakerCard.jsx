@@ -13,7 +13,7 @@ function SpeakerCard({ first_name, last_name, organization, slug, topic, image }
                 placeholder="blur"
                 alt={`${first_name} ${last_name}`}
                 width={400} 
-                unoptimized={true}
+                 
                 height={400} 
                 className={clsx(Utils.w_100, Utils.mb_1, Utils.h_auto, "object-fit-contain")}
             />

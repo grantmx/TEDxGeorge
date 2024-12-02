@@ -18,7 +18,7 @@ function Live(){
                         width="500" 
                         height="62" 
                         className={Style.salonImg}
-                        unoptimized={true}
+                         
                     />
                     
                     <small>A TEDx Live event brings the excitement and inspiration of a global TED conference directly to our local community. At TEDxGeorge Live, we will stream a live feed of the upcoming TEDNext 2024 event, allowing our audience to experience TED talks in real time, alongside thousands of viewers worldwide.</small>                       

@@ -63,7 +63,7 @@ function Partners(){
                                                         height={400}
                                                         src={sponsor.logo} 
                                                         alt={sponsor.name} 
-                                                        unoptimized={true}
+                                                         
                                                         className={clsx(Style.sponsorImg, Style[`sponsorImg__${sponsorLevel}`])} 
                                                     />
                                                 </a>

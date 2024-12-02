@@ -17,7 +17,7 @@ function Salon(){
                         width="500" 
                         height="62" 
                         className={Style.salonImg}
-                        unoptimized={true}
+                         
                     />
                     
                     <small>Salon events are small events that keeps our TEDxGeorge community engaged between regular TEDx events. It's a unique kind of gathering that TEDx we hold which allows the conversation to continue, up close and in person.</small>                       

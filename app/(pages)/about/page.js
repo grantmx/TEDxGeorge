@@ -136,7 +136,7 @@ function AboutUs(){
                      <heading className="col-lg-4 col-12">
                          <h2 className={Utils.fs_2}>
                             Our Team <br/>
-                            <Image src={logo} alt="TEDxGeorge Logo" width={300} height={75} unoptimized={true} />
+                            <Image src={logo} alt="TEDxGeorge Logo" width={300} height={75}   />
                          </h2>
                      </heading>
                      

@@ -49,7 +49,7 @@ function OurTeam(){
                                     width={400} 
                                     height={400} 
                                     placeholder="blur"
-                                    unoptimized={true}
+                                     
                                     className={clsx(Utils.w_100, Utils.h_auto, "object-fit-contain")}
                                 />
 
