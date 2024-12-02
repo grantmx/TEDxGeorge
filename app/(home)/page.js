@@ -1,5 +1,5 @@
 import Image from "next/image";
-import hero from "@/public/hero-shift.jpg.jpg"
+import hero from "@/public/hero-shift.jpg"
 import mobileHero from "@/public/mobile-hero.jpg"
 import Header from "@/components/nav/Header";
 import Utils from "@/styles/globals/utils.module.scss"
