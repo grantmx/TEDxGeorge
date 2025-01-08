@@ -62,12 +62,12 @@ export const metadata = {
 };
 
 
-
-
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<head>
+				<link href="/favicon.ico" rel="shortcut icon" />
+				<link rel="manifest" href="/manifest.json" />
 				<meta name="theme-color" content="#333333" />
 			</head>
 
