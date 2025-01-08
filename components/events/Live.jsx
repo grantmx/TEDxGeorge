@@ -11,7 +11,7 @@ function Live(){
             <hr className="my-5" />
 
             <div className="row">
-                <heading className="col-lg-4 col-12 pe-5">
+                <header className="col-lg-4 col-12 pe-5">
                     <Image 
                         {...liveImg} 
                         alt="TEDxGeorge Live" 
@@ -22,7 +22,7 @@ function Live(){
                     />
                     
                     <small>A TEDx Live event brings the excitement and inspiration of a global TED conference directly to our local community. At TEDxGeorge Live, we will stream a live feed of the upcoming TEDNext 2024 event, allowing our audience to experience TED talks in real time, alongside thousands of viewers worldwide.</small>                       
-                </heading>
+                </header>
                 
                 <article className="col-lg-8 col-12 ps-5">
                     <h2 className={Utils.fs_2}>

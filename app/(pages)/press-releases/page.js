@@ -42,7 +42,7 @@ function PressReleases(){
                 <hr className="my-5" />
 
                 <div className="row">
-                    <heading className="col-lg-4 col-12 pe-5">
+                    <header className="col-lg-4 col-12 pe-5">
                         <h2 className={clsx(Utils.fs_2, "mb-4")}>
                             Introducing TEDxGeorge: The Brave Ones | The first TEDx event in George!
                         </h2>
@@ -50,7 +50,7 @@ function PressReleases(){
                         <p>
 							July 25, 2024
 						</p>
-                    </heading>
+                    </header>
                     
                     <article className="col-lg-8 col-12">
                         <p>TEDxGeorge is proud to announce its inaugural event, bringing together the brightest minds and innovators to share ideas that have the power to shape the future. Scheduled to take place on 05 October 2024 - from 9AM at the Dotsure George Arts Theatre This event marks the beginning of an annual tradition where thinkers and doers converge to explore a wide array of topics spanning technology, entertainment, design, science, humanities, business, and development.</p>

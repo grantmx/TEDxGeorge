@@ -1,7 +1,28 @@
+import { eventsList } from "@/lib/eventList"
+import { speakerList } from "@/lib/speakerList"
 
 
 
 export default async function sitemap() {
+    const events = eventsList.map((event) => {
+        return {
+            url: `https://tedxgeorge.com/events/${event.slug}`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 1,
+        }
+    })
+
+    const speakers = Object.keys(speakerList).map((slug) => {
+        return {
+            url: `https://tedxgeorge.com/speakers/${slug}`,
+            lastModified: new Date(),
+            changeFrequency: 'yearly',
+            priority: 1,
+        }
+    })
+
+
     return[
         {
             url: 'https://tedxgeorge.com/',
@@ -33,5 +54,7 @@ export default async function sitemap() {
             changeFrequency: 'monthly',
             priority: 1,
         },
+        ...events,
+        ...speakers,
     ]
 }

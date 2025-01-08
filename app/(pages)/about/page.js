@@ -99,11 +99,11 @@ function AboutUs(){
                 {/* <hr className="my-5" /> */}
 
                 {/* <div className="row">
-                    <heading className="col-lg-4 col-12">
+                    <header className="col-lg-4 col-12">
                         <h2 className={Utils.fs_2}>
                             TEDx, x = independently organized event
                         </h2>
-                    </heading>
+                    </header>
 
                     <article className="col-lg-8 col-12">
                         <p>In the spirit of ideas worth spreading, TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TED Talks video and live speakers combine to spark deep discussion and connection. These local, self-organized events are branded TEDx, where x = independently organized TED event. The TED Conference provides general guidance for the TEDx program, but individual TEDx events are self-organized. (Subject to certain rules and regulations.)</p>
@@ -113,11 +113,11 @@ function AboutUs(){
                 <hr className="my-5" />
                  
                 <div className="row">
-                    <heading className="col-lg-4 col-12">
+                    <header className="col-lg-4 col-12">
                         <h2 className={Utils.fs_2}>
                             About TED
                         </h2>
-                    </heading>
+                    </header>
                     
                     <article className="col-lg-8 col-12">
                         <p>TED is on a mission to discover and spread ideas that spark imagination, embrace possibility and catalyze impact. Our organization is devoted to curiosity, reason, wonder and the pursuit of knowledge — without an agenda. We welcome people from every discipline and culture who seek a deeper understanding of the world and connection with others, and we invite everyone to engage with ideas and activate them in your community.</p>
@@ -133,12 +133,12 @@ function AboutUs(){
                 <hr className="my-5" />
                  
                 <div className="row">
-                     <heading className="col-lg-4 col-12">
+                     <header className="col-lg-4 col-12">
                          <h2 className={Utils.fs_2}>
                             Our Team <br/>
                             <Image src={logo} alt="TEDxGeorge Logo" width={300} height={75}   />
                          </h2>
-                     </heading>
+                     </header>
                      
                      <article className="col-lg-8 col-12">
                         <p>

@@ -187,4 +187,49 @@
     }
 }
 
+.speakerLink{
+    border: none;
+    text-decoration: none;
+    width: 25%;
+    margin-bottom: 3rem;
+}
+
+.speakerSocials{
+    margin: 0 0 4rem 0;
+    list-style: none;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.linkIcon{
+    width: 2rem;
+    height: 2rem;
+    margin: 0 1rem 0 0;
+    fill: #fff;
+}
+
+.socialLink{
+    display: inline-flex;
+    align-items: center;
+    margin: 0 1rem;
+    text-transform: capitalize;
+    font-size: 1.4rem;
+}
+
+.talkImage{
+    width: 350px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.talkSpeaker{
+    display: block;
+    font-size: 1.4rem;
+}
+
+.talkTitle{
+    display: block;
+}
 

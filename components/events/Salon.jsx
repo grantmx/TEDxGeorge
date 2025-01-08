@@ -10,7 +10,7 @@ function Salon(){
             <hr className="my-5" />
 
             <div className="row">
-                <heading className="col-lg-4 col-12 pe-5">
+                <header className="col-lg-4 col-12 pe-5">
                     <Image 
                         {...salonImg} 
                         alt="TEDxGeorge Salon" 
@@ -21,7 +21,7 @@ function Salon(){
                     />
                     
                     <small>Salon events are small events that keeps our TEDxGeorge community engaged between regular TEDx events. It's a unique kind of gathering that TEDx we hold which allows the conversation to continue, up close and in person.</small>                       
-                </heading>
+                </header>
                 
                 <article className="col-lg-8 col-12 ps-5">
                     <h2 className={Utils.fs_2}>

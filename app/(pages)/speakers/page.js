@@ -65,11 +65,11 @@ function Speakers(){
                 <div className="row">
                     <hr className={Utils.my_6} />
 
-                    <heading className="col-lg-4 col-12">
+                    <header className="col-lg-4 col-12">
                         <h4 className={Utils.fs_2}>
                             We believe ideas can come from anyone
                         </h4>
-                    </heading>
+                    </header>
 
                     <article className="col-lg-8 col-12">
                         <p>
@@ -81,11 +81,11 @@ function Speakers(){
                 <div className="row">
                     <hr className={Utils.my_6} />
 
-                    <heading className="col-lg-4 col-12">
+                    <header className="col-lg-4 col-12">
                         <h4 className={Utils.fs_2}>
                             We value skepticism and debate
                         </h4>
-                    </heading>
+                    </header>
 
                     <article className="col-lg-8 col-12">
                         <p>Our talks are the beginning, not the conclusion, of discussions. TEDxGeorge values skepticism and the role it plays in refining ideas, revealing their strengths and areas for improvement. We encourage conversations after our talks as a way to gain clarity and explore how these ideas can be applied. Our commitment is to provide an open and respectful environment where vigorous debate can thrive. We reject bigotry and hate speech, instead promoting constructive conversations as a means to bridge gaps and build understanding.</p>

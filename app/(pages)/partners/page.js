@@ -43,11 +43,11 @@ function Partners(){
                         <div className="row mt-5" key={sponsorLevel}>
                             <hr className={Utils.my_2} />
 
-                            <heading className="col-lg-3 col-12">
+                            <header className="col-lg-3 col-12">
                                 <h2 className={Style.sponsorHeading}>
                                     {sponsorLevel} Partners
                                 </h2>
-                            </heading>
+                            </header>
                                 
                             <article className="col-lg-9 col-12">
                                 <ul className={Style.sponsorList}>
@@ -116,11 +116,11 @@ function Partners(){
                 <hr className="my-5" />
 
                 <div className="row">
-                    <heading className="col-lg-4 col-12">
+                    <header className="col-lg-4 col-12">
                         <h2 className={Utils.fs_2}>
                             Sponsorship Add-on Activities
                         </h2>
-                    </heading>
+                    </header>
 
                     <article className="col-lg-8 col-12">
                         <p>Imagine a gathering where the air buzzes with excitement, where ideas crackle and spark, and where the boundaries of possibility are pushed to their limits. That's the vision we have for our upcoming event, TEDxGeorge 2024, where we celebrate "The Brave Ones" – individuals who defy the status quo and fearlessly shape the future. Anticipated benefits for you include:</p>

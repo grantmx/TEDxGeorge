@@ -76,8 +76,12 @@ function Home() {
 					<div className="row">
 						{eventsList.map((event, index) => {
 							if( index > 3 ) return
-
-							return <EventItem key={event.slug} event={event} />
+							return(
+								<EventItem 
+									key={event.slug} 
+									event={event} 
+								/>
+							)
 						})}
 					</div>
 
