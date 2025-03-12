@@ -79,7 +79,7 @@ export async function generateMetadata({ params }){
         },
         description: event.text.replace(/(<([^>]+)>)/ig, '').substring(0, 120),
         openGraph: {
-            title: `${event.type}: ${event.title}`,
+            title: `${event.type}: ${event.title} : TEDxGeorge`,
             url: "https://tedxgeorge.com/events/details/" + event.slug,
             siteName: 'TEDxGeorge',
             locale: 'en_US',

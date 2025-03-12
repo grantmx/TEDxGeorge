@@ -3,7 +3,6 @@ import Style from "../Page.module.scss"
 import clsx from "clsx"
 import { eventsList } from "@/lib/eventList"
 import { MainEvent } from "@/components/JSONld"
-import braveOnes from "@/public/brave-ones-event.jpg"
 import EventItem from "@/components/events/EventItem"
 
 export const dynamic = 'force-static'
@@ -14,19 +13,7 @@ export const metadata = {
         canonical: "https://tedxgeorge.com/events",
     },
     openGraph: {
-        title: 'TEDxGeorge',
-        description: "The Brave Ones is an attempt to celebrate the local heroes and heroines that have continuously taken brave steps in their respective fields",
-        url: 'https://tedxgeorge.com/events',
-        siteName: 'TEDxGeorge',
-        images: [
-            {
-                url: braveOnes.src,
-                width: 400,
-                height: 400,
-            },
-        ],
-        locale: 'en_US',
-        type: 'website',
+        title: 'Events: TEDxGeorge',
     },
 }
 

@@ -11,9 +11,12 @@ export const dynamic = 'force-static'
 
 
 export const metadata = {
-    title: "About",
+    title: "Brave Ones",
     alternates: {
         canonical: "https://tedxgeorge.com/about",
+    },
+    openGraph: {
+		title: 'Brave Ones : TEDxGeorge',
     }
 }
 

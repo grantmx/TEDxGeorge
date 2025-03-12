@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import '@/styles/globals/global.scss'
 import { Inter } from "next/font/google";
-import braveOnes from "@/public/brave-ones-event.jpg"
+import hero from "@/public/hero-shift.jpg"
 import { Analytics } from "@vercel/analytics/react"
 import clsx from 'clsx';
 import { GlobalContextProvider } from '@/contexts/GlobalContext';
@@ -52,7 +52,7 @@ export const metadata = {
 		type: 'website',
 		images: [
             {
-                url: braveOnes.src,
+                url: hero.src,
                 width: 400,
                 height: 400,
             },

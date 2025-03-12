@@ -11,6 +11,9 @@ export const metadata = {
     title: "Our Team",
     alternates: {
         canonical: "https://www.tedxgeorge.com/about/our-team",
+    },
+    openGraph: {
+		title: 'Our Team : TEDxGeorge',
     }
 }
 

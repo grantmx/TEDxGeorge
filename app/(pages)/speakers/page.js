@@ -11,6 +11,9 @@ export const metadata = {
     title: "Speakers",
     alternates: {
         canonical: "https://tedxgeorge.com/speakers",
+    },
+    openGraph: {
+		title: 'Speakers : TEDxGeorge',
     }
 }
 
