@@ -64,20 +64,24 @@ function AboutUs(){
 
                 <section className="container text-center d-flex justify-content-center">
                     <div className={Style.heading}>
-                            <h1>About TEDxGeorge</h1>
+                        <h1 className={Style.header}>
+                            About TEDxGeorge
+                        </h1>
 
-                            <h2 className={clsx(Style.callout, "mb-5")}>
-                                Are you ready to be inspired, empowered and challenged?
-                            </h2>
+                        <h2 className={clsx(Utils.fs_2, "fw-light")}>
+                            Are you ready to be inspired, empowered and challenged?
+                        </h2>
 
-                            {/* <p className={Utils.mt_3}>
+                           
+                       
+                        <p>TEDxGeorge is a one day conference hosted in the city of George focused on empowerment and inspiration with one core focus: <br/><strong>Ideas change everything!</strong></p>
+                    
+                        {/* <p className={Utils.mt_3}>
                                 <a href="/tickets" className="btn btn-danger fs-1 px-5">
                                     Get Tickets
                                 </a>
                             </p> */}
-                       
-                        <p className={Utils.fs_3}>TEDxGeorge is a one day conference hosted in the city of George focused on empowerment and inspiration with one core focus: Ideas change everything!</p>
-                    
+                            
                         <p>
 							<a href="https://chat.whatsapp.com/HGProtkIBL15I4K1ILAS71" className="btn btn-success fs-1 px-5">
                                 <svg id="icon-whatsapp" viewBox="0 0 32 32" fill="#fff" width={45} height={45} className="pe-4">

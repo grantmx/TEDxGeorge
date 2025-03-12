@@ -1,5 +1,5 @@
 import Utils from "@/styles/globals/utils.module.scss"
-import Style from "../Page.module.scss"
+import Style from "@/app/(pages)/Page.module.scss"
 import clsx from "clsx"
 import { speakerList } from "@/lib/speakerList"
 import sortBy from "@/lib/utils/sortBy"
@@ -22,19 +22,17 @@ function Speakers(){
         <>
             <section className="container text-center d-flex justify-content-center">
                 <div className={Style.heading}>
-                    <h1 className={clsx(Utils.fs_5, "fw-light")}>
+                    <h1 className={Style.header}>
                         Speakers
                     </h1>
 
-                    <article>
-                        <p className={Utils.fs_1}>
-                            Our speaker's ideas will inspire you to seek your highest potential.
-                        </p>
+                    <p className={clsx(Utils.fs_2, "fw-light")}>
+                        Our speaker's ideas will inspire you to seek your highest potential.
+                    </p>
 
-                        <p>
-                            TEDxGeorge is guided by the broader TED mission to uncover and share ideas that inspire, challenge, and create impact. As we navigate a world with growing divides, our goal is to bring together a wide range of voices, encouraging dialogue and deeper understanding among our community. We believe that valuable lessons can be learned from every speaker, even when their perspectives differ from our own. Our platform is dedicated to fostering meaningful conversations between people with diverse viewpoints.
-                        </p>
-                    </article>
+                    <p>
+                        TEDxGeorge is guided by the broader TED mission to uncover and share ideas that inspire, challenge, and create impact. As we navigate a world with growing divides, our goal is to bring together a wide range of voices, encouraging dialogue and deeper understanding among our community. We believe that valuable lessons can be learned from every speaker, even when their perspectives differ from our own. Our platform is dedicated to fostering meaningful conversations between people with diverse viewpoints.
+                    </p>
                 </div>
             </section>
 

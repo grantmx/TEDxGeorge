@@ -1,6 +1,6 @@
 "use client"
 
-import TicketBtn from './TicketBtn';
+// import TicketBtn from './TicketBtn';
 import Style from "./Header.module.scss"
 import { useContext, useEffect } from 'react';
 import clsx from 'clsx';
@@ -30,11 +30,23 @@ function Menu(){
                         Events
                     </Link>
                 </li>
+                
                 <li className="me-4 me-lg-5">
-                    <Link href="/speakers" className="p-1">
-                        Speakers
+                    <Link href="/volunteer" className="p-1">
+                        Volunteer
                     </Link>
                 </li>
+                <li className="me-4 me-lg-5">
+                    <Link href="/speakers/talks" className="p-1">
+                        Talks
+                    </Link>
+                </li>
+                <li className="me-4 me-lg-5">
+                    <Link href="/speakers/nominate" className="p-1">
+                        Nominate Speaker
+                    </Link>
+                </li>
+               
                 {/* <li className="me-4 me-lg-5">
                     <Link href="/events/agenda" className="p-1">
                         Agenda

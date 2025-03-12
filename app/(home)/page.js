@@ -8,11 +8,17 @@ import Footer from "@/components/nav/Footer";
 import { MainEvent } from "@/components/JSONld";
 import { eventsList } from "@/lib/eventList";
 import EventItem from "@/components/events/EventItem";
+import Style from "./home.module.scss"
+import useSpeakerTalks from "@/custom_hooks/useSpeakerTalks";
+import TalkCard from "@/components/speakers/TalkCard";
+import Link from "next/link";
 
 export const dynamic = 'force-static'
 
 
 function Home() {
+	const { talks } = useSpeakerTalks({ limit: 6, sort: "first_name" })
+
 	return (
 		<>
 			<Header />
@@ -38,10 +44,66 @@ function Home() {
 
 
 			<main className="container px-4">
+				<section className="container py-5">
+					<h3 className={Style.header}>
+						Latest Talks
+						<Link href="/speakers/talks" className={Style.headerLink}>
+							See all talks &nbsp;
+
+							<svg id="icon-arrow_right_alt" viewBox="0 0 24 24" width={20} fill="#ffffff"> 
+								<path d="M16.031 11.016v-3l3.984 3.984-3.984 3.984v-3h-12.047v-1.969h12.047z"></path>
+							</svg>
+						</Link>
+					</h3>
+
+					<article className="container mb-5">                
+						<div className="row mt-4">
+							{talks.map((talk) => {
+								return (
+									<TalkCard 
+										key={talk?.title} 
+										{...{ talk }} 
+									/>
+								)
+							})}
+						</div>
+            		</article>
+				</section>
+
+
+
+				<section className="container pb-5">
+					<h3 className={Style.header}>
+						Events
+
+						<Link href="/events" className={Style.headerLink}>
+							See all events &nbsp;
+
+							<svg id="icon-arrow_right_alt" viewBox="0 0 24 24" width={20} fill="#ffffff"> 
+								<path d="M16.031 11.016v-3l3.984 3.984-3.984 3.984v-3h-12.047v-1.969h12.047z"></path>
+							</svg>
+						</Link>
+					</h3>
+
+					<div className="row">
+						{eventsList.map((event, index) => {
+							if( index > 3 ) return
+							return(
+								<EventItem 
+									key={event.slug} 
+									event={event} 
+								/>
+							)
+						})}
+					</div>
+
+				</section>
+
+
 				<section className="row my-5 py-5">
 					<aside className="col col-lg-4">
-						<h1 className={Utils.fs_1}>
-							About <br/><Image src={logo} alt="TEDxGeorge Logo" width={300} height={75} />
+						<h1 className={Utils.fs_2}>
+							About <br/><Image src={logo} alt="TEDxGeorge Logo" width={350} />
 						</h1>
 
 						{/* <hr className="mb-5 w-50" />
@@ -60,31 +122,11 @@ function Home() {
 					</aside>
 
 					<article className="col col-lg-8">
-						<h2 className={Utils.fs_4}>
+						<h2 className={Utils.fs_2}>
 							What is TEDx?
 						</h2>
 						<p>In the spirit of ideas worth spreading, TED has created a program called <a href="https://www.ted.com/tedx" target="_blank" rel="nofollow">TEDx</a>. TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. Our event is called TEDxGeorge, where x = independently organized TED event. At our TEDxGeorge event, TED Talks video and live speakers will combine to spark deep discussion and connection in a small group. The TED Conference provides general guidance for the TEDx program, but individual TEDx events, including ours, are self-organized.</p>					
 					</article>
-				</section>
-
-
-				<section className="container pb-5">
-					<h3 className={Utils.fs_3}>
-						Events
-					</h3>
-
-					<div className="row">
-						{eventsList.map((event, index) => {
-							if( index > 3 ) return
-							return(
-								<EventItem 
-									key={event.slug} 
-									event={event} 
-								/>
-							)
-						})}
-					</div>
-
 				</section>
 			</main>
 

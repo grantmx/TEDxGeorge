@@ -6,9 +6,6 @@ const withPWA = require('next-pwa')({
 
 
 const NextConfig = {
-    experimental: {
-        serverComponentsExternalPackages: ["mjml"],
-    },
     pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
 	images: {
         localPatterns: [

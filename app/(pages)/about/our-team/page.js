@@ -22,18 +22,16 @@ function OurTeam(){
         <>
              <section className="container text-center d-flex justify-content-center">
                 <div className={Style.heading}>
-                    <h1 className={clsx(Utils.fs_5, "fw-light")}>
+                    <h1 className={Style.header}>
                         Our Team
                     </h1>
 
-                    <article>
-                        <p className={clsx(Utils.fs_1)}>
-                            Change-Makers & Mould-Breakers
-                        </p>
-                        <p>
-                            TEDxGeorge is driven by a diverse and dedicated team of volunteers who are passionate about fostering dialogue, sharing ideas, and creating positive change in our community. Our team members come from various backgrounds and disciplines, bringing unique perspectives and skills to the table. Together, we work tirelessly to curate engaging events, support inspiring speakers, and connect with our audience to spark meaningful conversations. Meet the faces behind TEDxGeorge and learn more about the individuals who are shaping our TEDx community.
-                        </p>
-                    </article>
+                    <p className={clsx(Utils.fs_2, "fw-light")}>
+                        Change-Makers & Mould-Breakers
+                    </p>
+                    <p>
+                        TEDxGeorge is driven by a diverse and dedicated team of volunteers who are passionate about fostering dialogue, sharing ideas, and creating positive change in our community. Our team members come from various backgrounds and disciplines, bringing unique perspectives and skills to the table. Together, we work tirelessly to curate engaging events, support inspiring speakers, and connect with our audience to spark meaningful conversations. Meet the faces behind TEDxGeorge and learn more about the individuals who are shaping our TEDx community.
+                    </p>
                 </div>
             </section>
 

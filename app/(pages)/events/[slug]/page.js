@@ -20,12 +20,9 @@ function EventDetail({ params }){
                        {event.type}
                     </p>
 
-                    <article>
-                        <h1 className={Utils.fs_1}>
-                            {event.title}
-                        </h1>
-                        <p></p>
-                    </article>
+                    <h1 className={Style.header}>
+                        {event.title}
+                    </h1>
                 </div>
             </section>
 

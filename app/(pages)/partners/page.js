@@ -19,15 +19,13 @@ function Partners(){
         <>
             <section className="container text-center d-flex justify-content-center">
                 <div className={Style.heading}>
-                    <h1 className={clsx(Utils.fs_5, "fw-light")}>
+                    <h1 className={Style.header}>
                         Partners
                     </h1>
 
-                    <article>
-                        <p className={clsx(Utils.fs_1)}>
-                            We in the TEDx Community view our sponsors as partners who are joining us on a journey. This is a project that we're investing in together. 
-                        </p>
-                    </article>
+                    <p className={clsx(Utils.fs_2, "fw-light")}>
+                        We in the TEDx Community view our sponsors as partners who are joining us on a journey. This is a project that we're investing in together. 
+                    </p>
                 </div>
             </section>
 

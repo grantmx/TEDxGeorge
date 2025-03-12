@@ -37,6 +37,36 @@ export default async function sitemap() {
             priority: 1,
         },
         {
+            url: "https://tedxgeorge.com/about/our-team",
+            lastModified: new Date(),
+            changeFrequency: 'yearly',
+            priority: 1,
+        },
+        {
+            url: "https://tedxgeorge.com/volunteer",
+            lastModified: new Date(),
+            changeFrequency: 'yearly',
+            priority: 1,
+        },
+        {
+            url: "https://tedxgeorge.com/press",
+            lastModified: new Date(),
+            changeFrequency: 'yearly',
+            priority: 1,
+        },
+        {
+            url: "https://tedxgeorge.com/speakers/talks",
+            lastModified: new Date(),
+            changeFrequency: 'yearly',
+            priority: 1,
+        },
+        {
+            url: "https://tedxgeorge.com/speakers/nominate",
+            lastModified: new Date(),
+            changeFrequency: 'yearly',
+            priority: 1,
+        },
+        {
             url: "https://tedxgeorge.com/events",
             lastModified: new Date(),
             changeFrequency: 'monthly',

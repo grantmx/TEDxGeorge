@@ -4,15 +4,13 @@ import clsx from "clsx"
 import Image from "next/image"
 import { speakerList } from "@/lib/speakerList"
 import { IconLink } from "@/icons/IconLink"
+import TalkCard from "@/components/speakers/TalkCard"
 
 
 async function SpeakerDetails({ params }){
     const { slug } = await params
     const speaker = speakerList[slug];
-
     const speakerName = `${speaker?.first_name} ${speaker?.last_name}`
-
-    console.log(speaker)
 
     return(
         <>
@@ -23,7 +21,7 @@ async function SpeakerDetails({ params }){
                     </p>
 
                     <article>
-                        <h1 className={clsx(Style.callout, "mb-0")}>
+                        <h1 className={Style.header}>
                             {speakerName}
                         </h1>
 
@@ -75,37 +73,11 @@ async function SpeakerDetails({ params }){
 
                         <div className="row">
                             {speaker?.talks.map((talk, index) => {
-                                const videoId = talk.video.split("v=")[1]
-                                const videoThumb = `https://i.ytimg.com/vi/${videoId}/hq720.jpg`
-
                                 return(
-                                    <article key={index} className="col-6 col-lg-3 col-12">
-                                        <a href={talk.video} target="_blank" rel="noreferrer">
-                                            <figure className={Style.talkThumb}>
-                                                <Image 
-                                                    src={videoThumb} 
-                                                    width={480} 
-                                                    height={360} 
-                                                    alt={talk.title} 
-                                                    className={Style.talkImage}
-                                                />
-
-                                                <figcaption className={Style.talkCaption}>
-                                                    <cite className={Style.talkSpeaker}>
-                                                        {speakerName}
-                                                    </cite>
-
-                                                    <strong className={Style.talkTitle}>
-                                                        {talk.title}
-                                                    </strong>
-
-                                                    <small>
-                                                        Posted: {talk.date}
-                                                    </small>
-                                                </figcaption>
-                                            </figure>
-                                        </a>
-                                    </article>
+                                    <TalkCard
+                                        key={index}
+                                        {...{ talk }}
+                                    />
                                 )
                             })}
                         </div>
