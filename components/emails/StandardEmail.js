@@ -81,7 +81,7 @@ function StandardEmail({ message, heading, type, id, first_name, last_name }){
                     <MjmlColumn>
                         <MjmlSocial icon-size="32px" mode="horizontal" align="right">
                             <MjmlSocialElement borderRadius="99px" name="facebook" href="https://www.facebook.com/profile.php?id=61556394653005" paddingRight="40px"/>
-                            <MjmlSocialElement borderRadius="99px" name="youtube" href="https://www.youtube.com/@TEDx" paddingRight="40px"/>
+                            <MjmlSocialElement borderRadius="99px" name="youtube" href="https://www.youtube.com/@TEDx/search?query=tedxgeorge" paddingRight="40px"/>
                             <MjmlSocialElement borderRadius="99px" name="instagram" href="https://www.instagram.com/tedxgeorge/" />
                         </MjmlSocial>
                     </MjmlColumn>        
