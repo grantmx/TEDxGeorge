@@ -45,8 +45,8 @@ function Home() {
 					<h3 className={Style.header}>
 						Events
 
-						<Link href="/events" className={Style.headerLink}>
-							See all events &nbsp;
+						<Link href="/events" className={Style.headerLink} title="View all events">
+							All events &nbsp;
 
 							<svg id="icon-arrow_right_alt" viewBox="0 0 24 24" width={20} fill="#ffffff"> 
 								<path d="M16.031 11.016v-3l3.984 3.984-3.984 3.984v-3h-12.047v-1.969h12.047z"></path>
@@ -70,8 +70,8 @@ function Home() {
 				<section className="container py-5">
 					<h3 className={Style.header}>
 						Latest Talks
-						<Link href="/speakers/talks" className={Style.headerLink}>
-							See all talks &nbsp;
+						<Link href="/speakers/talks" className={Style.headerLink} title="View all talks">
+							All talks &nbsp;
 
 							<svg id="icon-arrow_right_alt" viewBox="0 0 24 24" width={20} fill="#ffffff"> 
 								<path d="M16.031 11.016v-3l3.984 3.984-3.984 3.984v-3h-12.047v-1.969h12.047z"></path>
