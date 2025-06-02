@@ -40,36 +40,33 @@ function Home() {
 			</section>
 
 
-			
-			<section className="container pb-5">
-				<h3 className={Style.header}>
-					Events
-
-					<Link href="/events" className={Style.headerLink}>
-						See all events &nbsp;
-
-						<svg id="icon-arrow_right_alt" viewBox="0 0 24 24" width={20} fill="#ffffff"> 
-							<path d="M16.031 11.016v-3l3.984 3.984-3.984 3.984v-3h-12.047v-1.969h12.047z"></path>
-						</svg>
-					</Link>
-				</h3>
-
-				<div className="row">
-					{eventsList.map((event, index) => {
-						if( index > 3 ) return
-						return(
-							<EventItem 
-								key={event.slug} 
-								event={event} 
-							/>
-						)
-					})}
-				</div>
-			</section>
-
-
-
 			<main className="container px-4">
+				<section className="container py-5">
+					<h3 className={Style.header}>
+						Events
+
+						<Link href="/events" className={Style.headerLink}>
+							See all events &nbsp;
+
+							<svg id="icon-arrow_right_alt" viewBox="0 0 24 24" width={20} fill="#ffffff"> 
+								<path d="M16.031 11.016v-3l3.984 3.984-3.984 3.984v-3h-12.047v-1.969h12.047z"></path>
+							</svg>
+						</Link>
+					</h3>
+
+					<div className="row">
+						{eventsList.map((event, index) => {
+							if( index > 3 ) return
+							return(
+								<EventItem 
+									key={event.slug} 
+									event={event} 
+								/>
+							)
+						})}
+					</div>
+				</section>
+
 				<section className="container py-5">
 					<h3 className={Style.header}>
 						Latest Talks
