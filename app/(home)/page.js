@@ -1,5 +1,5 @@
 import Image from "next/image";
-import hero from "@/public/shift-hero-tedx.png"
+import hero from "@/public/shift-hero-tedx.webp"
 import mobileHero from "@/public/shift-concept-design.png"
 import Header from "@/components/nav/Header";
 import Utils from "@/styles/globals/utils.module.scss"
