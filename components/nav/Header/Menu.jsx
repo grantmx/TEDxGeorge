@@ -1,6 +1,6 @@
 "use client"
 
-// import TicketBtn from './TicketBtn';
+import TicketBtn from './TicketBtn';
 import Style from "./Header.module.scss"
 import { useContext, useEffect } from 'react';
 import clsx from 'clsx';
@@ -36,16 +36,23 @@ function Menu(){
                         Volunteer
                     </Link>
                 </li>
-                <li className="me-4 me-lg-5">
+                {/* <li className="me-4 me-lg-5">
                     <Link href="/speakers/talks" className="p-1">
                         Talks
                     </Link>
+                </li> */}
+
+                 <li className="me-4 me-lg-5">
+                    <Link href="/speakers" className="p-1">
+                        Speakers
+                    </Link>
                 </li>
-                <li className="me-4 me-lg-5">
+
+                {/* <li className="me-4 me-lg-5">
                     <Link href="/speakers/nominate" className="p-1">
                         Nominate Speaker
                     </Link>
-                </li>
+                </li> */}
                
                 {/* <li className="me-4 me-lg-5">
                     <Link href="/events/agenda" className="p-1">
@@ -57,13 +64,18 @@ function Menu(){
                         Partners
                     </Link>
                 </li>
-                <li className="me-4 me-lg-5">
+                {/* <li className="me-4 me-lg-5">
                     <Link href="/about">
                         About
                     </Link>
-                </li>
+                </li> */}
                 
                 {/* <TicketBtn /> */}
+
+
+                <a href="/tickets" className={clsx(Style.btn, "btn btn-danger px-4 py-3")}>
+                    Tickets
+                </a>
             </menu>
 
             <button 

@@ -19,14 +19,16 @@ export const metadata = {
 
 
 function Speakers(){
+    const year = new Date().getFullYear();
     const speakers = sortBy(Object.values(speakerList), "last_name")
-
+        .filter((speaker) => speaker.active.some((activeYear) => activeYear === year));
+    
     return(
         <>
             <section className="container text-center d-flex justify-content-center">
                 <div className={Style.heading}>
                     <h1 className={Style.header}>
-                        Speakers
+                        Our Speakers
                     </h1>
 
                     <p className={clsx(Utils.fs_2, "fw-light")}>
@@ -93,7 +95,23 @@ function Speakers(){
                         <p>By adhering to these guiding principles, TEDxGeorge remains true to TED's ethos, creating a platform where ideas can inspire, challenge, and drive positive change within our community.</p>
                             
                     </article>
-                </div>                     
+                </div>      
+
+
+                {/* <div className="row">
+                    <hr className={Utils.my_6} />
+
+                    <header className="col-lg-4 col-12">
+                        <h4 className={Utils.fs_2}>
+                           Past Speakers
+                        </h4>
+                    </header>
+
+                    <article className="col-lg-8 col-12">
+                            
+                    </article>
+                </div>     */}
+
             </section>
         </>
     )

@@ -1,3 +1,5 @@
+"use client"
+
 import FullWidth from "./FullWidth";
 import TicketModules from "./TicketModules";
 

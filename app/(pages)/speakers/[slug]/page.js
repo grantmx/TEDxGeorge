@@ -25,20 +25,23 @@ async function SpeakerDetails({ params }){
                             {speakerName}
                         </h1>
 
-                        <ul className={Style.speakerSocials}>
-                            {Object.keys(speaker?.social).map((social) => {
-                                if(!speaker?.social[social]) return null;
+                        {(speaker?.social && Object.keys(speaker?.social).length > 0) ? (
+                            <ul className={Style.speakerSocials}>
+                                {Object.keys(speaker?.social).map((social) => {
+                                    if(!speaker?.social[social]) return null;
 
-                                return(
-                                    <li key={social}>
-                                        <a href={speaker?.social[social]} target="_blank" className={Style.socialLink}>
-                                            <IconLink className={Style.linkIcon} width="20" height="20" />
-                                            {speakerName}'s {social}
-                                        </a>
-                                    </li>
-                                )
-                            })}
-                        </ul>
+                                    return(
+                                        <li key={social}>
+                                            <a href={speaker?.social[social]} target="_blank" className={Style.socialLink}>
+                                                <IconLink className={Style.linkIcon} width="20" height="20" />
+                                                {speakerName}'s {social}
+                                            </a>
+                                        </li>
+                                    )
+                                })}
+                            </ul>
+                        ):null}
+
                     </article>
                 </div>
             </section>
@@ -48,17 +51,17 @@ async function SpeakerDetails({ params }){
                 <div className="row">
                     <article 
                         className="col-lg-8 col-12 pe-5" 
-                        dangerouslySetInnerHTML={{ __html: speaker?.bio }} 
+                        dangerouslySetInnerHTML={{ __html: speaker?.bio ?? "" }} 
                     />
 
                     <figure className="col-lg-4 col-12">
                         <Image
-                            src={speaker?.image.src}
+                            src={speaker?.image?.src ?? "https://dummyimage.com/400x400/111/fff&text=Announcing+Soon"}
                             width={400}
                             height={400}
-                            alt={speakerName}
+                            alt={speakerName ?? "TEDx George Speaker"}
                             placeholder="blur"
-                            blurDataURL={speaker?.image.blurDataURL}
+                            blurDataURL={speaker?.image?.blurDataURL ?? "https://dummyimage.com/1x1/111/fff&text=Announcing+Soon"}
                         />
                     </figure>
                 </div>

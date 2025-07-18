@@ -29,26 +29,28 @@ function RegisterBtn({
 
 
     function register(){
-        const id = generateID()
+        // const id = generateID()
 
-        LocalStorage.addToStorage("TXG_cart", { 
-            type, 
-            price: finalPrice.current, 
-            quantity, 
-            id 
-        })
+        window.location.href="https://www.quicket.co.za/events/324812-tedx-george-2025/#/seats"
 
-        dispatch({
-            type: "addToCart",
-            data: {
-                type,
-                price: finalPrice.current,
-                quantity,
-                id
-            }
-        })
+        // LocalStorage.addToStorage("TXG_cart", { 
+        //     type, 
+        //     price: finalPrice.current, 
+        //     quantity, 
+        //     id 
+        // })
 
-        cart.open()
+        // dispatch({
+        //     type: "addToCart",
+        //     data: {
+        //         type,
+        //         price: finalPrice.current,
+        //         quantity,
+        //         id
+        //     }
+        // })
+
+        // cart.open()
     }
 
 
@@ -68,11 +70,11 @@ function RegisterBtn({
                 />
             </span>
 
-            {(allocation - sold) < 5 && (
+            {/* {(allocation - sold) < 5 && (
                 <small className={Style.fewLeft}>
                     Only {allocation - sold} left! - Order Soon
                 </small>
-            )}
+            )} */}
 
             <button 
                 type="button" 
@@ -80,7 +82,7 @@ function RegisterBtn({
                 onClick={register}
                 disabled={isSoldOut}
             >
-                {isSoldOut ? "Sold Out" : (
+                {isSoldOut ? "Not Available" : (
                     <>
                         <IconPlus width={24} height={24} fill="#fff" />
                         Add Ticket

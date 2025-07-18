@@ -5,9 +5,12 @@ import clsx from "clsx"
 import Link from "next/link"
 
 
-function SpeakerCard({ first_name, last_name, organization, slug, topic, image }){
+function SpeakerCard({ first_name, last_name, organization, slug, topic, image, theme, bio }){
+
+    const ContainerElement = bio ? Link : "article";
+
     return(
-        <Link 
+        <ContainerElement 
             className={clsx(Style.speakerLink, "col-6 col-lg-3")}
             href={`/speakers/${slug}`} title={`${first_name} ${last_name} TEDx George Profile`}
         >
@@ -18,7 +21,6 @@ function SpeakerCard({ first_name, last_name, organization, slug, topic, image }
                     placeholder="blur"
                     alt={`${first_name} ${last_name}`}
                     width={400} 
-                    
                     height={400} 
                     className={clsx(Utils.w_100, Utils.mb_1, Utils.h_auto, "object-fit-contain")}
                 />
@@ -31,16 +33,16 @@ function SpeakerCard({ first_name, last_name, organization, slug, topic, image }
 
                     <p className={Utils.mt_2}>
                         <small className={Style.smallText}>
-                            TALK TOPIC
+                            {topic ? "TALK TOPIC" : "Theme"}
                         </small>
                         <span>
-                            {topic}
+                            {topic ?? theme}
                         </span>
                     </p>
                     
                 </figcaption>
             </figure>
-        </Link>
+        </ContainerElement>
     )
 }
 

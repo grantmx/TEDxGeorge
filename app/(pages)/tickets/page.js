@@ -29,7 +29,7 @@ async function Tickets(){
 
                     <article>
                         <p className={clsx(Utils.fs_1)}>
-                            "The Brave Ones" Event Registration
+                            "Shift" Event Registration 2025
                         </p>
                     </article>
                 </div>
