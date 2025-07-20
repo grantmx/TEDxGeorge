@@ -48,6 +48,19 @@ function EventDetail({ params }){
                             Time: <strong>{event.time}</strong><br />
                             Location: <strong>{event.location}</strong>
                         </figcaption>
+
+                        {event.bookingLink && (
+                            <p className="mt-3">
+                                <a 
+                                    href={event.bookingLink} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="btn btn-danger"
+                                >
+                                    Book Now
+                                </a>
+                            </p>
+                        )}
                     </figure>
                 </div>
 
