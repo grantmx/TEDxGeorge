@@ -50,14 +50,14 @@ function EventDetail({ params }){
                         </figcaption>
 
                         {event.bookingLink && (
-                            <p className="mt-3">
+                            <p className="mt-5">
                                 <a 
                                     href={event.bookingLink} 
                                     target="_blank" 
                                     rel="noopener noreferrer"
-                                    className="btn btn-danger"
+                                    className="btn btn-danger btn-lg px-5 py-3 fs-2"
                                 >
-                                    Book Now
+                                    <strong>Book Now</strong>
                                 </a>
                             </p>
                         )}
