@@ -4,6 +4,7 @@ import clsx from "clsx"
 import { speakerList } from "@/lib/speakerList"
 import sortBy from "@/lib/utils/sortBy"
 import SpeakerCard from "@/components/speakers/SpeakerCard"
+import HostCard from "@/components/speakers/HostCard"
 
 export const dynamic = 'force-static'
 
@@ -22,13 +23,16 @@ function Speakers(){
     const year = new Date().getFullYear();
     const speakers = sortBy(Object.values(speakerList), "last_name")
         .filter((speaker) => speaker.active.some((activeYear) => activeYear === year));
-    
+
+    const hosts = sortBy(Object.values(speakerList), "last_name")
+        .filter((speaker) =>  speaker?.presenter && speaker.presenter.some((presenterYear) => presenterYear === year));
+
     return(
         <>
             <section className="container text-center d-flex justify-content-center">
                 <div className={Style.heading}>
                     <h1 className={Style.header}>
-                        Our Speakers
+                        Meet the speakers
                     </h1>
 
                     <p className={clsx(Utils.fs_2, "fw-light")}>
@@ -49,6 +53,26 @@ function Speakers(){
                     })}
                 </div>
             </section>
+
+
+
+            <section className="container text-center d-flex justify-content-center">
+                <div className={Style.heading}>
+                    <h2 className={Style.header}>
+                        Session Hosts
+                    </h2>
+                </div>
+            </section>
+
+            <section className="container mb-5">                
+                <div className="row mt-4">
+                    {hosts.map((host) => {
+                        return <HostCard {...host} key={host?.slug} />
+                    })}
+                </div>
+            </section>
+
+
 
 
             <section className="container">
