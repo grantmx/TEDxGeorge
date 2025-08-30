@@ -3,9 +3,14 @@ import Style from "@/app/(pages)/Page.module.scss"
 import clsx from "clsx"
 import { agenda } from "@/lib/agenda";
 import React from "react";
+import Image from "next/image";
 
 export const dynamic = 'force-static'
 
+export const metadata = {
+    title: "Schedule",
+    description: "Explore the schedule for TEDxGeorge 2025, featuring inspiring talks and engaging sessions."
+}
 
 function EventAgenda(){
     return(
@@ -13,7 +18,7 @@ function EventAgenda(){
             <section className="container text-center d-flex justify-content-center">
                 <div className={Style.heading}>
                     <h1 className={clsx(Utils.fs_1)}>
-                       Agenda
+                       Your Schedule
                     </h1>
                 </div>
             </section>
@@ -23,24 +28,33 @@ function EventAgenda(){
                     return(
                         <div className="col-lg-10 col-12" key={item.title}>
                             <div className="row px-4 mt-5 pb-5">
-                                <header className="col-lg-6 col-12">
-                                    <h2 className={clsx(Utils.fs_2, "mb-0")}>
-                                        {item.title}
-                                    </h2>
-                                    
-                                    <p>
-                                        {item.start} - {item.end} CAT
-                                    </p>
-                                </header>
-                                
+                                <time className="col-lg-3 col-12">
+                                    {item.start} - {item.end} CAT
+                                </time>
+
+                               
                                 <article className="col-lg-6 col-12">
+                                    <h2 className={clsx(Utils.fs_2)}>
+                                        <strong>{item?.title}</strong>
+                                    </h2>
+
                                     <p>
                                         {item.description}
                                     </p>
                                 </article>
 
+                                <figure className="col-lg-3 col-12">
+                                    <Image 
+                                        width={300}
+                                        height={200}
+                                        src={item?.image ?? "/default-image.jpg"}
+                                        alt={item?.title}
+                                        className={clsx("img-fluid", "w-100")}
+                                    />
+                                </figure>
 
-                                {item.speakers && (
+
+                                {/* {item.speakers && (
                                     <aside className="row g-4 mt-0">
                                         {item.speakers.map(speaker => {
                                             return(
@@ -53,7 +67,7 @@ function EventAgenda(){
                                             )
                                         })}
                                     </aside>
-                                )}
+                                )} */}
                             </div>
 
                             <hr className="my-5" />
