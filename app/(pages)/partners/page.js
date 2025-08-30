@@ -34,7 +34,7 @@ function Partners(){
 
 
                  
-            {/* <section className="container">
+            <section className="container">
                 {Object.keys(sponsorList).map((sponsorLevel) => {
                     const sponsor = sponsorList[sponsorLevel]
 
@@ -60,7 +60,7 @@ function Partners(){
                                             >
                                                 <a href={sponsor.url} target="_blank" rel="noreferrer">
                                                     <Image 
-                                                        width={400}
+                                                        width={500}
                                                         height={400}
                                                         src={sponsor.logo} 
                                                         alt={sponsor.name} 
@@ -76,7 +76,7 @@ function Partners(){
                         </div>
                     )
                 })}  
-            </section> */}
+            </section>
 
 
             <section className="container">
