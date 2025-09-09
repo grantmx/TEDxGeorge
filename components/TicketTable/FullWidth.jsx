@@ -12,7 +12,7 @@ function FullWidth({ sold }){
     return(
         <div className={Style.full}>
             <div className="row align-items-start">
-                <div className="col-3">
+                <div className="col-4">
                     <h2 className={clsx(Utils.fs_2)}>
                         Ticket Comparison
                     </h2>
@@ -24,9 +24,9 @@ function FullWidth({ sold }){
                             <h2 className={clsx(Utils.fs_4, "mb-0")}>
                                 {ticket.type}
                             </h2>
-                            <small>
-                                {ticket.description}
-                            </small>
+
+                            <small dangerouslySetInnerHTML={{ __html: ticket.description }} />
+                         
                         </div>
                     )
                 })}
@@ -34,7 +34,7 @@ function FullWidth({ sold }){
 
 
             <div className="row">
-                <div className="col-3 p-0">
+                <div className="col-4 p-0">
                     {Object.keys(features).map((feature, i) => {
                         return (
                             <div className={clsx("col p-4", (i % 2) && Style.zebraStripe, Style.cell)} key={feature}>
