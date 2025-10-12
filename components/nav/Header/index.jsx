@@ -24,7 +24,7 @@ function Header(){
             </Link>
             
 
-             <Menu />
+            <Menu />
         </header>
     )
 }

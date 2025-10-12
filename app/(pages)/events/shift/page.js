@@ -7,6 +7,8 @@ import clsx from "clsx";
 import { speakerList } from "@/lib/speakerList"
 import sortBy from "@/lib/utils/sortBy"
 import SpeakerCard from "@/components/speakers/SpeakerCard"
+import HostCard from "@/components/speakers/HostCard"
+
 
 export const metadata = {
     title: "Shift",
@@ -20,10 +22,13 @@ export const metadata = {
 
 
 
-async function Shift(){
+async function Shift(){    
     const speakers = sortBy(Object.values(speakerList), "last_name")
         .filter((speaker) => speaker.active.some((activeYear) => activeYear === 2025));
 
+    const hosts = sortBy(Object.values(speakerList), "last_name")
+        .filter((speaker) =>  speaker?.presenter && speaker.presenter.some((presenterYear) => presenterYear === 2025));
+        
 
     return(
         <>
@@ -69,6 +74,22 @@ async function Shift(){
                 </div>
             </section>
 
+
+            <section className="container text-center d-flex justify-content-center">
+                <div className={Style.heading}>
+                    <h2 className={Style.header}>
+                        Session Hosts
+                    </h2>
+                </div>
+            </section>
+
+            <section className="container mb-5">                
+                <div className="row mt-4">
+                    {hosts.map((host) => {
+                        return <HostCard {...host} key={host?.slug} />
+                    })}
+                </div>
+            </section>
 
 
             
