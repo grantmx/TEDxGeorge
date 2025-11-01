@@ -16,3 +16,30 @@
     margin-left: 3rem;
     font-weight: 500;
 }
+
+
+.hero{
+    width: 100%;
+    min-height: 900px;
+
+    & mux-player {
+        --controls: none;
+        --media-object-fit: cover;
+
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+
+        @media screen and (max-width: $screen-sm){
+            position: relative;
+        }
+    }
+
+    & mux-player::part(gesture-layer) {
+        display: none;
+    }
+
+}
+
+
+

@@ -12,6 +12,7 @@ import Style from "./home.module.scss"
 import useSpeakerTalks from "@/custom_hooks/useSpeakerTalks";
 import TalkCard from "@/components/speakers/TalkCard";
 import Link from "next/link";
+import MuxPlayer from "@mux/mux-player-react";
 
 export const dynamic = 'force-static'
 
@@ -23,8 +24,23 @@ function Home() {
 		<>
 			<Header />
 
-			<section className="w-100">
-				<picture>
+			<section className={Style.hero}>
+				<MuxPlayer 
+					loop
+					muted
+					autoplay
+					streamType="on-demand"
+					playbackRate={0.75}
+					playbackId="MLF1qE1ZHbGaZvTCa5NzCAVRlKPh3JCvRinWg01RN5jU"
+					style={{ 
+						opacity: 0.5, 
+						width: "100%", 
+						height: "auto",
+						aspectRatio: "16/9",
+					}}
+				/>
+
+				{/* <picture>
 					<source srcSet={hero.src} type="image/jpeg" media="(min-width: 600px)"/>
 					<source srcSet={mobileHero.src} type="image/jpeg" media="(max-width: 600px)" />
 
@@ -36,7 +52,7 @@ function Home() {
 						height={1080}
 						priority={true}
 					/>
-				</picture>
+				</picture> */}
 			</section>
 
 
