@@ -22,6 +22,11 @@
     width: 100%;
     min-height: 900px;
 
+    @media screen and (max-width: $screen-sm){
+        min-height: auto;
+    }
+
+    
     & mux-player {
         --controls: none;
         --media-object-fit: cover;
