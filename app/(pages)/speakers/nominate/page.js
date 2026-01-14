@@ -68,6 +68,16 @@ function Nominations(){
                     </p>
 
                     <p>Our stage is dedicated to ideas, not promotions—talks should challenge, inform, and inspire without pushing a personal, political, or commercial agenda. <em>Multiple nominations for the same person won't influence the speaker selection team in any way. We review every nomination that comes in, and it only takes one.</em></p>
+
+                    <p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfm_rr2a49Dn2Iy5GckoiOfyjo5eXxEWSmtpV9Obkii4mG84w/viewform?usp=header" target="_blank" className="btn btn-danger fs-1 px-5">
+                            Ready? Nominate Someone &nbsp;
+
+                            <svg id="icon-arrow_right_alt" viewBox="0 0 24 24" width={40} fill="#ffffff"> 
+                                <path d="M16.031 11.016v-3l3.984 3.984-3.984 3.984v-3h-12.047v-1.969h12.047z"></path>
+                            </svg>
+                        </a>
+                    </p>
                 </div>
             </section>
 
