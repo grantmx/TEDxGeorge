@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import hero from "@/public/shift-hero-tedx.webp"
 import mobileHero from "@/public/shift-concept-design.png"
