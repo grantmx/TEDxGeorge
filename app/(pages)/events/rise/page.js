@@ -8,6 +8,7 @@ import { speakerList } from "@/lib/speakerList"
 import sortBy from "@/lib/utils/sortBy"
 import SpeakerCard from "@/components/speakers/SpeakerCard"
 import HostCard from "@/components/speakers/HostCard"
+import rise from "@/public/2026-rise.webp"
 
 
 export const metadata = {
@@ -16,7 +17,16 @@ export const metadata = {
         canonical: "https://tedxgeorge.com/events/rise",
     },
     openGraph: {
-        title: 'Rise - 2026: TEDxGeorge',
+        title: 'Rise: TEDxGeorge Women 2026',
+        description: "Through bold ideas, untold stories, and lived experiences, our speakers will explore what rising looks like across identity, leadership, culture, innovation, wellness, justice, and community.",
+        images: [
+            {
+                url: hero.src,
+                width: 800,
+                height: 800,
+                alt: 'Rise: TEDxGeorge Women 2026'
+            }
+        ]
     }
 }
 

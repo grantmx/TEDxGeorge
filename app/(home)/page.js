@@ -19,7 +19,7 @@ export const dynamic = 'force-static'
 
 
 function Home() {
-	const { talks } = useSpeakerTalks({ limit: 6, sort: "active" })
+	const { talks } = useSpeakerTalks({ limit: 6 })
 
 	return (
 		<>

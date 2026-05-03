@@ -5,9 +5,14 @@ import { speakerList } from "@/lib/speakerList"
 
 export default function useSpeakerTalks({ limit = null, sort = "last_name" }){ 
     const speakerTalks = useMemo(() =>  {
-        
-        return Object.values(speakerList).map((speaker) => {
+        let limiter = 0
+
+        return Object.values(speakerList).map((speaker, index) => {
             if( !Array.isArray(speaker.talks) || !speaker.talks.length ) return null
+
+            if( limit && limiter >= limit ) return null;
+        
+            limiter++
 
             return speaker.talks.map((talk) => {
                 return {
@@ -21,9 +26,8 @@ export default function useSpeakerTalks({ limit = null, sort = "last_name" }){
             
         }).flat().filter(Boolean)
 
-    }, [ speakerList ])
+    }, [ speakerList, limit ])
 
-    console.log("speakerTalks", speakerTalks)
 
     const talks = useMemo(() => sortBy(speakerTalks, "date"), [ speakerTalks ])
 
