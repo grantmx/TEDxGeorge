@@ -49,11 +49,6 @@ async function SpeakerDetails({ params }){
 
             <section className="container">
                 <div className="row">
-                    <article 
-                        className="col-lg-8 col-12 pe-5" 
-                        dangerouslySetInnerHTML={{ __html: speaker?.bio ?? "" }} 
-                    />
-
                     <figure className="col-lg-4 col-12">
                         <Image
                             src={speaker?.image?.src ?? "https://dummyimage.com/400x400/111/fff&text=Announcing+Soon"}
@@ -64,6 +59,11 @@ async function SpeakerDetails({ params }){
                             blurDataURL={speaker?.image?.blurDataURL ?? "https://dummyimage.com/1x1/111/fff&text=Announcing+Soon"}
                         />
                     </figure>
+
+                    <article 
+                        className="col-lg-8 col-12 pe-5" 
+                        dangerouslySetInnerHTML={{ __html: speaker?.bio ?? "" }} 
+                    />
                 </div>
 
                 {(Array.isArray(speaker?.talks) && speaker?.talks.length) ? (

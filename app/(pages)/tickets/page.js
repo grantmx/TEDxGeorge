@@ -3,6 +3,8 @@ import Style from "../Page.module.scss"
 import clsx from "clsx"
 import TicketTable from "@/components/TicketTable"
 import getTicketCount from "./getTicketCount"
+import RiseLogo from "@/components/events/RiseLogo"
+import Divider from "@/components/display/Divider"
 
 
 export const dynamic = 'force-dynamic'
@@ -22,19 +24,15 @@ async function Tickets(){
     return(
         <>
             <section className="container text-center d-flex justify-content-center">
-                <div className={Style.heading}>
-                    <h1 className={clsx(Utils.fs_5, "fw-light")}>
-                        Purchase Tickets
-                    </h1>
-
-                    <article>
-                        <p className={clsx(Utils.fs_1)}>
-                            "Shift" Event Registration 2025
-                        </p>
-                    </article>
+                <div className={clsx(Style.heading, "p-0")}>
+                    <RiseLogo horizontal />
                 </div>
             </section>
 
+            <section className="container text-center d-flex justify-content-center my-5">
+                <Divider />
+            </section>
+            
             <TicketTable {...{ sold }} />
         </>
     )

@@ -18,7 +18,7 @@ function Nominations(){
     // nominator
     // nominee
 
-    // Please share a brief biography that includes information about this potential future TED speaker’s connection to their talk topic. 
+    // Please share a brief biography that includes information about this potential future TED speaker's connection to their talk topic. 
     // What is the unique idea that they want to share in a TED talk? In a few sentences, please describe the core of the talk idea, and what makes the talk idea new. 
     // In one sentence, what is the key takeaway that you want the audience to know or feel after hearing this talk? 
     // Under which of the following categories would this person fall? 
@@ -30,11 +30,11 @@ function Nominations(){
     // Has this person spoken publicly before? If so, where?
     // Please provide links to online video or audio featuring the proposed speaker.
     // Please provide links to any articles or web pages about the speaker.
-    // Do you know this person personally? - It’s okay if you do not.
+    // Do you know this person personally? - It's okay if you do not.
 
 
     // What commitment do we make to our speakers?
-    // The TEDxCapeTown speaker team works with selected speakers well in advance of the event date to help shape a presentation that will succeed on our stage — ensuring each talk embodies the ethos of  ‘Ideas Worth Spreading’. This support is provided through a series of facilitated workshops, as well as one-on-one coaching sessions.
+    // The TEDxCapeTown speaker team works with selected speakers well in advance of the event date to help shape a presentation that will succeed on our stage — ensuring each talk embodies the ethos of  ‘Ideas Worth Spreading'. This support is provided through a series of facilitated workshops, as well as one-on-one coaching sessions.
 
     // What commitment is expected from speakers?
     // We are flexible and accommodating, but we do expect a high level of commitment from speakers. If you cannot commit to these requirements, we reserve the right to exclude you from the final speaker line-up.

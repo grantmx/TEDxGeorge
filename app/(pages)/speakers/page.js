@@ -39,9 +39,9 @@ function Speakers(){
                         Our speaker's ideas will inspire you to seek your highest potential.
                     </p>
 
-                    <p>
+                    {/* <p>
                         TEDxGeorge is guided by the broader TED mission to uncover and share ideas that inspire, challenge, and create impact. As we navigate a world with growing divides, our goal is to bring together a wide range of voices, encouraging dialogue and deeper understanding among our community. We believe that valuable lessons can be learned from every speaker, even when their perspectives differ from our own. Our platform is dedicated to fostering meaningful conversations between people with diverse viewpoints.
-                    </p>
+                    </p> */}
                 </div>
             </section>
 
@@ -59,7 +59,7 @@ function Speakers(){
             <section className="container text-center d-flex justify-content-center">
                 <div className={Style.heading}>
                     <h2 className={Style.header}>
-                        Session Hosts
+                        Discovery Session Hosts
                     </h2>
                 </div>
             </section>

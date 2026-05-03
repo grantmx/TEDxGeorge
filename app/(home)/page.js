@@ -1,7 +1,6 @@
 
 import Image from "next/image";
-import hero from "@/public/shift-hero-tedx.webp"
-import mobileHero from "@/public/shift-concept-design.png"
+// import mobileHero from "@/public/shift-concept-design.png"
 import Header from "@/components/nav/Header";
 import Utils from "@/styles/globals/utils.module.scss"
 import logo from "@/public/TEDx_Logo_Short_George-white.svg"
@@ -14,18 +13,39 @@ import useSpeakerTalks from "@/custom_hooks/useSpeakerTalks";
 import TalkCard from "@/components/speakers/TalkCard";
 import Link from "next/link";
 import MuxPlayer from "@mux/mux-player-react";
+import RiseLogo from "@/components/events/RiseLogo";
 
 export const dynamic = 'force-static'
 
 
 function Home() {
-	const { talks } = useSpeakerTalks({ limit: 6, sort: "first_name" })
+	const { talks } = useSpeakerTalks({ limit: 6, sort: "active" })
 
 	return (
 		<>
 			<Header />
 
 			<section className={Style.hero}>
+				<article className={Style.heroOverlay}>
+					<div className={Style.heroInner}>
+						<RiseLogo />
+
+						<p className={Style.heroDesc}>
+							Through bold ideas, untold stories, and lived experiences, our speakers will explore what rising looks like across identity, leadership, culture, innovation, wellness, justice, and community.
+						</p>
+
+						<div className={Style.heroCtaRow}>
+							<Link href="/tickets" className="btn btn-danger btn-lg px-5 py-3 fs-2">
+								Purchase Tickets
+							</Link>
+
+							<Link href="/speakers" className="fs-2">
+								Meet the Speakers
+							</Link>
+						</div>
+					</div>
+				</article>
+
 				<MuxPlayer 
 					loop
 					muted

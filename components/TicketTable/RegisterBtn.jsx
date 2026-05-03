@@ -31,7 +31,7 @@ function RegisterBtn({
     function register(){
         // const id = generateID()
 
-        window.location.href="https://www.quicket.co.za/events/324812-tedx-george-2025/#/seats"
+        window.location.href="https://www.quicket.co.za/events/333333-tedxgeorge-women/#/tickets"
 
         // LocalStorage.addToStorage("TXG_cart", { 
         //     type, 

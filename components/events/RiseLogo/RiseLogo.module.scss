@@ -1,0 +1,47 @@
+@import "@/styles/globals/placeholders";
+
+
+.block{
+    display: flex;
+    flex-direction: column;
+
+    &__horizontal{
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+
+        & .logo{
+            width: 80%;
+        }
+    }
+}
+
+
+.riseLogo{
+    font-size: calc(200px + (400 - 200) * (100vw - 400px) / (2000 - 400) ) !important;
+    font-weight: 400;
+    letter-spacing: -0.5rem;
+    line-height: 1;
+
+    & span{
+       font-weight: 100;
+    }
+}
+
+.lead{
+    font-size: calc(20px + (40 - 20) * (100vw - 400px) / (2000 - 400) ) !important;
+    margin: 0rem;
+    font-weight: 700;
+}
+
+.logo{
+    width: 50%;
+    height: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+
+    @media screen and (max-width: $screen-lg){
+        width: 80%;
+    }
+}
+

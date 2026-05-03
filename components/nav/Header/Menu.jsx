@@ -42,17 +42,17 @@ function Menu(){
                     </Link>
                 </li>
 
-                 {/* <li className="me-4 me-lg-5">
+                <li className="me-4 me-lg-5">
                     <Link href="/speakers" className="p-1">
                         Speakers
                     </Link>
-                </li> */}
+                </li>
 
-                <li className="me-4 me-lg-5">
+                {/* <li className="me-4 me-lg-5">
                     <Link href="/speakers/nominate" className="p-1">
                         Nominate Speaker
                     </Link>
-                </li>
+                </li> */}
                
                 {/* <li className="me-4 me-lg-5">
                     <Link href="/events/agenda" className="p-1">
@@ -71,9 +71,9 @@ function Menu(){
                 </li> */}
                 
 
-                {/* <a href="/tickets" className={clsx(Style.btn, "btn btn-danger px-4 py-3")}>
+                <a href="/tickets" className={clsx(Style.btn, "btn btn-danger px-4 py-3")}>
                     Tickets
-                </a> */}
+                </a>
             </menu>
 
             <button 

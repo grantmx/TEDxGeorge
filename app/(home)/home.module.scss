@@ -19,12 +19,11 @@
 
 
 .hero{
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
     width: 100%;
-    min-height: 900px;
-
-    @media screen and (max-width: $screen-sm){
-        min-height: auto;
-    }
+    height: 100%;
+    min-height: 400px;
 
     
     & mux-player {
@@ -34,9 +33,15 @@
         position: absolute;
         inset: 0;
         z-index: -1;
+        min-height: 800px;
+
+        @media screen and (max-width: $screen-lg){
+            min-height: 700px;
+        }
 
         @media screen and (max-width: $screen-sm){
             position: relative;
+            min-height: 400px;
         }
     }
 
@@ -46,5 +51,74 @@
 
 }
 
+
+.heroOverlay{
+    position: absolute;
+    width: 100%;
+    min-height: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.heroLogo{
+    width: 40%;
+    height: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+
+    @media screen and (max-width: $screen-lg){
+        width: 80%;
+    }
+}
+
+.heroInner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1320px;
+    height: 100%;
+    flex: 1 0 auto;
+    margin: 0 auto;
+    text-align: center;
+
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    width: 100%;
+}
+
+.heroLead{
+    font-size: calc(20px + (40 - 20) * (100vw - 400px) / (2000 - 400) ) !important;
+    margin: 0rem;
+    font-weight: 700;
+}
+
+.heroDesc{
+    margin-top: 1rem;
+    width: 50%;
+
+    @media screen and (max-width: $screen-lg){
+        width: 100%;
+    }
+
+    @media screen and (max-width: $screen-md){
+       display: none;
+    }
+}
+
+.heroCtaRow{
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    align-items: center;
+    width: 40%;
+    justify-content: space-around;
+
+    @media screen and (max-width: $screen-lg){
+        width: 100%;
+        justify-content: center;
+    }
+}
 
 

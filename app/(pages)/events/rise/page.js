@@ -1,7 +1,7 @@
 import Utils from "@/styles/globals/utils.module.scss"
 import Style from "@/app/(pages)/Page.module.scss"
 import Image from "next/image";
-import hero from "@/public/temp-backdrop-womenevent.webp"
+import hero from "@/public/rise-banner-2000.webp"
 import mobileHero from "@/public/shift-concept-design.png"
 import clsx from "clsx";
 import { speakerList } from "@/lib/speakerList"
@@ -58,7 +58,7 @@ async function Rise(){
 
                     <article>
                         <p className={clsx(Utils.fs_3, Utils.mb_2)}>
-                            This year’s event celebrates women who refuse to be defined by circumstance, limitation, or inherited narratives. These are the women who rise — again and again — not by accident, but by intention.
+                            This year's event celebrates women who refuse to be defined by circumstance, limitation, or inherited narratives. These are the women who rise — again and again — not by accident, but by intention.
                         </p>
 
                         <p>This gathering is for the thinkers, makers, disruptors, storytellers, healers, builders, and everyday heroes whose courage stretches far beyond their own lives. Through bold ideas, untold stories, and lived experiences, our speakers will explore what rising looks like across identity, leadership, culture, innovation, wellness, justice, and community.
