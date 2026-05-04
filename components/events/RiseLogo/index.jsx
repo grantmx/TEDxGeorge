@@ -16,7 +16,7 @@ function RiseLogo({ horizontal }){
             <figure>
                 <Image src={tedxwomen} className={Style.logo} alt="TEDxGeorge Women Logo" width={900} priority />
 
-                <figcaption className={Style.heroLead}>
+                <figcaption className={Style.lead}>
                     August 8, 2026 &nbsp;&nbsp;&nbsp; Fancourt, South Africa
                 </figcaption>
             </figure>
