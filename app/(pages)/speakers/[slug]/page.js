@@ -61,7 +61,7 @@ async function SpeakerDetails({ params }){
                     </figure>
 
                     <article 
-                        className="col-lg-8 col-12 pe-5" 
+                        className={clsx("col-lg-8 col-12 pe-5", Style.speakerBio)}
                         dangerouslySetInnerHTML={{ __html: speaker?.bio ?? "" }} 
                     />
                 </div>
