@@ -2,13 +2,12 @@ import Utils from "@/styles/globals/utils.module.scss"
 import Style from "@/app/(pages)/Page.module.scss"
 import Image from "next/image";
 import hero from "@/public/rise-banner-2000.webp"
-import mobileHero from "@/public/shift-concept-design.png"
+import mobileHero from "@/public/2026-rise.webp"
 import clsx from "clsx";
 import { speakerList } from "@/lib/speakerList"
 import sortBy from "@/lib/utils/sortBy"
 import SpeakerCard from "@/components/speakers/SpeakerCard"
 import HostCard from "@/components/speakers/HostCard"
-import rise from "@/public/2026-rise.webp"
 
 
 export const metadata = {
