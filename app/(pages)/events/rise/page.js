@@ -88,7 +88,7 @@ async function Rise(){
             <section className="container text-center d-flex justify-content-center">
                 <div className={Style.heading}>
                     <h2 className={Style.header}>
-                        Session Hosts
+                        Discovery Session Hosts
                     </h2>
                 </div>
             </section>
