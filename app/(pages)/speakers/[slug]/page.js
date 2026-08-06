@@ -48,7 +48,7 @@ async function SpeakerDetails({ params }){
 
 
             <section className="container">
-                <div className="row">
+                <div className="row justify-content-center align-items-start">
                     <figure className="col-lg-4 col-12">
                         <Image
                             src={speaker?.image?.src ?? "https://dummyimage.com/400x400/111/fff&text=Announcing+Soon"}
@@ -56,12 +56,13 @@ async function SpeakerDetails({ params }){
                             height={400}
                             alt={speakerName ?? "TEDx George Speaker"}
                             placeholder="blur"
+                            style={{ width: "100%", height: "auto", objectFit: "cover" }}
                             blurDataURL={speaker?.image?.blurDataURL ?? "https://dummyimage.com/1x1/111/fff&text=Announcing+Soon"}
                         />
                     </figure>
 
                     <article 
-                        className="col-lg-8 col-12 pe-5" 
+                        className="col-lg-6 col-12 pe-5" 
                         dangerouslySetInnerHTML={{ __html: speaker?.bio ?? "" }} 
                     />
                 </div>
