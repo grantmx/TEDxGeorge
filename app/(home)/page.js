@@ -35,9 +35,9 @@ function Home() {
 						</p>
 
 						<div className={Style.heroCtaRow}>
-							<Link href="/tickets" className="btn btn-danger btn-lg px-5 py-3 fs-2">
+							{/* <Link href="/tickets" className="btn btn-danger btn-lg px-5 py-3 fs-2">
 								Purchase Tickets
-							</Link>
+							</Link> */}
 
 							<Link href="/speakers" className="fs-2">
 								Meet the Speakers
